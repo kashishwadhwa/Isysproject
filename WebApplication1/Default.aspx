@@ -7,7 +7,7 @@
 	<title>Home</title>
 
 	<link rel="shortcut icon" href="logo_title.jpg" />
-	<link rel="stylesheet" href="index.css" />
+	
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Cookie" />
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="engine1/style.css" />
@@ -27,7 +27,7 @@
 
 
 
-
+    <link rel="stylesheet" href="index.css" />
 	
 </asp:Content>
 
