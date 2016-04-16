@@ -196,6 +196,7 @@ nav > ul li ul li > a {
 	  		  color: #FFFFFF;
 	  /*opacity:.8;*/
 	  transition:.2s ease-in-out .2s;
+      text-decoration:none;
 	  }
 	  
 #links-header:hover {
