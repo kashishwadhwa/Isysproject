@@ -181,7 +181,7 @@
     <Content Include="search.css" />
     <Content Include="testimonials.aspx" />
     <Content Include="UnderConstr.aspx" />
-    <Content Include="User-profile.aspx" />
+    <Content Include="Book-Appointment.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="WebForm3.aspx" />
     <Content Include="scss\style.scss" />
@@ -278,12 +278,12 @@
     <Compile Include="UnderConstr.aspx.designer.cs">
       <DependentUpon>UnderConstr.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User-profile.aspx.cs">
-      <DependentUpon>User-profile.aspx</DependentUpon>
+    <Compile Include="Book-Appointment.aspx.cs">
+      <DependentUpon>Book-Appointment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="User-profile.aspx.designer.cs">
-      <DependentUpon>User-profile.aspx</DependentUpon>
+    <Compile Include="Book-Appointment.aspx.designer.cs">
+      <DependentUpon>Book-Appointment.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>

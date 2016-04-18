@@ -136,6 +136,10 @@ header {
 /***********************************
 Navigation Bar
 ************************************/
+nav{
+    border:1px;
+}
+
 ul{
 list-style:none;
 padding-top:.45%;
@@ -196,6 +200,7 @@ nav > ul li ul li > a {
 	  		  color: #FFFFFF;
 	  /*opacity:.8;*/
 	  transition:.2s ease-in-out .2s;
+      text-decoration:none;
 	  }
 	  
 #links-header:hover {
@@ -442,7 +447,7 @@ Footer
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
-
+    position:relative;
 	padding: 55px 50px;
 	margin-top: 80px;
 }
@@ -1160,6 +1165,7 @@ Footer
     margin-left: 1%;
     width: 70%;
     float: left;
+
 }
 
 
