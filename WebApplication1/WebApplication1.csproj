@@ -80,6 +80,7 @@
     <Content Include="css\style1.css" />
     <Content Include="css\testimonialstyle.css" />
     <Content Include="css\theme.css" />
+    <Content Include="dashboard-billing.aspx" />
     <Content Include="dashboard.aspx" />
     <Content Include="dashboard_scripts\common.js" />
     <Content Include="dashboard_scripts\datatables\jquery.dataTables.js" />
@@ -216,6 +217,13 @@
     </Compile>
     <Compile Include="contact.aspx.designer.cs">
       <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard-billing.aspx.cs">
+      <DependentUpon>dashboard-billing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard-billing.aspx.designer.cs">
+      <DependentUpon>dashboard-billing.aspx</DependentUpon>
     </Compile>
     <Compile Include="dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>

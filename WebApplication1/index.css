@@ -136,6 +136,10 @@ header {
 /***********************************
 Navigation Bar
 ************************************/
+nav{
+    border:1px;
+}
+
 ul{
 list-style:none;
 padding-top:.45%;
@@ -443,7 +447,7 @@ Footer
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
-
+    position:relative;
 	padding: 55px 50px;
 	margin-top: 80px;
 }
@@ -1161,6 +1165,7 @@ Footer
     margin-left: 1%;
     width: 70%;
     float: left;
+
 }
 
 

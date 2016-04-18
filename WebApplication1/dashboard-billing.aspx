@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="WebApplication1.dashboard" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard-billing.aspx.cs" Inherits="WebApplication1.dashboard_billing" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Edmin</title>
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -14,52 +13,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    
     <div class="dashboard">
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                        <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">Edmin </a>
-                    <div class="nav-collapse collapse navbar-inverse-collapse">
-                        <ul class="nav nav-icons">
-                            <li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
-                            <li><a href="#"><i class="icon-eye-open"></i></a></li>
-                            <li><a href="#"><i class="icon-bar-chart"></i></a></li>
-                        </ul>
-                        <form class="navbar-search pull-left input-append" action="#">
-                        <input type="text" class="span3">
-                        <button class="btn" type="button">
-                            <i class="icon-search"></i>
-                        </button>
-                        </form>
-                        <ul class="nav pull-right">
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
-                                <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Item No. 1</a></li>
-                                    <li><a href="#">Don't Click</a></li>
-                                    <li class="divider"></li>
-                                    <li class="nav-header">Example Header</li>
-                                    <li><a href="#">A Separated link</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Support </a></li>
-                            <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="images/user.png" class="nav-avatar" />
-                                <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Your Profile</a></li>
-                                    <li><a href="#">Edit Profile</a></li>
-                                    <li><a href="#">Account Settings</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Logout</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.nav-collapse -->
-                </div>
+                
             </div>
             <!-- /navbar-inner -->
         </div>
@@ -110,42 +68,23 @@
                         <div class="content">
                             <div class="btn-controls">
                                 <div class="btn-box-row row-fluid">
-                                    <a href="#" class="btn-box big span4"><i class=" icon-random"></i><b>65%</b>
+                                    <a href="#" class="btn-box big span4"><i class=" icon-random"></i><b><asp:Label runat="server" ID="lbl_balance"></asp:Label></b>
                                         <p class="text-muted">
-                                            Growth</p>
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b>15</b>
+                                            Balance</p>
+                                    </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b><asp:Label runat="server" ID="lbl_amount"></asp:Label></b>
                                         <p class="text-muted">
-                                            New Users</p>
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-money"></i><b>15,152</b>
+                                            Amount Paid</p>
+                                    </a><a href="#" class="btn-box big span4"><i class="icon-money"></i><b><asp:Label runat="server" ID="lbl_lastVisit"></asp:Label></b>
                                         <p class="text-muted">
-                                            Profit</p>
+                                            Last Visit</p>
                                     </a>
                                 </div>
-								<div class="btn-box-row row-fluid">
-                                    <a href="#" class="btn-box big span4"><i class=" icon-random"></i><b>65%</b>
-                                        <p class="text-muted">
-                                            Growth</p>
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b>15</b>
-                                        <p class="text-muted">
-                                            New Users</p>
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-money"></i><b>15,152</b>
-                                        <p class="text-muted">
-                                            Profit</p>
-                                    </a>
-                                </div>
+								
                             </div>
                             <!--/#btn-controls-->
                             <div class="module">
-                                <div class="module-head">
-                                    <h3>
-                                        Profit Chart</h3>
-                                </div>
-                                <div class="module-body">
-                                    <div class="chart inline-legend grid">
-                                        <div id="placeholder2" class="graph" style="height: 500px">
-                                        </div>
-                                    </div>
-                                </div>
+                             
+
                             </div>
                             <!--/.module-->
                             <div class="module hide">
@@ -179,13 +118,11 @@
     <asp:GridView ID="GridView1" CssClass="footable" OnPageIndexChanging="GridView1_PageIndexChanging" runat="server" AutoGenerateColumns="false"
          AllowPaging="True" PagerSettings-Mode="NumericFirstLast">
         <Columns>
-            <asp:BoundField DataField="appointment_id" HeaderText="Appointment ID" />
-            <asp:BoundField DataField="Patient Name" HeaderText="Patient Name" />
+            <asp:BoundField DataField="patient_name" HeaderText="Patient Name" />
+            <asp:BoundField DataField="visit_date_cast" HeaderText="Visit Date" />
+            <asp:BoundField DataField="service_description" HeaderText="Service Description" />
+            <asp:BoundField DataField="service_cost" DataFormatString="{0:C}" HeaderText="Service Cost"  />
 
-            <asp:BoundField DataField="Dentist Name" HeaderText="Dentist Name" />
-
-            <asp:BoundField DataField="appointment_date" HeaderText="Appointment Date" />
-            <asp:BoundField DataField="appointment_time" HeaderText="Appointment Time" />
         </Columns>
 
         <PagerStyle HorizontalAlign="Right" CssClass="GridPager" />
