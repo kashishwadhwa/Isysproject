@@ -182,6 +182,7 @@
     <Content Include="testimonials.aspx" />
     <Content Include="UnderConstr.aspx" />
     <Content Include="Book-Appointment.aspx" />
+    <Content Include="User-Profile.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="WebForm3.aspx" />
     <Content Include="scss\style.scss" />
@@ -284,6 +285,13 @@
     </Compile>
     <Compile Include="Book-Appointment.aspx.designer.cs">
       <DependentUpon>Book-Appointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Profile.aspx.cs">
+      <DependentUpon>User-Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User-Profile.aspx.designer.cs">
+      <DependentUpon>User-Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
