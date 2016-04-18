@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="index.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
+      <div class="main-background-login">
+        <h1>
+            Billing
+        </h1>
+		</div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
