@@ -22,8 +22,15 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (!IsPostBack)
-                bindview();
+            if (Session["email"] == null)
+            {
+                Response.Redirect("WebForm4.aspx");
+            }
+            else
+            {
+                if (!IsPostBack)
+                    bindview();
+            }
 
         }
         private void bindview(){

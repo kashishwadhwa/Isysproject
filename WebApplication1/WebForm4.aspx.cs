@@ -13,7 +13,10 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["email"] != null)
+            {
+                Response.Redirect("WebForm5.aspx");
+            }
         }
         string connectionString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
 
@@ -79,6 +82,8 @@ namespace WebApplication1
                         user_type = (myReader["user_type"].ToString());
                     }
                     myConnection.Close();
+
+                    Session["email"] = email_login_string;
                     if(user_type=="r")
                     {
                         Response.Redirect("WebForm5.aspx");
