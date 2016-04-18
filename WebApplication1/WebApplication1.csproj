@@ -82,6 +82,7 @@
     <Content Include="css\testimonialstyle.css" />
     <Content Include="css\theme.css" />
     <Content Include="dashboard-billing.aspx" />
+    <Content Include="dashboard-doctor.aspx" />
     <Content Include="dashboard-patient.aspx" />
     <Content Include="dashboard.aspx" />
     <Content Include="dashboard_scripts\common.js" />
@@ -228,6 +229,13 @@
     </Compile>
     <Compile Include="dashboard-billing.aspx.designer.cs">
       <DependentUpon>dashboard-billing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard-doctor.aspx.cs">
+      <DependentUpon>dashboard-doctor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard-doctor.aspx.designer.cs">
+      <DependentUpon>dashboard-doctor.aspx</DependentUpon>
     </Compile>
     <Compile Include="dashboard-patient.aspx.cs">
       <DependentUpon>dashboard-patient.aspx</DependentUpon>

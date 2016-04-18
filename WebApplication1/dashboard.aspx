@@ -10,6 +10,11 @@
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet" />
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' />
     <link rel="stylesheet" href="index.css" />
+        <style>
+        body{
+            background-color:#eee;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
           <div class="main-background-login">

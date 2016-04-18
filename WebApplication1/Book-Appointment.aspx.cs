@@ -20,62 +20,71 @@ namespace WebApplication1
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            if (!IsPostBack)
+            if (Session["email"] == null)
             {
-                // SESSION STRING
-                string session_patient_id = "1";
+                Response.Redirect("WebForm4.aspx");
+            }
+            else
+            {
 
 
-                string ConnectString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-                string appointment_id = null;
-                SqlConnection myConnection = new SqlConnection(ConnectString);
-                try
+
+                if (!IsPostBack)
                 {
-                    SqlDataReader myReader = null;
-                    SqlCommand myCommand2 = new SqlCommand("select top 1 (appointment_id+1) as appointment_id from appointment order by appointment_id desc",
-                                                             myConnection);
-                    myConnection.Open();
-                    myReader = myCommand2.ExecuteReader();
-                    while (myReader.Read())
+                    // SESSION STRING
+                    string session_patient_id = "1";
+
+
+                    string ConnectString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
+                    string appointment_id = null;
+                    SqlConnection myConnection = new SqlConnection(ConnectString);
+                    try
                     {
-                        appointment_id = (myReader["appointment_id"].ToString());
+                        SqlDataReader myReader = null;
+                        SqlCommand myCommand2 = new SqlCommand("select top 1 (appointment_id+1) as appointment_id from appointment order by appointment_id desc",
+                                                                 myConnection);
+                        myConnection.Open();
+                        myReader = myCommand2.ExecuteReader();
+                        while (myReader.Read())
+                        {
+                            appointment_id = (myReader["appointment_id"].ToString());
+                        }
+                        myConnection.Close();
+                        Appointment.Attributes.Add("value", appointment_id);
+
                     }
-                    myConnection.Close();
-                    Appointment.Attributes.Add("value", appointment_id);
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
+
+
+
+                    bindview();
+
+                    string QueryString = "select concat(dentist_first_name,' ',dentist_last_name) as dentist_name, dentist_id from dentist";
+
+
+                    SqlDataAdapter myCommand = new SqlDataAdapter(QueryString, myConnection);
+                    DataSet ds = new DataSet();
+                    myCommand.Fill(ds, "Dentists");
+
+                    doctor.DataSource = ds;
+                    doctor.DataTextField = "dentist_name";
+                    doctor.DataValueField = "dentist_id";
+                    doctor.DataBind();
+
+                    QueryString = "select concat(patient_first_name,' ',patient_last_name) as patient_name, patient_id from patient where account_id=(select account_id from patient where patient_id=" + session_patient_id + ")";
+
+                    DataSet ds_patient = new DataSet();
+                    SqlDataAdapter myCommand1 = new SqlDataAdapter(QueryString, myConnection);
+                    myCommand1.Fill(ds_patient, "Patients");
+                    patient.DataSource = ds_patient;
+                    patient.DataTextField = "patient_name";
+                    patient.DataValueField = "patient_id";
+                    patient.DataBind();
 
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                }
-                
-
-
-                bindview();
-                
-                string QueryString = "select concat(dentist_first_name,' ',dentist_last_name) as dentist_name, dentist_id from dentist";
-
-                
-                SqlDataAdapter myCommand = new SqlDataAdapter(QueryString, myConnection);
-                DataSet ds = new DataSet();
-                myCommand.Fill(ds, "Dentists");
-
-                doctor.DataSource = ds;
-                doctor.DataTextField = "dentist_name";
-                doctor.DataValueField = "dentist_id";
-                doctor.DataBind();
-
-                QueryString = "select concat(patient_first_name,' ',patient_last_name) as patient_name, patient_id from patient where account_id=(select account_id from patient where patient_id="+ session_patient_id+")";
-
-                DataSet ds_patient = new DataSet();
-                SqlDataAdapter myCommand1 = new SqlDataAdapter(QueryString, myConnection);
-                myCommand1.Fill(ds_patient, "Patients");
-                patient.DataSource = ds_patient;
-                patient.DataTextField = "patient_name";
-                patient.DataValueField = "patient_id";
-                patient.DataBind();
-
             }
         }
         private void bindview()

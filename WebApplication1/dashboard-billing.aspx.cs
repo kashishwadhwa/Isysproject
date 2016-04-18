@@ -18,60 +18,68 @@ namespace WebApplication1
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            string balance = null;
-            string amount = null;
-            string lastVisit = null;
-            string connString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-            SqlConnection myConnection = new SqlConnection(connString);
-            try
+            if (Session["email"] == null)
             {
-                SqlDataReader myReader = null;
-                SqlCommand myCommand = new SqlCommand("select * from account where account_id=1",
-                                                         myConnection);
-                SqlCommand myCommand1 = new SqlCommand("select sum(payment_amount) as payment_sum from payment where account_id=1",
-                                                         myConnection);
-                SqlCommand myCommand2 = new SqlCommand("select top 1 visit_date from visit v, patient p where v.patient_id = p.patient_id and   p.account_id = 1 order by visit_date desc ",
-                                                         myConnection);
-                myConnection.Open();
+                Response.Redirect("WebForm4.aspx");
+            }
+            else
+            {
 
-                myReader = myCommand.ExecuteReader();
-                while (myReader.Read())
+                string balance = null;
+                string amount = null;
+                string lastVisit = null;
+                string connString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
+                SqlConnection myConnection = new SqlConnection(connString);
+                try
                 {
-                    balance = (myReader["account_balance"].ToString());
-                }
-                myConnection.Close();
+                    SqlDataReader myReader = null;
+                    SqlCommand myCommand = new SqlCommand("select * from account where account_id=1",
+                                                             myConnection);
+                    SqlCommand myCommand1 = new SqlCommand("select sum(payment_amount) as payment_sum from payment where account_id=1",
+                                                             myConnection);
+                    SqlCommand myCommand2 = new SqlCommand("select top 1 visit_date from visit v, patient p where v.patient_id = p.patient_id and   p.account_id = 1 order by visit_date desc ",
+                                                             myConnection);
+                    myConnection.Open();
 
-                myConnection.Open();
-                myReader = myCommand1.ExecuteReader();
-                while (myReader.Read())
+                    myReader = myCommand.ExecuteReader();
+                    while (myReader.Read())
+                    {
+                        balance = (myReader["account_balance"].ToString());
+                    }
+                    myConnection.Close();
+
+                    myConnection.Open();
+                    myReader = myCommand1.ExecuteReader();
+                    while (myReader.Read())
+                    {
+                        amount = (myReader["payment_sum"].ToString());
+                    }
+                    myConnection.Close();
+
+                    myConnection.Open();
+                    myReader = myCommand2.ExecuteReader();
+                    while (myReader.Read())
+                    {
+                        lastVisit = (myReader["visit_date"].ToString());
+                    }
+
+                    myConnection.Close();
+                    lbl_balance.Text = "$" + balance.Remove(balance.Length - 2);
+                    lbl_amount.Text = "$" + amount.Remove(amount.Length - 2);
+                    lbl_lastVisit.Text = lastVisit.Remove(lastVisit.Length - 12);
+
+
+
+                }
+                catch (Exception ex)
                 {
-                    amount = (myReader["payment_sum"].ToString());
-                }
-                myConnection.Close();
-
-                myConnection.Open();
-                myReader = myCommand2.ExecuteReader();
-                while (myReader.Read())
-                {
-                    lastVisit = (myReader["visit_date"].ToString());
+                    Console.WriteLine(ex.ToString());
                 }
 
-                myConnection.Close();
-                lbl_balance.Text = "$"+balance.Remove(balance.Length - 2);
-                lbl_amount.Text = "$"+amount.Remove(amount.Length - 2);
-                lbl_lastVisit.Text = lastVisit.Remove(lastVisit.Length - 12);
-
-
+                if (!IsPostBack)
+                    bindview();
 
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-
-            if (!IsPostBack)
-                bindview();
-
         }
         private void bindview()
         {

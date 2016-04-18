@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard-billing.aspx.cs" Inherits="WebApplication1.dashboard_billing" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard-doctor.aspx.cs" Inherits="WebApplication1.dashboard_doctor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Edmin</title>
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -9,23 +10,23 @@
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet" />
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' />
     <link rel="stylesheet" href="index.css" />
-        <style>
+    <style>
         body{
             background-color:#eee;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
-      <div class="main-background-login">
+          <div class="main-background-login">
         <h1>
-            Billing
+            Welcome
         </h1>
 		</div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+
     <div class="dashboard">
-        <div class="navbar navbar-fixed-top">
+                <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 
             </div>
@@ -78,23 +79,30 @@
                         <div class="content">
                             <div class="btn-controls">
                                 <div class="btn-box-row row-fluid">
-                                    <a href="#" class="btn-box big span4"><i class=" icon-random"></i><b><asp:Label runat="server" ID="lbl_balance"></asp:Label></b>
+                                    <a href="#" class="btn-box big span4"><i class=" icon-random"></i><b>Patients</b>
                                         <p class="text-muted">
-                                            Balance</p>
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b><asp:Label runat="server" ID="lbl_amount"></asp:Label></b>
+                                            View Patient Details</p>
+                                    </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b>Appointments</b>
                                         <p class="text-muted">
-                                            Amount Paid</p>
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-money"></i><b><asp:Label runat="server" ID="lbl_lastVisit"></asp:Label></b>
+                                            Manage Appointments</p>
+                                    </a><a href="#" class="btn-box big span4"><i class="icon-money"></i><b>Prescription</b>
                                         <p class="text-muted">
-                                            Last Visit</p>
+                                            Write Prescription</p>
                                     </a>
                                 </div>
 								
-                            </div>
                             <!--/#btn-controls-->
                             <div class="module">
-                             
-
+                                <div class="module-head">
+                                    <h3>
+                                        Profit Chart</h3>
+                                </div>
+                                <div class="module-body">
+                                    <div class="chart inline-legend grid">
+                                        <div id="placeholder2" class="graph" style="height: 500px">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <!--/.module-->
                             <div class="module hide">
@@ -120,20 +128,40 @@
                                     <h3>
                                         DataTables</h3>
                                 </div>
+                                <form id="form1" runat="server">
+                               <div class="module-head">
+                                       
+                                    
+                                        <asp:TextBox ID="txtSearch" runat="server" />
+                                        <input id="from_date" type="date" placeholder="from"   runat="server" />
+                                    <input id="to_date" type="date" placeholder="to"   runat="server" />
+                                        <asp:Button Text="Search" runat="server" OnClick="Search" />
+                                </div>
                                 <div class="module-body table">
                                     
     
 
-    <form id="form1" runat="server">
+
     <asp:GridView ID="GridView1" CssClass="footable" OnPageIndexChanging="GridView1_PageIndexChanging" runat="server" AutoGenerateColumns="false"
          AllowPaging="True" PagerSettings-Mode="NumericFirstLast">
         <Columns>
-            <asp:BoundField DataField="patient_name" HeaderText="Patient Name" />
-            <asp:BoundField DataField="visit_date_cast" HeaderText="Visit Date" />
-            <asp:BoundField DataField="service_description" HeaderText="Service Description" />
-            <asp:BoundField DataField="service_cost" DataFormatString="{0:C}" HeaderText="Service Cost"  />
+            <asp:BoundField DataField="appointment_id" HeaderText="Appointment ID" />
+            <asp:BoundField DataField="Patient Name" HeaderText="Patient Name" />
 
+            <asp:BoundField DataField="Dentist Name" HeaderText="Dentist Name" />
+
+            <asp:BoundField DataField="appointment_date" HeaderText="Appointment Date" />
+            <asp:BoundField DataField="appointment_time" HeaderText="Appointment Time" />
         </Columns>
+                <EmptyDataTemplate>
+
+<div>
+
+No Upcoming Appointments
+
+</div>
+
+</EmptyDataTemplate>
 
         <PagerStyle HorizontalAlign="Right" CssClass="GridPager" />
     </asp:GridView>
@@ -149,9 +177,9 @@
 </form>
    
       
-           
+           </div>
                                 </div>
-                            </div>
+                            
                             <!--/.module-->
                         </div>
                         <!--/.content-->

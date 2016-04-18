@@ -68,28 +68,13 @@ blockquote small::before {
 .text-muted {color: #999;}
 .wrapper {
 	background: url(../images/bg.png) #eee;
-	border-bottom: 1px solid #bbb;
-	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	/*border-bottom: 1px solid #bbb;*/
+	/*-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);*/
 	padding: 30px 0
 }
-.footer {
-	color: #999;
-	padding: 30px 0 60px
-}
-.footer .nav li {
-	float: left
-}
-.footer .nav li+li {
-	margin-left: 30px
-}
-.footer .nav li a {
-	color: inherit
-}
-.footer .nav li a:hover {
-	color: #555
-}
+
 form {
 	margin: 0
 }
@@ -165,6 +150,7 @@ body [class^="icon-"], body [class*=" icon-"] {
 }
 .nav>li>a:hover {
 	background: 0
+
 }
 .form-horizontal .control-group, .form-vertical .control-group {
 	margin-bottom: 0
@@ -928,7 +914,7 @@ transition: all .2s ease-in-out;
 	border-top: 1px solid #555
 }
 .widget-menu>li>a {
-	background-color: #2d2b32;
+	background-color: #292c2f;
 	color: #767676;
 	-webkit-transition: all .2s ease-in-out;
 -moz-transition: all .2s ease-in-out;
@@ -948,7 +934,7 @@ transition: all .2s ease-in-out;
 }
 .widget-menu>li>a:hover {
 	background-color: #28262c;
-	color: #fafafa;
+	color: orange;
 }
 
 .widget-menu>li>a:hover .menu-icon { color:#fff;}
