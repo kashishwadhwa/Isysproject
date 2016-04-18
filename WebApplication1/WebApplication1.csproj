@@ -81,6 +81,7 @@
     <Content Include="css\testimonialstyle.css" />
     <Content Include="css\theme.css" />
     <Content Include="dashboard-billing.aspx" />
+    <Content Include="dashboard-patient.aspx" />
     <Content Include="dashboard.aspx" />
     <Content Include="dashboard_scripts\common.js" />
     <Content Include="dashboard_scripts\datatables\jquery.dataTables.js" />
@@ -179,6 +180,7 @@
     <Content Include="search.css" />
     <Content Include="testimonials.aspx" />
     <Content Include="UnderConstr.aspx" />
+    <Content Include="User-profile.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="WebForm3.aspx" />
     <Content Include="scss\style.scss" />
@@ -225,6 +227,13 @@
     <Compile Include="dashboard-billing.aspx.designer.cs">
       <DependentUpon>dashboard-billing.aspx</DependentUpon>
     </Compile>
+    <Compile Include="dashboard-patient.aspx.cs">
+      <DependentUpon>dashboard-patient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard-patient.aspx.designer.cs">
+      <DependentUpon>dashboard-patient.aspx</DependentUpon>
+    </Compile>
     <Compile Include="dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -267,6 +276,13 @@
     </Compile>
     <Compile Include="UnderConstr.aspx.designer.cs">
       <DependentUpon>UnderConstr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-profile.aspx.cs">
+      <DependentUpon>User-profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User-profile.aspx.designer.cs">
+      <DependentUpon>User-profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
