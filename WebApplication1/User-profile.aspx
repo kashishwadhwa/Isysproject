@@ -1,14 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="User-profile.aspx.cs" Inherits="WebApplication1.User_profile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Edmin</title>
-        <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+            <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
         <link type="text/css" href="css/theme.css" rel="stylesheet" />
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet" />
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' />
+     <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sign Up Form</title>
+<link rel="stylesheet" href="css/normalize.css"/>
+<link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'/>
+<link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="css/form.css" />
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
               <div class="main-background-login">
@@ -115,184 +121,87 @@
 
 				<div class="span9">
 					<div class="content">
+                        <div class="module">
+						 <form action="#" method="post" class="form-reg" runat="server">
+      
+        <h1>Book Appointment</h1>
+        
+        <fieldset>
+          <legend><span class="number">1</span>Your Info</legend>
+          <label for="name">Appointment ID:</label>
+          <input type="text" id="Appointment" name="Appointment" readonly="true" style="opacity:.5;" runat="server" />
 
-						<div class="module">
-							<div class="module-head">
-								<h3>Forms</h3>
-							</div>
-							<div class="module-body">
+          <label for="patient">Patient Name:</label>
+          <select id="patient" name="patient" runat="server">
+        </select>
+                      
+          <label for="doctor">Doctor Name:</label>
+          <select id="doctor" name="doctor" runat="server">
+        </select>
 
-									<div class="alert">
-										<button type="button" class="close" data-dismiss="alert">×</button>
-										<strong>Warning!</strong> Something fishy here!
-									</div>
-									<div class="alert alert-error">
-										<button type="button" class="close" data-dismiss="alert">×</button>
-										<strong>Oh snap!</strong> Whats wrong with you? 
-									</div>
-									<div class="alert alert-success">
-										<button type="button" class="close" data-dismiss="alert">×</button>
-										<strong>Well done!</strong> Now you are listening me :) 
-									</div>
+        </fieldset>
+        
+        <fieldset>
+          <legend><span class="number">2</span>Appointment Info</legend>
+          <label for="date">Appointment Date:</label>
+          <input type="date" id="date" name="appointment_date" runat="server"/>
+          <label for="time">Appointment Time:</label>
+          <input type="time" id="time" name="appointment_time" runat="server"/>
+          <label for="bio">Message:</label>
+          <textarea id="message" name="message" runat="server"></textarea>
+        </fieldset>
 
-									<br />
+        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book">Sign Up</button>
+     
+</div>
+                                                    <div class="module">
+                                <div class="module-head">
+                                    <h3>
+                                        Booked Appointments</h3>
+                                </div>
+                                <div class="module-body table">
+                                    
+    
 
-									<form class="form-horizontal row-fluid">
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Basic Input</label>
-											<div class="controls">
-												<input type="text" id="basicinput" placeholder="Type something here..." class="span8">
-												<span class="help-inline">Minimum 5 Characters</span>
-											</div>
-										</div>
+  
+    <asp:GridView ID="GridView1" CssClass="footable" OnPageIndexChanging="GridView1_PageIndexChanging" runat="server" AutoGenerateColumns="false"
+         AllowPaging="True" PagerSettings-Mode="NumericFirstLast">
+        <Columns>
+            <asp:BoundField DataField="appointment_id" HeaderText="Appointment ID" />
+            <asp:BoundField DataField="Patient Name" HeaderText="Patient Name" />
 
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Disabled Input</label>
-											<div class="controls">
-												<input type="text" id="basicinput" placeholder="You can't type something here..." class="span8" disabled>
-											</div>
-										</div>
+            <asp:BoundField DataField="Dentist Name" HeaderText="Dentist Name" />
 
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Tooltip Input</label>
-											<div class="controls">
-												<input data-title="A tooltip for the input" type="text" placeholder="Hover to view the tooltip…" data-original-title="" class="span8 tip">
-											</div>
-										</div>
+            <asp:BoundField DataField="appointment_date" HeaderText="Appointment Date" />
+            <asp:BoundField DataField="appointment_time" HeaderText="Appointment Time" />
+        </Columns>
+        <EmptyDataTemplate>
 
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Prepended Input</label>
-											<div class="controls">
-												<div class="input-prepend">
-													<span class="add-on">#</span><input class="span8" type="text" placeholder="prepend">       
-												</div>
-											</div>
-										</div>
+<div>
 
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Appended Input</label>
-											<div class="controls">
-												<div class="input-append">
-													<input type="text" placeholder="5.000" class="span8"><span class="add-on">$</span>
-												</div>
-											</div>
-										</div>
+No Upcoming Appointments
 
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Dropdown Button</label>
-											<div class="controls">
-												<div class="dropdown">
-													<a class="dropdown-toggle btn" data-toggle="dropdown" href="#">Dropdown Button <i class="icon-caret-down"></i></a>
-													<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-														<li><a href="#">First Row</a></li>
-														<li><a href="#">Second Row</a></li>
-														<li><a href="#">Third Row</a></li>
-														<li><a href="#">Fourth Row</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
+</div>
 
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Dropdown</label>
-											<div class="controls">
-												<select tabindex="1" data-placeholder="Select here.." class="span8">
-													<option value="">Select here..</option>
-													<option value="Category 1">First Row</option>
-													<option value="Category 2">Second Row</option>
-													<option value="Category 3">Third Row</option>
-													<option value="Category 4">Fourth Row</option>
-												</select>
-											</div>
-										</div>
+</EmptyDataTemplate>
 
-										<div class="control-group">
-											<label class="control-label">Radiobuttons</label>
-											<div class="controls">
-												<label class="radio">
-													<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-													Option one
-												</label> 
-												<label class="radio">
-													<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-													Option two
-												</label> 
-												<label class="radio">
-													<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-													Option three
-												</label>
-											</div>
-										</div>
-
-										<div class="control-group">
-											<label class="control-label">Inline Radiobuttons</label>
-											<div class="controls">
-												<label class="radio inline">
-													<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-													Option one
-												</label> 
-												<label class="radio inline">
-													<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-													Option two
-												</label> 
-												<label class="radio inline">
-													<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-													Option three
-												</label>
-											</div>
-										</div>
-
-										<div class="control-group">
-											<label class="control-label">Checkboxes</label>
-											<div class="controls">
-												<label class="checkbox">
-													<input type="checkbox" value="">
-													Option one
-												</label>
-												<label class="checkbox">
-													<input type="checkbox" value="">
-													Option two
-												</label>
-												<label class="checkbox">
-													<input type="checkbox" value="">
-													Option three
-												</label>
-											</div>
-										</div>
-
-										<div class="control-group">
-											<label class="control-label">Inline Checkboxes</label>
-											<div class="controls">
-												<label class="checkbox inline">
-													<input type="checkbox" value="">
-													Option one
-												</label>
-												<label class="checkbox inline">
-													<input type="checkbox" value="">
-													Option two
-												</label>
-												<label class="checkbox inline">
-													<input type="checkbox" value="">
-													Option three
-												</label>
-											</div>
-										</div>
-
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Textarea</label>
-											<div class="controls">
-												<textarea class="span8" rows="5"></textarea>
-											</div>
-										</div>
-
-										<div class="control-group">
-											<div class="controls">
-												<button type="submit" class="btn">Submit Form</button>
-											</div>
-										</div>
-									</form>
-							</div>
-						</div>
+        <PagerStyle HorizontalAlign="Right" CssClass="GridPager" />
+    </asp:GridView>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/css/footable.min.css"
+        rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/js/footable.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+                $('[id*=GridView1]').footable();
+        });
+    </script>
+</form>
+   
+      
+           
+                                </div>
+                            </div>
 
 						
 						
