@@ -35,8 +35,8 @@
 					<input type="checkbox" id="nav" /><label for="nav"></label>
 					<ul>
 						<li><a id="links-header" href="Default.aspx" >Home</a></li>       
-						<li><a id="links-header" href="UnderConstr.aspx" >About Us</a></li>
-                        <li><a id="links-header" href="UnderConstr.aspx" >Services</a></li>
+						<li><a id="links-header" href="about.aspx" >About Us</a></li>
+                      <%--  <li><a id="links-header" href="UnderConstr.aspx" >Services</a></li>--%>
 						<li><a id="links-header" href="webform4.aspx" >Manage Appointment</a></li>
 						<li><a id="links-header" href="testimonials.aspx" >Testimonials</a></li>
 						<li><a id="links-header" href="contact.aspx" >Contact</a></li>
