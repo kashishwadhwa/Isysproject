@@ -155,5 +155,18 @@ namespace WebApplication1
                 Exception E = ex;
             }
         }
+
+
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                System.Data.DataRowView drv = e.Row.DataItem as System.Data.DataRowView;
+                e.Row.Attributes.Add("ondblclick", String.Format("window.location='default.aspx'"));
+            }
+        }
+
+
     }
+
 }

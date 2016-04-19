@@ -137,6 +137,7 @@
           <legend><span class="number">1</span>Visit Info</legend>
           <label for="name">Visit ID:</label>
           <input type="text" id="Visit" name="Appointment" runat="server" />
+            <asp:Label runat="server" ID="lbl_visitId_validate" ForeColor="Red" ></asp:Label>
    
 
 
@@ -145,13 +146,13 @@
         <fieldset>
           <legend><span class="number">2</span>Service Info</legend>
                       
-          <label for="doctor">Doctor Name:</label>
+          <label for="doctor">Service Provided:</label>
           <select data-placeholder="Choose a Service..." class="chosen-select" multiple id="service_list" runat="server">
           </select>
         </fieldset>
 
         <button type="submit" class="button button-block" runat="server" id="button2"  onserverclick="Buttonbook_Click_visit">Add Service</button>
-     
+    </form>   
 </div>					
 					</div><!--/.content-->
 				</div><!--/.span9-->
@@ -159,7 +160,7 @@
 		</div><!--/.container-->
 	</div><!--/.wrapper-->
         </div>
-    </form>
+  
 		
 		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
   <script src="js/chosen.jquery.js" type="text/javascript"></script>

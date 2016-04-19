@@ -11,8 +11,9 @@
 <link rel="stylesheet" href="css/normalize.css"/>
 <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'/>
 <link rel="stylesheet" href="css/main.css"/>
-    
+    <link rel="stylesheet" href="css/theme.css" />    
     <link rel="stylesheet" href="index.css" />
+     <link rel="stylesheet" href="css/form.css" />
     <style>
         body{
             background-color:#eee;
@@ -169,7 +170,7 @@
 
   
     <asp:GridView ID="GridView1" CssClass="footable" OnPageIndexChanging="GridView1_PageIndexChanging" runat="server" AutoGenerateColumns="false"
-         AllowPaging="True" PagerSettings-Mode="NumericFirstLast">
+         AllowPaging="True" PagerSettings-Mode="NumericFirstLast" OnRowDataBound="GridView1_RowDataBound">
         <Columns>
             <asp:BoundField DataField="appointment_id" HeaderText="Appointment ID" />
             <asp:BoundField DataField="Patient Name" HeaderText="Patient Name" />

@@ -22,6 +22,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText Visit;
         
         /// <summary>
+        /// lbl_visitId_validate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_visitId_validate;
+        
+        /// <summary>
         /// service_list control.
         /// </summary>
         /// <remarks>
