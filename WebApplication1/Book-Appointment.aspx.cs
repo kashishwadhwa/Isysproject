@@ -20,6 +20,9 @@ namespace WebApplication1
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            linkLogout.ServerClick += new EventHandler(fnSetLogout_Click);
+
+
             if (Session["email"] == null)
             {
                 Response.Redirect("WebForm4.aspx");
@@ -32,7 +35,7 @@ namespace WebApplication1
                 if (!IsPostBack)
                 {
                     // SESSION STRING
-                    string session_patient_id = "1";
+                    string session_patient_id = Session["user_id"].ToString();
 
 
                     string ConnectString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
@@ -87,10 +90,19 @@ namespace WebApplication1
                 }
             }
         }
+
+        protected void fnSetLogout_Click(object sender, EventArgs e)
+        {
+            Session["email"] = null;
+            Session["user_id"] = null;
+            Session["user_type"] = null;
+            Response.Redirect("default.aspx");
+        }
+
         private void bindview()
         {
             // SESSION STRING
-            string session_patient_id = "1";
+            string session_patient_id = Session["user_id"].ToString();
 
             string connectionString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
             string sql = "select appointment_id,concat(Patient_First_Name,' ',Patient_last_Name) as [Patient Name],concat(dentist_First_Name,' ',dentist_last_Name) as [Dentist Name] ,cast(appointment_date as varchar(10)) as appointment_date, appointment_time  from dentist d, patient p, appointment a where d.dentist_id = a.dentist_id and p.patient_id = a.patient_id and p.patient_id="+session_patient_id+" and a.appointment_date>=getdate()";

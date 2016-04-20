@@ -13,10 +13,14 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            linkLogout.ServerClick += new EventHandler(fnSetLogout_Click);
+
+
             if (!IsPostBack)
             {
                 string ConnectString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-                string visit_id = null;
+                
                 SqlConnection myConnection = new SqlConnection(ConnectString);
 
                 string QueryString = "select top 3 * from service";
@@ -34,13 +38,22 @@ namespace WebApplication1
 
         }
 
+
+        protected void fnSetLogout_Click(object sender, EventArgs e)
+        {
+            Session["email"] = null;
+            Session["user_id"] = null;
+            Session["user_type"] = null;
+            Response.Redirect("default.aspx");
+        }
+
+
         protected void Buttonbook_Click_visit(object sender, EventArgs e)
         {
-            int count = 0;
-            int countl = 0;
+
             foreach (ListItem listItem in service_list.Items)
             {
-                countl=countl+1;
+           
                 if (listItem.Selected==true)
                 {
                     string listitemm = listItem.Value;

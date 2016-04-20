@@ -14,11 +14,17 @@ namespace WebApplication1
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
 
+
+
             GridView1.PageIndex = e.NewPageIndex;
             bindview(); //bindgridview will get the data source and bind it again
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            linkLogout.ServerClick += new EventHandler(fnSetLogout_Click);
+
+
             if (Session["email"] == null)
             {
                 Response.Redirect("WebForm4.aspx");
@@ -78,6 +84,16 @@ namespace WebApplication1
                 }
             }
         }
+
+        protected void fnSetLogout_Click(object sender, EventArgs e)
+        {
+            Session["email"] = null;
+            Session["user_id"] = null;
+            Session["user_type"] = null;
+            Response.Redirect("default.aspx");
+        }
+
+
         private void bindview()
         {
             // SESSION STRING

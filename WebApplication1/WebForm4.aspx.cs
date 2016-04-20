@@ -13,47 +13,74 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["email"] != null)
+            if (Session["user_id"] != null)
             {
-                Response.Redirect("WebForm5.aspx");
-            }
-        }
-        string connectionString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-
-        protected void ButtonRegister_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string frname = fname.Value;
-                string ltname = lname.Value;
-                string emailid = email.Value;
-                string pass = passwrd.Value;
-                               
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                if (Session["user_type"].ToString() == "r")
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO patient ( Patient_First_Name, Patient_Last_Name, passint, patient_minor) VALUES ( @fname, @lname, @pass, 0)");
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Connection = connection;
-                    cmd.Parameters.AddWithValue("@fname", frname);
-                    cmd.Parameters.AddWithValue("@lname", ltname);
-                    cmd.Parameters.AddWithValue("@pass", pass);
-
-                    connection.Open();
-                    cmd.ExecuteNonQuery();
+                    Response.Redirect("dashboard.aspx");
                 }
 
-                Response.Redirect("Default.aspx");
+                else if(Session["user_type"].ToString() == "d")
+                {
+                    Response.Redirect("dashboard-doctor.aspx");
+                }
 
-
-
-
-
+                else if (Session["user_type"].ToString() == "p")
+                {
+                    Response.Redirect("dashboard-patient.aspx");
+                }
             }
-            catch (Exception ex)
+
+        }
+        string connectionString = "Server=isys631.database.windows.net;Database=\"isys 631\";User Id=isys631;Password=CollegeMain-345;";
+  
+        protected void ButtonRegister_Click(object sender, EventArgs e)
+        {
+
+
+            string frname = fname.Value;
+            string ltname = lname.Value;
+            string emailid = email.Value;
+            string pass = passwrd.Value;
+            SqlConnection db = new SqlConnection("connectionString");
+            SqlCommand com = new SqlCommand();
+            SqlCommand com2 = new SqlCommand();
+            SqlCommand com3 = new SqlCommand();
+            SqlTransaction tran;
+            db.Open();
+            tran = db.BeginTransaction();
+            try
             {
-                Exception E = ex;
+                //Run all your insert statements here here
+                com.CommandText = "INSERT INTO account ( account_id,account_balance) VALUES ( (select top 1 (account_id+1) as account_id from patient order by account_id desc) , 0)";
+                com.Connection = db;
+                com.Transaction = tran;
+                com.ExecuteNonQuery();
+
+                com2.CommandText = "INSERT INTO users ( user_id,passwrd,user_type,email) VALUES ( (select top 1 (patient_id+1) as patient_id from patient order by patient_id desc) , @pass, 'p',@email)";
+                com2.Connection = db;
+                com2.Transaction = tran;
+                com2.Parameters.AddWithValue("@email", emailid);
+                com2.Parameters.AddWithValue("@pass", pass);
+
+                com3.CommandText = "INSERT INTO patient ( Patient_First_Name, Patient_Last_Name, passint, patient_minor,account_id) VALUES ( @fname, @lname, @pass, 0,(select top 1 (account_id+1) as account_id from patient order by account_id desc))";
+                com3.Connection = db;
+                com3.Transaction = tran;
+                com3.Parameters.AddWithValue("@fname", frname);
+                com3.Parameters.AddWithValue("@lname", ltname);
+                com3.Parameters.AddWithValue("@pass", pass);
+                tran.Commit();
             }
+            catch (SqlException sqlex)
+            {
+                tran.Rollback();
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            
         }
 
 
@@ -65,6 +92,7 @@ namespace WebApplication1
                 string email_login_string = email_login.Value;
                 string email_psswrd_string = psswrd_login.Value;
                 string user_type = null;
+                string user_id = null;
 
                 
                 SqlConnection myConnection = new SqlConnection(connectionString);
@@ -73,24 +101,36 @@ namespace WebApplication1
                     SqlCommand myCommand = new SqlCommand("select * from users where email='" + email_login_string + "' and passwrd='" + email_psswrd_string + "'", myConnection);
                     myConnection.Open();
                     myReader = myCommand.ExecuteReader();
-                if (myReader==null)
-                {
-                    Response.Redirect("#");
-                }
+                    if (myReader==null)
+                    {
+                        Response.Redirect("#");
+                    }
                     while (myReader.Read())
                     {
                         user_type = (myReader["user_type"].ToString());
-                    }
+                        user_id = (myReader["user_id"].ToString());
+                }
                     myConnection.Close();
 
                     Session["email"] = email_login_string;
-                    if(user_type=="r")
+                    Session["user_id"] = user_id;
+                    Session["user_type"] = user_type;
+
+                    if (user_type=="r")
                     {
-                        Response.Redirect("WebForm5.aspx");
+                        Response.Redirect("dashboard.aspx");
+                    }
+                    else if (user_type == "d")
+                    {
+                        Response.Redirect("dashboard-doctor.aspx");
+                    }
+                    else if (user_type == "p")
+                    {
+                        Response.Redirect("dashboard-patient.aspx");
                     }
                     else
                     {
-                        Response.Redirect("#");
+                    lbl_invalidId.Text = "Please check credentials";
                     }
 
                 

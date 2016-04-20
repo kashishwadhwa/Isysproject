@@ -18,6 +18,11 @@ namespace WebApplication1
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
+            linkLogout.ServerClick += new EventHandler(fnSetLogout_Click);
+
+
             if (Session["email"] == null)
             {
                 Response.Redirect("WebForm4.aspx");
@@ -30,6 +35,16 @@ namespace WebApplication1
 
             }
         }
+
+        protected void fnSetLogout_Click(object sender, EventArgs e)
+        {
+            Session["email"] = null;
+            Session["user_id"] = null;
+            Session["user_type"] = null;
+            Response.Redirect("default.aspx");
+        }
+
+
 
 
         protected void Search(object sender, EventArgs e)

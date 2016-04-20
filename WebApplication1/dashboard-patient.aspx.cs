@@ -17,12 +17,27 @@ namespace WebApplication1
             bindview(); //bindgridview will get the data source and bind it again
         }
         protected void Page_Load(object sender, EventArgs e)
+
         {
+            linkLogout.ServerClick += new EventHandler(fnSetLogout_Click);
+
 
             if (!IsPostBack)
                 bindview();
 
         }
+
+
+        protected void fnSetLogout_Click(object sender, EventArgs e)
+        {
+            Session["email"] = null;
+            Session["user_id"] = null;
+            Session["user_type"] = null;
+            Response.Redirect("default.aspx");
+        }
+
+
+
         private void bindview()
         {
             string connectionString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
