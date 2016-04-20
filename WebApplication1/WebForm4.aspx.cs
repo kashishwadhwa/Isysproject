@@ -42,7 +42,7 @@ namespace WebApplication1
             string ltname = lname.Value;
             string emailid = email.Value;
             string pass = passwrd.Value;
-            SqlConnection db = new SqlConnection("connectionString");
+            SqlConnection db = new SqlConnection(connectionString);
             SqlCommand com = new SqlCommand();
             SqlCommand com2 = new SqlCommand();
             SqlCommand com3 = new SqlCommand();
@@ -52,28 +52,36 @@ namespace WebApplication1
             try
             {
                 //Run all your insert statements here here
-                com.CommandText = "INSERT INTO account ( account_id,account_balance) VALUES ( (select top 1 (account_id+1) as account_id from patient order by account_id desc) , 0)";
+                com.CommandText = "INSERT INTO account ( account_id,account_balance) VALUES ( (select top 1 (account_id+1) as account_id from account order by account_id desc) , 0)";
                 com.Connection = db;
                 com.Transaction = tran;
                 com.ExecuteNonQuery();
+
+
+
+                com3.CommandText = "INSERT INTO patient ( Patient_First_Name, Patient_Last_Name, passint, patient_minor,account_id) VALUES ( @fname, @lname, @pass, 0,(select top 1 (account_id) as account_id from account order by account_id desc))";
+                com3.Connection = db;
+                com3.Transaction = tran;
+                com3.Parameters.AddWithValue("@fname", frname);
+                com3.Parameters.AddWithValue("@lname", ltname);
+                com3.Parameters.AddWithValue("@pass", pass);
+                com2.Transaction = tran;
+                com3.ExecuteNonQuery();
 
                 com2.CommandText = "INSERT INTO users ( user_id,passwrd,user_type,email) VALUES ( (select top 1 (patient_id+1) as patient_id from patient order by patient_id desc) , @pass, 'p',@email)";
                 com2.Connection = db;
                 com2.Transaction = tran;
                 com2.Parameters.AddWithValue("@email", emailid);
                 com2.Parameters.AddWithValue("@pass", pass);
+                com2.ExecuteNonQuery();
 
-                com3.CommandText = "INSERT INTO patient ( Patient_First_Name, Patient_Last_Name, passint, patient_minor,account_id) VALUES ( @fname, @lname, @pass, 0,(select top 1 (account_id+1) as account_id from patient order by account_id desc))";
-                com3.Connection = db;
-                com3.Transaction = tran;
-                com3.Parameters.AddWithValue("@fname", frname);
-                com3.Parameters.AddWithValue("@lname", ltname);
-                com3.Parameters.AddWithValue("@pass", pass);
+
                 tran.Commit();
             }
             catch (SqlException sqlex)
             {
                 tran.Rollback();
+                lbl_invalidId.Text = "Please check email";
             }
             finally
             {
