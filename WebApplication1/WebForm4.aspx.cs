@@ -31,6 +31,11 @@ namespace WebApplication1
                 }
             }
 
+            else
+            {
+                
+            }
+
         }
         string connectionString = "Server=isys631.database.windows.net;Database=\"isys 631\";User Id=isys631;Password=CollegeMain-345;";
   
@@ -124,15 +129,15 @@ namespace WebApplication1
                     Session["user_id"] = user_id;
                     Session["user_type"] = user_type;
 
-                    if (user_type=="r")
+                    if (user_type=="R" || user_type == "r")
                     {
                         Response.Redirect("dashboard.aspx");
                     }
-                    else if (user_type == "d")
+                    else if (user_type == "D" || user_type == "d")
                     {
                         Response.Redirect("dashboard-doctor.aspx");
                     }
-                    else if (user_type == "p")
+                    else if (user_type == "P" || user_type == "p")
                     {
                         Response.Redirect("dashboard-patient.aspx");
                     }

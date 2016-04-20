@@ -3,7 +3,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Edmin</title>
+        <title>Dashboard</title>
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
         <link type="text/css" href="css/theme.css" rel="stylesheet" />
@@ -19,7 +19,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
           <div class="main-background-login">
         <h1>
-            Welcome
+            Welcome <asp:label ID="lbl_doctorName" runat="server"> </asp:label>
         </h1>
 		</div>
 </asp:Content>
@@ -39,36 +39,17 @@
                     <div class="span3">
                         <div class="sidebar">
                             <ul class="widget widget-menu unstyled">
-                                <li class="active"><a href="index.html"><i class="menu-icon icon-dashboard"></i>Dashboard
+                                <li class="active"><a href="dashboard-doctor.aspx"><i class="menu-icon icon-dashboard"></i>Dashboard
                                 </a></li>
-                                <li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Feed </a>
+                                <li><a href="#"><i class="menu-icon icon-bullhorn"></i>Patients </a>
                                 </li>
-                                <li><a href="message.html"><i class="menu-icon icon-inbox"></i>Inbox <b class="label green pull-right">
-                                    11</b> </a></li>
-                                <li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
-                                    19</b> </a></li>
+                                <li><a href="#"><i class="menu-icon icon-inbox"></i>Appointments  </a></li>
+                                <li><a href="Dashboard-doctor-prescription.aspx"><i class="menu-icon icon-tasks"></i>New Prescription </a></li>
                             </ul>
                             <!--/.widget-nav-->
                             
                             
                             <ul class="widget widget-menu unstyled">
-                                <li><a href="ui-button-icon.html"><i class="menu-icon icon-bold"></i> Buttons </a></li>
-                                <li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Typography </a></li>
-                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Forms </a></li>
-                                <li><a href="table.html"><i class="menu-icon icon-table"></i>Tables </a></li>
-                                <li><a href="charts.html"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>
-                            </ul>
-                            <!--/.widget-nav-->
-                            <ul class="widget widget-menu unstyled">
-                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-cog">
-                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                </i>More Pages </a>
-                                    <ul id="togglePages" class="collapse unstyled">
-                                        <li><a href="other-login.html"><i class="icon-inbox"></i>Login </a></li>
-                                        <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
-                                        <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>
-                                    </ul>
-                                </li>
                                 <li><a id="linkLogout" runat="server"><i class="menu-icon icon-signout"></i>Logout </a></li>
                             </ul>
                         </div>
@@ -85,7 +66,7 @@
                                     </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b>Appointments</b>
                                         <p class="text-muted">
                                             Manage Appointments</p>
-                                    </a><a href="Dashboard-doctor-prescription.aspx" class="btn-box big span4"><i class="icon-money"></i><b>Prescription</b>
+                                    </a><a href="Dashboard-doctor-prescription.aspx" class="btn-box big span4"><i class="icon-money"></i><b>New Prescription</b>
                                         <p class="text-muted">
                                             Write Prescription</p>
                                     </a>
@@ -126,30 +107,16 @@
                             <div class="module">
                                 <div class="module-head">
                                     <h3>
-                                        DataTables</h3>
+                                        Appointment Schedule</h3>
                                 </div>
                                 <form id="form1" runat="server">
-                               <div class="module-head">
-                                       
-                                    
-                                        <asp:TextBox ID="txtSearch" runat="server" />
-                                        <input id="from_date" type="date" placeholder="from"   runat="server" />
-                                    <input id="to_date" type="date" placeholder="to"   runat="server" />
-                                        <asp:Button Text="Search" runat="server" OnClick="Search" />
-                                </div>
                                 <div class="module-body table">
                                     
-    
-
-
     <asp:GridView ID="GridView1" CssClass="footable" OnPageIndexChanging="GridView1_PageIndexChanging" runat="server" AutoGenerateColumns="false"
          AllowPaging="True" PagerSettings-Mode="NumericFirstLast">
         <Columns>
             <asp:BoundField DataField="appointment_id" HeaderText="Appointment ID" />
             <asp:BoundField DataField="Patient Name" HeaderText="Patient Name" />
-
-            <asp:BoundField DataField="Dentist Name" HeaderText="Dentist Name" />
-
             <asp:BoundField DataField="appointment_date" HeaderText="Appointment Date" />
             <asp:BoundField DataField="appointment_time" HeaderText="Appointment Time" />
         </Columns>

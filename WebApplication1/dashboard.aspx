@@ -3,7 +3,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Edmin</title>
+        <title>Dashboard</title>
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
         <link type="text/css" href="css/theme.css" rel="stylesheet" />
@@ -19,7 +19,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
           <div class="main-background-login">
         <h1>
-            Billing
+            Welcome Admin !
         </h1>
 		</div>
 </asp:Content>
@@ -39,28 +39,27 @@
                     <div class="span3">
                         <div class="sidebar">
                             <ul class="widget widget-menu unstyled">
-                                <li class="active"><a href="index.html"><i class="menu-icon icon-dashboard"></i>Dashboard
+                                <li class="active"><a href="dashboard.aspx"><i class="menu-icon icon-dashboard"></i>Dashboard
                                 </a></li>
-                                <li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Feed </a>
+                                <li><a href="dashboard-receptionist-makeAppointment.aspx"><i class="menu-icon icon-bullhorn"></i>Make Appointment </a>
                                 </li>
-                                <li><a href="message.html"><i class="menu-icon icon-inbox"></i>Inbox <b class="label green pull-right">
-                                    11</b> </a></li>
-                                <li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
-                                    19</b> </a></li>
+                                <li><a href="Dashboard-Receptionist-Visit.aspx"><i class="menu-icon icon-inbox"></i>Add Visit </a></li>
+                                
                             </ul>
                             <!--/.widget-nav-->
                             
                             
                             <ul class="widget widget-menu unstyled">
-                                <li><a href="ui-button-icon.html"><i class="menu-icon icon-bold"></i> Buttons </a></li>
-                                <li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Typography </a></li>
-                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Forms </a></li>
-                                <li><a href="table.html"><i class="menu-icon icon-table"></i>Tables </a></li>
-                                <li><a href="charts.html"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>
+                                <li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Doctors </a></li>
+                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Patients </a></li>
+                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Appointment History </a></li>
+                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Add User</a></li>
+                                    <%--APPOINTMENTS WITH BILLS dr.name pat name appt. date/time services amount--%> 
+                                    
                             </ul>
                             <!--/.widget-nav-->
                             <ul class="widget widget-menu unstyled">
-                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-cog">
+  <%--                              <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-cog">
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
                                 </i>More Pages </a>
                                     <ul id="togglePages" class="collapse unstyled">
@@ -68,7 +67,7 @@
                                         <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
                                         <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>
                                     </ul>
-                                </li>
+                                </li>--%>
                                 <li><a id="linkLogout" runat="server"><i class="menu-icon icon-signout"></i>Logout </a></li>
                             </ul>
                         </div>
@@ -79,27 +78,21 @@
                         <div class="content">
                             <div class="btn-controls">
                                 <div class="btn-box-row row-fluid">
-                                    <a href="#" class="btn-box big span4"><i class=" icon-random"></i><b>65%</b>
-                                        <p class="text-muted">
-                                            Growth</p>
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b>15</b>
-                                        <p class="text-muted">
-                                            New Users</p>
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-money"></i><b>15,152</b>
-                                        <p class="text-muted">
-                                            Profit</p>
+                                    <a href="dashboard-receptionist-makeAppointment.aspx" class="btn-box big span4"><i class=" icon-random"></i><b>Appointments</b>
+                                        
+                                    </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b>Doctors</b>
+                                        
+                                    </a><a href="#" class="btn-box big span4"><i class="icon-money"></i><b>Appointment History</b>
+                                        
                                     </a>
                                 </div>
 								<div class="btn-box-row row-fluid">
-                                    <a href="#" class="btn-box big span4"><i class=" icon-random"></i><b>65%</b>
-                                        <p class="text-muted">
-                                            Growth</p>
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b>15</b>
-                                        <p class="text-muted">
-                                            New Users</p>
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-money"></i><b>15,152</b>
-                                        <p class="text-muted">
-                                            Profit</p>
+                                    <a href="#" class="btn-box big span4"><i class=" icon-random"></i><b>Add Visits</b>
+                                      
+                                    </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b>Patients</b>
+                                 
+                                    </a><a href="#" class="btn-box big span4"><i class="icon-money"></i><b>Add User</b>
+                                        
                                     </a>
                                 </div>
                             </div>
@@ -138,7 +131,7 @@
                             <div class="module">
                                 <div class="module-head">
                                     <h3>
-                                        DataTables</h3>
+                                        Appointment Schedule</h3>
                                 </div>
                                 <div class="module-body table">
                                     

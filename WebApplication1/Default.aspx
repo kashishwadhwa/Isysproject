@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication1.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication1.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -111,22 +111,22 @@
                             </div>
 				
 
-				<form action="#" method="post" id="appointment-form">
+				<form id="appointment_form" runat="server" method="post">
                     <div id="col1">
-					<input type="text" name="full name" placeholder="Full Name"  id="name"/>
-                    <input type="text" name="phone" placeholder="Phone" id="phone" />
+					<input type="text" name="full name" placeholder="Full Name"  id="name" runat="server"/>
+                    <input type="text" name="phone" placeholder="Phone" id="phone" runat="server" />
                         </div>
                     <div id="col2">
-                    <input type="text" name="email" placeholder="Email" id="email"/>
-                    <input type="date" name="date"  id="date" />
+                    <input type="text" name="email" placeholder="Email" id="email" runat="server"/>
+                    <input type="date" name="date"  id="date" runat="server" />
                         </div>
                     <div id="col3">
-					<textarea name="message" placeholder="Message" id="message"></textarea>
+					<textarea name="message" placeholder="Message" id="message" runat="server"></textarea>
 					</div>
 
 				</form>
 
-			                           <div id="manage-appointment-text1"> <a href="webform4.aspx" style="display:block;">
+			                           <div id="manage-appointment-text1"> <a id="bookAppointment" runat="server" style="display:block;" >
                                 Book</a>
                             </div>
 

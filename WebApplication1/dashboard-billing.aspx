@@ -38,34 +38,23 @@
                     <div class="span3">
                         <div class="sidebar">
                             <ul class="widget widget-menu unstyled">
-                                <li class="active"><a href="index.html"><i class="menu-icon icon-dashboard"></i>Dashboard
+                                <li class="active"><a href="dashboard-patient.aspx"><i class="menu-icon icon-dashboard"></i>Dashboard
                                 </a></li>
-                                <li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Feed </a>
+                                <li><a href="Book-Appointment.aspx"><i class="menu-icon icon-bullhorn"></i>Appointments </a>
                                 </li>
-                                <li><a href="message.html"><i class="menu-icon icon-inbox"></i>Inbox <b class="label green pull-right">
-                                    11</b> </a></li>
-                                <li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
-                                    19</b> </a></li>
+                                <li><a href="dashboard-billing.aspx"><i class="menu-icon icon-inbox"></i>Billing </a></li>
+                                <li><a href="dashboard-user_profile.aspx"><i class="menu-icon icon-tasks"></i>Profile </a></li>
                             </ul>
                             <!--/.widget-nav-->
                             
-                            
-                            <ul class="widget widget-menu unstyled">
-                                <li><a href="ui-button-icon.html"><i class="menu-icon icon-bold"></i> Buttons </a></li>
-                                <li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Typography </a></li>
-                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Forms </a></li>
-                                <li><a href="table.html"><i class="menu-icon icon-table"></i>Tables </a></li>
-                                <li><a href="charts.html"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>
-                            </ul>
-                            <!--/.widget-nav-->
                             <ul class="widget widget-menu unstyled">
                                 <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-cog">
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                </i>More Pages </a>
+                                </i>Settings </a>
                                     <ul id="togglePages" class="collapse unstyled">
-                                        <li><a href="other-login.html"><i class="icon-inbox"></i>Login </a></li>
-                                        <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
-                                        <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>
+                                        
+                                        <li><a href="User-Profile.aspx"><i class="icon-inbox"></i>Edit Profile </a></li>
+                                        <li><a href="#"><i class="icon-inbox"></i>My Family</a></li>
                                     </ul>
                                 </li>
                                 <li><a id="linkLogout" runat="server"><i class="menu-icon icon-signout"></i>Logout </a></li>
@@ -78,13 +67,13 @@
                         <div class="content">
                             <div class="btn-controls">
                                 <div class="btn-box-row row-fluid">
-                                    <a href="#" class="btn-box big span4"><i class=" icon-random"></i><b><asp:Label runat="server" ID="lbl_balance"></asp:Label></b>
+                                    <a href="#" class="btn-box big span4"><i class="icon-money"></i><b><asp:Label runat="server" ID="lbl_balance"></asp:Label></b>
                                         <p class="text-muted">
                                             Balance</p>
                                     </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b><asp:Label runat="server" ID="lbl_amount"></asp:Label></b>
                                         <p class="text-muted">
                                             Amount Paid</p>
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-money"></i><b><asp:Label runat="server" ID="lbl_lastVisit"></asp:Label></b>
+                                    </a><a href="#" class="btn-box big span4"><i class=" icon-random"></i><b><asp:Label runat="server" ID="lbl_lastVisit"></asp:Label></b>
                                         <p class="text-muted">
                                             Last Visit</p>
                                     </a>

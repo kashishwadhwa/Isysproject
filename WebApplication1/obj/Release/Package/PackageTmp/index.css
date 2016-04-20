@@ -1203,3 +1203,15 @@ Footer
         }
     }
 
+#table_user_profile_table{
+    width:100%;
+}
+
+#table_user_profile_table tr, table_user_profile_table td{
+    border:none;
+    width:60%;
+    margin:2px 0;
+}
+#table_user_profile_table .id2{
+    width: 40%;
+}

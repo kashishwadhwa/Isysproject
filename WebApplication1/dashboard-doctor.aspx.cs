@@ -30,6 +30,23 @@ namespace WebApplication1
             else
             {
 
+                string connectionString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
+                SqlConnection myConnection = new SqlConnection(connectionString);
+
+                SqlDataReader myReader = null;
+                SqlCommand myCommand = new SqlCommand("select dentist_first_name from dentist where dentist_id=" + Session["user_id"].ToString(), myConnection);
+                myConnection.Open();
+                myReader = myCommand.ExecuteReader();
+                string user_name = null;
+                while (myReader.Read())
+                {
+                    user_name = (myReader["dentist_first_name"].ToString());
+
+                }
+                myConnection.Close();
+                lbl_doctorName.Text = " " + user_name + " !";
+
+
                 if (!IsPostBack)
                     bindview();
 
@@ -58,7 +75,7 @@ namespace WebApplication1
             int session_dentist_id = 1;
 
             string connectionString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-            string sql = "select appointment_id,concat(Patient_First_Name,' ',Patient_last_Name) as [Patient Name],concat(dentist_First_Name,' ',dentist_last_Name) as [Dentist Name] ,cast(appointment_date as varchar(10)) as appointment_date, appointment_time  from dentist d, patient p, appointment a where d.dentist_id = a.dentist_id and p.patient_id = a.patient_id and a.appointment_date between and a.dentist_id=" + session_dentist_id;
+            string sql = "select appointment_id,concat(Patient_First_Name,' ',Patient_last_Name) as [Patient Name],concat(dentist_First_Name,' ',dentist_last_Name) as [Dentist Name] ,cast(appointment_date as varchar(10)) as appointment_date, appointment_time  from dentist d, patient p, appointment a where d.dentist_id = a.dentist_id and p.patient_id = a.patient_id and a.dentist_id=" + session_dentist_id+"order by a.appointment_date desc";
             //string sql = "select appointment_id,concat(Patient_First_Name,' ',Patient_last_Name) as [Patient Name],concat(dentist_First_Name,' ',dentist_last_Name) as [Dentist Name] ,cast(appointment_date as varchar(10)) as appointment_date, appointment_time  from dentist d, patient p, appointment a where d.dentist_id = a.dentist_id and p.patient_id = a.patient_id and a.appointment_date between " + from_date.Value + " and " + to_date.Value + " and a.dentist_id=" + session_dentist_id;
 
             SqlConnection connection = new SqlConnection(connectionString);
@@ -79,7 +96,7 @@ namespace WebApplication1
                 //Attribute to hide column in Phone.
                 GridView1.HeaderRow.Cells[2].Attributes["data-hide"] = "phone";
                 GridView1.HeaderRow.Cells[3].Attributes["data-hide"] = "phone";
-                GridView1.HeaderRow.Cells[4].Attributes["data-hide"] = "phone";
+             
                 //Adds THEAD and TBODY to GridView.
                 GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
 

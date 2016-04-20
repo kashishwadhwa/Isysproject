@@ -45,7 +45,7 @@
         <li class="tab active"><a href="#signup">Sign Up</a></li>
         <li class="tab"><a href="#login">Log In</a></li>
       </ul>
-      
+      <asp:Label runat="server" ID="lbl_invalidId" forecolor="Red"></asp:Label>
       <div class="tab-content">
         <div id="signup">   
           <h1>Sign Up for Free</h1>
@@ -97,14 +97,14 @@
             <label>
               Email Address<span class="req">*</span>
             </label>
-            <input type="email" required="required" autocomplete="off" id="email_login" runat="server"/>
+            <input type="email" required="required"  id="email_login" runat="server"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
             </label>
-            <input type="password" required="required" autocomplete="off" id="psswrd_login" runat="server" />
+            <input type="password" required="required"  id="psswrd_login" runat="server" />
           </div>
           
           <p class="forgot"><a href="UnderConstr.aspx">Forgot Password?</a></p>

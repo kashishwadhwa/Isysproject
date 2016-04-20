@@ -98,6 +98,7 @@
     <Content Include="Dashboard-doctor-prescription.aspx" />
     <Content Include="dashboard-doctor.aspx" />
     <Content Include="dashboard-patient.aspx" />
+    <Content Include="dashboard-receptionist-makeAppointment.aspx" />
     <Content Include="Dashboard-Receptionist-Visit.aspx" />
     <Content Include="dashboard-user_profile.aspx" />
     <Content Include="dashboard.aspx" />
@@ -296,6 +297,13 @@
     </Compile>
     <Compile Include="dashboard-patient.aspx.designer.cs">
       <DependentUpon>dashboard-patient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard-receptionist-makeAppointment.aspx.cs">
+      <DependentUpon>dashboard-receptionist-makeAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard-receptionist-makeAppointment.aspx.designer.cs">
+      <DependentUpon>dashboard-receptionist-makeAppointment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard-Receptionist-Visit.aspx.cs">
       <DependentUpon>Dashboard-Receptionist-Visit.aspx</DependentUpon>
