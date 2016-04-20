@@ -22,7 +22,7 @@ namespace WebApplication1
 
             else
             {
-                String patient_id = "1";
+                String patient_id = Session["user_id"].ToString();
                 String account_Id = null;
                 String f_name = null;
                 String m_name = null;
@@ -90,8 +90,9 @@ namespace WebApplication1
                 username.Text =  uname;
             }
         }
-        protected void Button_edit_profile(object sender, EventArgs e) 
+        protected void Button_edit_profile(object sender, EventArgs e)
         {
+            Response.Redirect("User-Profile.aspx");
         }
         protected void fnSetLogout_Click(object sender, EventArgs e)
         {
