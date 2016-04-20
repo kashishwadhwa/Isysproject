@@ -99,6 +99,7 @@
     <Content Include="dashboard-doctor.aspx" />
     <Content Include="dashboard-patient.aspx" />
     <Content Include="Dashboard-Receptionist-Visit.aspx" />
+    <Content Include="dashboard-user_profile.aspx" />
     <Content Include="dashboard.aspx" />
     <Content Include="dashboard_scripts\common.js" />
     <Content Include="dashboard_scripts\datatables\jquery.dataTables.js" />
@@ -302,6 +303,13 @@
     </Compile>
     <Compile Include="Dashboard-Receptionist-Visit.aspx.designer.cs">
       <DependentUpon>Dashboard-Receptionist-Visit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard-user_profile.aspx.cs">
+      <DependentUpon>dashboard-user_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard-user_profile.aspx.designer.cs">
+      <DependentUpon>dashboard-user_profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
