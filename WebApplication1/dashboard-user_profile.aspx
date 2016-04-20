@@ -107,12 +107,9 @@
 								</ul>
 							</li>
 							
-							<li>
-								<a href="#">
-									<i class="menu-icon icon-signout"></i>
-									Logout
-								</a>
-							</li>
+							
+								<li><a id="linkLogout" runat="server"><i class="menu-icon icon-signout"></i>Logout </a></li>
+							
 						</ul>
 
 					</div><!--/.sidebar-->
