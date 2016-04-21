@@ -1215,3 +1215,18 @@ Footer
 #table_user_profile_table .id2{
     width: 40%;
 }
+
+#table_user_profile_table input[type="text"],#table_user_profile_table input[type="password"],#table_user_profile_table input[type="date"],#table_user_profile_table input[type="datetime"],#table_user_profile_table input[type="email"],#table_user_profile_table input[type="number"],#table_user_profile_table input[type="search"],#table_user_profile_table input[type="tel"],#table_user_profile_table input[type="time"],#table_user_profile_table input[type="url"],#table_user_profile_table textarea,#table_user_profile_table select {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    font-size: 16px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 10px;
+    width: 95%;
+    background-color: #f7f9f9;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 20px;
+}
