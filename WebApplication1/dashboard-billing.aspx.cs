@@ -43,7 +43,7 @@ namespace WebApplication1
                                                              myConnection);
                     SqlCommand myCommand1 = new SqlCommand("select sum(payment_amount) as payment_sum from payment where account_id=(select account_id from patient where patient_id=" + Session["user_id"].ToString() + "))",
                                                              myConnection);
-                    SqlCommand myCommand2 = new SqlCommand("select top 1 visit_date from visit v, patient p where v.patient_id = p.patient_id and   p.account_id = =(select account_id from patient where patient_id=" + Session["user_id"].ToString() + ") order by visit_date desc ",
+                    SqlCommand myCommand2 = new SqlCommand("select top 1 visit_date from visit v, patient p where v.patient_id = p.patient_id and   p.account_id =(select account_id from patient where patient_id=" + Session["user_id"].ToString() + ") order by visit_date desc ",
                                                              myConnection);
                     myConnection.Open();
 
@@ -101,7 +101,7 @@ namespace WebApplication1
         private void bindview()
         {
             string connectionString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-            string sql = "select *,concat(patient_first_name,' ',patient_last_name) as patient_name, cast(visit_date as varchar(10)) as visit_date_cast from visit v, patient p, COMPLETED_SERVICE cs, service s where v.patient_id = p.patient_id and cs.visit_id = v.visit_id and cs.service_id = s.service_id and p.account_id = 1 order by visit_date_cast desc";
+            string sql = "select *,concat(patient_first_name,' ',patient_last_name) as patient_name, cast(visit_date as varchar(10)) as visit_date_cast from visit v, patient p, COMPLETED_SERVICE cs, service s where v.patient_id = p.patient_id and cs.visit_id = v.visit_id and cs.service_id = s.service_id and p.account_id = (select account_id from patient where patient_id=" + Session["user_id"].ToString() + ") order by visit_date_cast desc";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
             DataSet ds = new DataSet();

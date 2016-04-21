@@ -48,7 +48,7 @@
       <asp:Label runat="server" ID="lbl_invalidId" forecolor="Red"></asp:Label>
       <div class="tab-content">
         <div id="signup">   
-          <h1>Sign Up for Free</h1>
+          <h1>Sign Up</h1>
           
 <form   method="post" runat="server">
           
