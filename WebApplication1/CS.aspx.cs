@@ -19,7 +19,7 @@ public static string GetChart(string country)
         string constr = "Server=isys631.database.windows.net;Database=\"isys 631\";User Id=isys631;Password=CollegeMain-345;";
         using (SqlConnection con = new SqlConnection(constr))
     {
-        string query = string.Format("select DATEPART(month,appointment_date) as appointment_month, count(appointment_id) as cnt_appointment  from appointment where DATEPART(year,appointment_date)={0}  group by DATEPART(month,appointment_date) order by 1", country);
+        string query = string.Format("select DATEPART(month,appointment_date) as appointment_month, count(appointment_id) as cnt_appointment  from appointment where DATEPART(year,appointment_date)={0} and DATEPART(month,appointment_date)<>9 group by DATEPART(month,appointment_date) order by 1", country);
         using (SqlCommand cmd = new SqlCommand())
         {
             cmd.CommandText = query;
