@@ -248,20 +248,20 @@ Sealants</p>
 				<!----start-img-cursual---->
 				<!-- start content_slider -->
 					       <div id="owl-demo" class="owl-carousel">
-				                <div class="item" onclick="location.href='single-page.html';"><img class="lazyOwl" src="images/s1.jpg" alt="Lazy Owl Image" />
-				                	<a href="UnderConstr.aspx"><span>Dental Implants</span> </a>
+				                <div class="item" ><img class="lazyOwl" src="images/s1.jpg" alt="Lazy Owl Image" />
+				                	<a ><span>Dental Implants</span> </a>
 				                	<p>Guaranteed to make you fall in love again with your smile, we introduce our low price dental implants. </p>
 				                </div>
-				                <div class="item" onclick="location.href='single-page.html';"><img class="lazyOwl" src="images/s2.jpg" alt="Lazy Owl Image" />
-				                	<a href="UnderConstr.aspx"><span>Teeth Cleaning</span> </a>
+				                <div class="item" ><img class="lazyOwl" src="images/s2.jpg" alt="Lazy Owl Image" />
+				                	<a ><span>Teeth Cleaning</span> </a>
 				                	<p>Lets prevent teeth from getting infected from various diseases and restore perfect smile</p>
 				                </div>
-				                <div class="item" onclick="location.href='single-page.html';"><img class="lazyOwl" src="images/s3.jpg" alt="Lazy Owl Image" />
-				                	<a href="UnderConstr.aspx"><span>Dental Examination</span> </a>
+				                <div class="item" ><img class="lazyOwl" src="images/s3.jpg" alt="Lazy Owl Image" />
+				                	<a ><span>Dental Examination</span> </a>
 				                	<p>Take the first step to a healthy, bright smile by scheduling a smile consultation</p>
 				                </div>
-				                <div class="item" onclick="location.href='single-page.html';"><img class="lazyOwl" src="images/s4.jpg" alt="Lazy Owl Image" />
-				                	<a href="UnderConstr.aspx"><span>Fillings and Bridges</a>
+				                <div class="item" ><img class="lazyOwl" src="images/s4.jpg" alt="Lazy Owl Image" />
+				                	<a ><span>Fillings and Bridges</a>
 				                	<p>Don't be embarrassed by damaged tooth visit us for affordable dental bridges similar to natural teeth </p>
 				                </div>
 				              
@@ -278,31 +278,31 @@ Sealants</p>
 				<!----start-img-cursual---->
 				<!-- start content_slider -->
 					       <div id="owl-demo1" class="owl-carousel">
-				                <div class="item" onclick="location.href='single-page.html';"><img class="lazyOwl" src="images/d1.jpg" alt="Lazy Owl Image" />
-				                	<a href="UnderConstr.aspx"><span>Dr. Kevin O Nixon</span>, Head Dentist </a>
+				                <div class="item" ><img class="lazyOwl" src="images/d1.jpg" alt="Lazy Owl Image" />
+				                	<a ><span>Dr. Kevin O Nixon</span>, Head Dentist </a>
 				                	<p>Dr. Kevin Nixon received his D.D.S. degree from Texas A&M University in 1989. 
                                         He was awarded "The Best Dentist" award in 2015 in the Denver.</p>
 				                </div>
-				                <div class="item" onclick="location.href='single-page.html';"><img class="lazyOwl" src="images/d2.jpg" alt="Lazy Owl Image" />
-				                	<a href="UnderConstr.aspx"><span>Dr. Angela</span>, Orthodontist- DDS</a>
+				                <div class="item" ><img class="lazyOwl" src="images/d2.jpg" alt="Lazy Owl Image" />
+				                	<a ><span>Dr. Angela</span>, Orthodontist- DDS</a>
 				                	<p>Dr. Angela is an accomplished orthodontist. 
                                         Prior to moving to the city in 2015, Dr. Angela relocated to Chicago where she was an 
                                         associate in two orthodontic practices.</p>
 				                </div>
-				                <div class="item" onclick="location.href='single-page.html';"><img class="lazyOwl" src="images/d3.png" alt="Lazy Owl Image" />
-				                	<a href="UnderConstr.aspx"><span>Dr. Megan Smith</span>, Root Canal Specialist</a>
+				                <div class="item" ><img class="lazyOwl" src="images/d3.png" alt="Lazy Owl Image" />
+				                	<a ><span>Dr. Megan Smith</span>, Root Canal Specialist</a>
 				                	<p>Dr. Megan Smith is the third generation in a family of healthcare providers. 
                                         She attributes her  ethics to her late grandfather. 
                                         </p>
 				                </div>
-				                <div class="item" onclick="location.href='single-page.html';"><img class="lazyOwl" src="images/d4.png" alt="Lazy Owl Image" />
-				                	<a href="UnderConstr.aspx"><span>Dr. Elvis Copperfield</span>, General & Cosmetic Dentist</a>
+				                <div class="item" ><img class="lazyOwl" src="images/d4.png" alt="Lazy Owl Image" />
+				                	<a ><span>Dr. Elvis Copperfield</span>, General & Cosmetic Dentist</a>
 				                	<p>Dr. Elvis is a general and cosmetic dentist at The Center for Special Dentistry. After graduating with 
                                         honors , Dr. Elvis has continued to excel in private practice. 
                                         </p>
 				                </div>
                                <div class="item" ><img class="lazyOwl" src="images/d35.png" alt="Lazy Owl Image" />
-				                	<a href="UnderConstr.aspx"><span>Dr. Kyle Simmons</span>, Oral Cancer Specialist</a>
+				                	<a><span>Dr. Kyle Simmons</span>, Oral Cancer Specialist</a>
 				                	<p>Dr. Kyle is a dental oncologist and dental sleep medicine provider. His 
                                         expertise is the dental management of patients before, during, and after cancer experience. 
                                         

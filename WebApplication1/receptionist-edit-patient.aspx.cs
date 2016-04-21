@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication1
 {
-    public partial class User_Profile : System.Web.UI.Page
+    public partial class receptionist_edit_patient : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,13 +25,13 @@ namespace WebApplication1
                 string patient_id = null;
                 if (abc != null)
                 {
-                     patient_id = abc;
+                    patient_id = abc;
                 }
                 else
                 {
-                     patient_id = Session["user_id"].ToString();
+                    patient_id = Session["user_id"].ToString();
                 }
-                
+
                 String account_Id = null;
                 String f_name = null;
                 String m_name = null;
@@ -80,25 +80,25 @@ namespace WebApplication1
                 while (myReader1.Read())
                 {
                     uname = (myReader1["email"].ToString());
-                    pass = (myReader1["passwrd"].ToString());
+                  
                 }
                 myConnection.Close();
 
-                patientId.Text       = patient_id;
-                accountId.Text       = account_Id;
-                fname.Text           = f_name;
-                mname.Text           = m_name;
-                lname.Text           = l_name;
-                dob.Text             = DOB;
-                ssn.Text             = SSN;
-                city.Text            = cty;
-                ph.Text              = phone;
-                street.Text          = st;
-                state.Text           = stat;
-                zip.Text             = zi;
-                allergies.Text       = allergy;
-                username.Text        = uname;
-                password.Text        = pass;
+                patientId.Text = patient_id;
+                accountId.Text = account_Id;
+                fname.Text = f_name;
+                mname.Text = m_name;
+                lname.Text = l_name;
+                dob.Text = DOB;
+                ssn.Text = SSN;
+                city.Text = cty;
+                ph.Text = phone;
+                street.Text = st;
+                state.Text = stat;
+                zip.Text = zi;
+                allergies.Text = allergy;
+                username.Text = uname;
+               
             }
         }
         protected void Button_edit_profile(object sender, EventArgs e)
@@ -140,14 +140,14 @@ namespace WebApplication1
     new SqlCommand("update users set passwrd=@pass,email=@email where user_id=@Patient_ID and user_type='p'", conn))
                     {
 
-                        
+
                         cmd.Parameters.AddWithValue("@email", username.Text);
-                        cmd.Parameters.AddWithValue("@pass", password.Text);
+                        
 
                         int rows = cmd.ExecuteNonQuery();
 
                         string abc = Request.QueryString["patient_id"];
-                        
+
                         if (abc != null)
                         {
                             Response.Redirect("dashboard-receptionist-doctors.aspx?record_updated=" + rows + " record updated");
@@ -157,8 +157,8 @@ namespace WebApplication1
                             Response.Redirect("dashboard-user_profile.aspx");
                         }
 
-                       
-                        
+
+
                     }
 
 

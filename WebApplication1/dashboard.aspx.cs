@@ -20,12 +20,12 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //if (Session["email"] == null)
-            //{
-            //    Response.Redirect("WebForm4.aspx");
-            //}
-            //else
-            //{
+            if (Session["email"] == null)
+            {
+                Response.Redirect("WebForm4.aspx");
+            }
+            else
+            {
                 lbl_warning.Visible = false;
                 string abc = Request.QueryString["message"];
                 if (abc != null)
@@ -37,7 +37,7 @@ namespace WebApplication1
                 if (!IsPostBack)
                     bindview();
 
-            //}
+            }
 
         }
 

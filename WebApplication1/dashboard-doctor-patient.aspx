@@ -1,37 +1,37 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard-doctor.aspx.cs" Inherits="WebApplication1.dashboard_doctor" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard-doctor-patient.aspx.cs" Inherits="WebApplication1.dashboard_doctor_patient" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Dashboard</title>
+        <title>Patient Profiles</title>
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
         <link type="text/css" href="css/theme.css" rel="stylesheet" />
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet" />
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' />
     <link rel="stylesheet" href="index.css" />
-    <style>
+        <style>
         body{
             background-color:#eee;
         }
     </style>
 </asp:Content>
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
-          <div class="main-background-login">
+
+    <div class="main-background-login">
         <h1>
-            Welcome <asp:label ID="lbl_doctorName" runat="server"> </asp:label>
+            Patient Profiles
         </h1>
 		</div>
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+</asp:Content>
+
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="dashboard">
-                <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
                 
-            </div>
-            <!-- /navbar-inner -->
-        </div>
         <!-- /navbar -->
         <div class="wrapper">
             <div class="container">
@@ -41,7 +41,7 @@
                             <ul class="widget widget-menu unstyled">
                                 <li class="active"><a href="dashboard-doctor.aspx"><i class="menu-icon icon-dashboard"></i>Dashboard
                                 </a></li>
-                                <li><a href="dashboard-doctor-patient.aspx"><i class="menu-icon icon-bullhorn"></i>Patients </a>
+                                <li><a href="#"><i class="menu-icon icon-bullhorn"></i>Patients </a>
                                 </li>
                                 <li><a href="#"><i class="menu-icon icon-inbox"></i>Appointments  </a></li>
                                 <li><a href="Dashboard-doctor-prescription.aspx"><i class="menu-icon icon-tasks"></i>New Prescription </a></li>
@@ -58,77 +58,29 @@
                     <!--/.span3-->	
                     <div class="span9">
                         <div class="content">
-                            <div class="btn-controls">
-                                <div class="btn-box-row row-fluid">
-                                    <a href="dashboard-doctor-patient.aspx" class="btn-box big span4"><i class=" icon-random"></i><b>Patients</b>
-                                        <p class="text-muted">
-                                            View Patient Details</p>
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b>Appointments</b>
-                                        <p class="text-muted">
-                                            Manage Appointments</p>
-                                    </a><a href="Dashboard-doctor-prescription.aspx" class="btn-box big span4"><i class="icon-money"></i><b>New Prescription</b>
-                                        <p class="text-muted">
-                                            Write Prescription</p>
-                                    </a>
-                                </div>
-								
-                            <!--/#btn-controls-->
+                  
                             <div class="module">
                                 <div class="module-head">
                                     <h3>
-                                        Profit Chart</h3>
+                                        Patient Profiles</h3>
                                 </div>
-                                <div class="module-body">
-                                    <div class="chart inline-legend grid">
-                                        <div id="placeholder2" class="graph" style="height: 500px">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--/.module-->
-                            <div class="module hide">
-                                <div class="module-head">
-                                    <h3>
-                                        Adjust Budget Range</h3>
-                                </div>
-                                <div class="module-body">
-                                    <div class="form-inline clearfix">
-                                        <a href="#" class="btn pull-right">Update</a>
-                                        <label for="amount">
-                                            Price range:</label>
-                                        &nbsp;
-                                        <input type="text" id="amount" class="input-" />
-                                    </div>
-                                    <hr />
-                                    <div class="slider-range">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="module">
-                                <div class="module-head">
-                                    <h3>
-                                        Appointment Schedule</h3>
-                                </div>
-                                <form id="form1" runat="server">
                                 <div class="module-body table">
                                     
+    
+
+    <form id="form1" runat="server">
     <asp:GridView ID="GridView1" CssClass="footable" OnPageIndexChanging="GridView1_PageIndexChanging" runat="server" AutoGenerateColumns="false"
          AllowPaging="True" PagerSettings-Mode="NumericFirstLast">
         <Columns>
-            <asp:BoundField DataField="appointment_id" HeaderText="Appointment ID" />
-            <asp:BoundField DataField="Patient Name" HeaderText="Patient Name" />
-            <asp:BoundField DataField="appointment_date" HeaderText="Appointment Date" />
-            <asp:BoundField DataField="appointment_time" HeaderText="Appointment Time" />
+            <asp:HyperLinkField 
+     DataTextField="patient_id" 
+     HeaderText="Patient Id" 
+     DataNavigateUrlFields="patient_id" 
+     DataNavigateUrlFormatString="receptionist-edit-patient.aspx?patient_id={0}" />
+            <asp:BoundField DataField="Patient_Name" HeaderText="Patient Name" />
+            <asp:BoundField DataField="patient_phone_primary" HeaderText="Phone" />
+            <asp:BoundField DataField="dob" HeaderText="DoB" />
         </Columns>
-                <EmptyDataTemplate>
-
-<div>
-
-No Upcoming Appointments
-
-</div>
-
-</EmptyDataTemplate>
 
         <PagerStyle HorizontalAlign="Right" CssClass="GridPager" />
     </asp:GridView>
@@ -144,20 +96,22 @@ No Upcoming Appointments
 </form>
    
       
-           </div>
+           
                                 </div>
-                            
+                            </div>
                             <!--/.module-->
                         </div>
                         <!--/.content-->
                     </div>
                     <!--/.span9-->
-                </div>
+                    
+                    </div>
             </div>
             <!--/.container-->
         </div>
         <!--/.wrapper-->
-        </div>
+     </div>
+
      <%--<script src="dashboard_scripts/jquery-1.9.1.min.js" type="text/javascript"></script>--%>
         <script src="dashboard_scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
         <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
