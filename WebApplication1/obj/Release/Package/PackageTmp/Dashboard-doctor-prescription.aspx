@@ -49,9 +49,9 @@
                             <ul class="widget widget-menu unstyled">
                                 <li class="active"><a href="dashboard-doctor.aspx"><i class="menu-icon icon-dashboard"></i>Dashboard
                                 </a></li>
-                                <li><a href="#"><i class="menu-icon icon-bullhorn"></i>Patients </a>
+                                <li><a href="dashboard-doctor-patient.aspx"><i class="menu-icon icon-bullhorn"></i>Patients </a>
                                 </li>
-                                <li><a href="#"><i class="menu-icon icon-inbox"></i>Appointments  </a></li>
+                                <li><a href="dashboard-doctor-appointments.aspx"><i class="menu-icon icon-inbox"></i>Appointments  </a></li>
                                 <li><a href="Dashboard-doctor-prescription.aspx"><i class="menu-icon icon-tasks"></i>New Prescription </a></li>
                             </ul>
                             <!--/.widget-nav-->
@@ -70,7 +70,7 @@
                         <div class="module">
 						 <form action="#" method="post" class="form-reg" runat="server">
       
-        <h1>Add Service</h1>
+        <h1>New Prescription</h1>
         
         <fieldset>
           <legend><span class="number">1</span>Visit Info</legend>
