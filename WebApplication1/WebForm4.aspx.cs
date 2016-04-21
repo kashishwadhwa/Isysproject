@@ -79,6 +79,43 @@ namespace WebApplication1
 
 
                 tran.Commit();
+
+
+                string email_login_string = email.Value;
+                string email_psswrd_string = passwrd.Value;
+                string user_type = null;
+                string user_id = null;
+
+
+                SqlConnection myConnection = new SqlConnection(connectionString);
+
+                SqlDataReader myReader = null;
+                SqlCommand myCommand = new SqlCommand("select * from users where email='" + email_login_string + "' and passwrd='" + email_psswrd_string + "'", myConnection);
+                myConnection.Open();
+                myReader = myCommand.ExecuteReader();
+                if (myReader == null)
+                {
+                    Response.Redirect("#");
+                }
+                while (myReader.Read())
+                {
+                    user_type = (myReader["user_type"].ToString());
+                    user_id = (myReader["user_id"].ToString());
+                }
+                myConnection.Close();
+
+                Session["email"] = email_login_string;
+                Session["user_id"] = user_id;
+                Session["user_type"] = user_type;
+
+                if (Session["book_name"]!=null)
+                { 
+                Response.Redirect("Book-Appointment.aspx");
+                 }
+                else
+                {
+                    Response.Redirect("user-Profile.aspx");
+                }
             }
             catch (SqlException sqlex)
             {

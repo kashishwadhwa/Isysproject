@@ -45,8 +45,13 @@ namespace WebApplication1
 
         protected void fnSetBook_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Webform4.aspx?Name=" +
-name.Value+"&phone="+phone.Value+"&email="+email.Value+"&date="+date.Value );
+            Session["book_name"] = name.Value;
+            Session["book_email"] = email.Value;
+            Session["book_date"] = date.Value;
+            Session["book_phone"] = phone.Value;
+
+            Response.Redirect("Webform4.aspx");
+            
         }
     }
 }
