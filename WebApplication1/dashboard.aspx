@@ -172,6 +172,8 @@ var jQuery_1_8_3 = $.noConflict(true);
                         G_vmlCanvasManager.initElement(el);
                     }
                     var ctx = el.getContext('2d');
+                    ctx.canvas.width = 100;
+                    ctx.canvas.height = 500;
                     var userStrengthsChart;
                     switch (chartType) {
                         case 1:

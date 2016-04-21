@@ -38,12 +38,15 @@ namespace WebApplication1
                 SqlConnection myConnection = new SqlConnection(connString);
                 try
                 {
+                    string session_var = Session["user_id"].ToString();
                     SqlDataReader myReader = null;
-                    SqlCommand myCommand = new SqlCommand("select * from account where account_id=(select distinct account_id from patient where account_id=(select account_id from patient where patient_id="+Session["user_id"].ToString()+"))",
+                    SqlCommand myCommand = new SqlCommand("select * from account where account_id=(select distinct account_id from patient where account_id=(select account_id from patient where patient_id="+ session_var + "))",
                                                              myConnection);
-                    SqlCommand myCommand1 = new SqlCommand("select sum(payment_amount) as payment_sum from payment where account_id=(select account_id from patient where patient_id=" + Session["user_id"].ToString() + "))",
+                    string sql_query= "select sum(payment_amount) as payment_sum from payment where account_id=(select account_id from patient where patient_id=" + session_var+ ")";
+                    SqlCommand myCommand1 = new SqlCommand(sql_query,
                                                              myConnection);
-                    SqlCommand myCommand2 = new SqlCommand("select top 1 visit_date from visit v, patient p where v.patient_id = p.patient_id and   p.account_id =(select account_id from patient where patient_id=" + Session["user_id"].ToString() + ") order by visit_date desc ",
+                    string sql_query1 = "select top 1 visit_date from visit v, patient p where v.patient_id = p.patient_id and   p.account_id =(select account_id from patient where patient_id=" + session_var + ") order by visit_date desc ";
+                    SqlCommand myCommand2 = new SqlCommand(sql_query1,
                                                              myConnection);
                     myConnection.Open();
 
@@ -70,9 +73,17 @@ namespace WebApplication1
                     }
 
                     myConnection.Close();
-                    lbl_balance.Text = "$" + balance.Remove(balance.Length - 2);
-                    lbl_amount.Text = "$" + amount.Remove(amount.Length - 2);
-                    lbl_lastVisit.Text = lastVisit.Remove(lastVisit.Length - 12);
+                    if(balance!=null)
+                        lbl_balance.Text = "$" + balance.Remove(balance.Length - 2);
+                    if (amount != "")
+                        lbl_amount.Text = "$" + amount.Remove(amount.Length - 2);
+                    else
+                        lbl_amount.Text = "$0.00";
+                    if (lastVisit != null)
+                        lbl_lastVisit.Text = lastVisit.Remove(lastVisit.Length - 12);
+                    else
+                        lbl_lastVisit.Text = "No Visits";
+
 
 
 
@@ -100,8 +111,9 @@ namespace WebApplication1
 
         private void bindview()
         {
+            string session_var = Session["user_id"].ToString();
             string connectionString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-            string sql = "select *,concat(patient_first_name,' ',patient_last_name) as patient_name, cast(visit_date as varchar(10)) as visit_date_cast from visit v, patient p, COMPLETED_SERVICE cs, service s where v.patient_id = p.patient_id and cs.visit_id = v.visit_id and cs.service_id = s.service_id and p.account_id = (select account_id from patient where patient_id=" + Session["user_id"].ToString() + ") order by visit_date_cast desc";
+            string sql = "select *,concat(patient_first_name,' ',patient_last_name) as patient_name, cast(visit_date as varchar(10)) as visit_date_cast from visit v, patient p, COMPLETED_SERVICE cs, service s where v.patient_id = p.patient_id and cs.visit_id = v.visit_id and cs.service_id = s.service_id and p.account_id = (select account_id from patient where patient_id=" + session_var + ") order by visit_date_cast desc";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
             DataSet ds = new DataSet();
@@ -111,6 +123,9 @@ namespace WebApplication1
             GridView1.DataSource = ds;
             GridView1.DataBind();
             //GridView1.DataMember = "Auppointments_table";
+
+            if (ds.Tables[0].Rows.Count != 0)
+            {
 
             //Attribute to show the Plus Minus Button.
             GridView1.HeaderRow.Cells[1].Attributes["data-class"] = "expand";
@@ -123,6 +138,8 @@ namespace WebApplication1
 
             //Adds THEAD and TBODY to GridView.
             GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
+                
+            }
 
         }
     }

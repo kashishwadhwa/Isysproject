@@ -124,7 +124,15 @@
 
         </Columns>
 
+                <EmptyDataTemplate>
 
+<div>
+
+No Service Record
+
+</div>
+
+</EmptyDataTemplate>
         <PagerStyle HorizontalAlign="Right" CssClass="GridPager" />
     </asp:GridView>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/css/footable.min.css"
