@@ -48,6 +48,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -75,6 +76,7 @@
     <Content Include="chosen-sprite%402x.png" />
     <Content Include="chosen-sprite.png" />
     <Content Include="contact.aspx" />
+    <Content Include="CS.aspx" />
     <Content Include="css\about\animate.min.css" />
     <Content Include="css\about\bootstrap.min.css" />
     <Content Include="css\about\font-awesome.min.css" />
@@ -274,6 +276,10 @@
     </Compile>
     <Compile Include="contact.aspx.designer.cs">
       <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CS.aspx.cs">
+      <DependentUpon>CS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="dashboard-billing.aspx.cs">
       <DependentUpon>dashboard-billing.aspx</DependentUpon>

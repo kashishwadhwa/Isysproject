@@ -20,12 +20,12 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (Session["email"] == null)
-            {
-                Response.Redirect("WebForm4.aspx");
-            }
-            else
-            {
+            //if (Session["email"] == null)
+            //{
+            //    Response.Redirect("WebForm4.aspx");
+            //}
+            //else
+            //{
                 lbl_warning.Visible = false;
                 string abc = Request.QueryString["message"];
                 if (abc != null)
@@ -37,9 +37,43 @@ namespace WebApplication1
                 if (!IsPostBack)
                     bindview();
 
-            }
+            //}
 
         }
+
+        public static string GetChart(string country)
+        {
+            string constr = "Server=isys631.database.windows.net;Database=\"isys 631\";User Id=isys631;Password=CollegeMain-345;";
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                string query = string.Format("select count(appointment_id) as cnt_appointment ,DATEPART(month,appointment_date) as appointment_month from appointment where DATEPART(year,appointment_date)={0} and DATEPART(month,appointment_date)<>9 group by DATEPART(month,appointment_date) order by 1", country);
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = query;
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        StringBuilder sb = new StringBuilder();
+                        sb.Append("[");
+                        while (sdr.Read())
+                        {
+                            sb.Append("{");
+                            System.Threading.Thread.Sleep(50);
+                            string color = String.Format("#{0:X6}", new Random().Next(0x1000000));
+                            sb.Append(string.Format("text :'{0}', value:{1}, color: '{2}'", sdr[0], sdr[1], color));
+                            sb.Append("},");
+                        }
+                        sb = sb.Remove(sb.Length - 1, 1);
+                        sb.Append("]");
+                        con.Close();
+                        return sb.ToString();
+                    }
+                }
+            }
+        }
+
         protected void fnSetLogout_Click(object sender, EventArgs e)
         {
             Session["email"] = null;
@@ -90,39 +124,7 @@ namespace WebApplication1
 
 
 
-        public static string GetChart(string year)
-        {
-            string constr = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                string query = string.Format("select count(appointment_id) as cnt_appointment ,DATEPART(month,appointment_date) as appointment_month from appointment where DATEPART(year,appointment_date)={0} group by DATEPART(month,appointment_date)", year);
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.CommandText = query;
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Connection = con;
-                    con.Open();
-                    using (SqlDataReader sdr = cmd.ExecuteReader())
-                    {
-                        StringBuilder sb = new StringBuilder();
-                        sb.Append("[");
-                        while (sdr.Read())
-                        {
-                            sb.Append("{");
-                            System.Threading.Thread.Sleep(50);
-                            string color = String.Format("#{0:X6}", new Random().Next(0x1000000));
-                            sb.Append(string.Format("text :'{0}', value:{1}, color: '{2}'", sdr[0], sdr[1], color));
-                            sb.Append("},");
-                        }
-                        sb = sb.Remove(sb.Length - 1, 1);
-                        sb.Append("]");
-                        con.Close();
-                        return sb.ToString();
-                    }
-                }
-            }
-        }
-
+       
 
 
     }

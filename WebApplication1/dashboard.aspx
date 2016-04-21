@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="WebApplication1.dashboard" %>
+<%@ Register assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.UI.DataVisualization.Charting" tagprefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -14,6 +15,11 @@
         body{
             background-color:#eee;
         }
+
+        canvas{
+            width:100%;
+            height:auto;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
@@ -25,62 +31,9 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/excanvas/r3/excanvas.js" type="text/javascript"></script>
-    <script src="//cdn.jsdelivr.net/chart.js/0.2/Chart.js" type="text/javascript"></script>
-    <form id="form1" runat="server">
-    <script type="text/javascript">
-        $(function () {
-            LoadChart();
-            $("[id*=ddlCountries]").bind("change", function () {
-                LoadChart();
-            });
-            $("[id*=rblChartType] input").bind("click", function () {
-                LoadChart();
-            });
-        });
-        function LoadChart() {
-            var chartType = parseInt($("[id*=rblChartType] input:checked").val());
-            $.ajax({
-                type: "POST",
-                url: "dashboard.aspx/GetChart",
-                data: "{country: '" + $("[id*=ddlCountries]").val() + "'}",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (r) {
-                    $("#dvChart").html("");
-                    $("#dvLegend").html("");
-                    var data = eval(r.d);
-                    var el = document.createElement('canvas');
-                    $("#dvChart")[0].appendChild(el);
 
-                    //Fix for IE 8
-                    if ($.browser.msie && $.browser.version == "8.0") {
-                        G_vmlCanvasManager.initElement(el);
-                    }
-                    var ctx = el.getContext('2d');
-                    var userStrengthsChart;
-                    switch (chartType) {
-                        case 1:
-                            userStrengthsChart = new Chart(ctx).Pie(data);
-                            break;
-                        case 2:
-                            userStrengthsChart = new Chart(ctx).Doughnut(data);
-                            break;
-                    }
-                    for (var i = 0; i < data.length; i++) {
-                        var div = $("<div />");
-                        div.css("margin-bottom", "10px");
-                        div.html("<span style = 'display:inline-block;height:10px;width:10px;background-color:" + data[i].color + "'></span> " + data[i].text);
-                        $("#dvLegend").append(div);
-                    }
-                },
-                failure: function (response) {
-                    alert('There was an error.');
-                }
-            });
-        }
-    </script>
+    <form id="form1" runat="server">
+    
 
 
 
@@ -170,15 +123,86 @@
                                         Profit Chart</h3>
                                 </div>
                                 <div class="module-body">
-                                    <table border="0" cellpadding="0" cellspacing="0">
+                                   
+
+
+
+
+
+
+
+
+
+
+
+                               <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+var jQuery_1_8_3 = $.noConflict(true);
+</script>
+    <script src="//cdn.jsdelivr.net/excanvas/r3/excanvas.js" type="text/javascript"></script>
+    <script src="//cdn.jsdelivr.net/chart.js/0.2/Chart.js" type="text/javascript"></script>
+    <%--<form id="form2" runat="server">--%>
+    <script type="text/javascript">
+        jQuery_1_8_3(function () {
+            LoadChart();
+            jQuery_1_8_3("[id*=ddlCountries]").bind("change", function () {
+                LoadChart();
+            });
+            jQuery_1_8_3("[id*=rblChartType] input").bind("click", function () {
+                LoadChart();
+            });
+        });
+        function LoadChart() {
+            var chartType = parseInt(jQuery_1_8_3("[id*=rblChartType] input:checked").val());
+            jQuery_1_8_3.ajax({
+                type: "POST",
+                url: "CS.aspx/GetChart",
+                data: "{country: '" + jQuery_1_8_3("[id*=ddlCountries]").val() + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (r) {
+                    jQuery_1_8_3("#dvChart").html("");
+                    jQuery_1_8_3("#dvLegend").html("");
+                    var data = eval(r.d);
+                    var el = document.createElement('canvas');
+                    jQuery_1_8_3("#dvChart")[0].appendChild(el);
+
+                    //Fix for IE 8
+                    if (jQuery_1_8_3.browser.msie && jQuery_1_8_3.browser.version == "8.0") {
+                        G_vmlCanvasManager.initElement(el);
+                    }
+                    var ctx = el.getContext('2d');
+                    var userStrengthsChart;
+                    switch (chartType) {
+                        case 1:
+                            userStrengthsChart = new Chart(ctx).Pie(data);
+                            break;
+                        case 2:
+                            userStrengthsChart = new Chart(ctx).Doughnut(data);
+                            break;
+                    }
+                    for (var i = 0; i < data.length; i++) {
+                        var div = jQuery_1_8_3("<div />");
+                        div.css("margin-bottom", "10px");
+                        div.html("<span style = 'display:inline-block;height:10px;width:10px;background-color:" + data[i].color + "'></span> " + data[i].text);
+                        jQuery_1_8_3("#dvLegend").append(div);
+                    }
+                },
+                failure: function (response) {
+                    alert('There was an error.');
+                }
+            });
+        }
+    </script>
+    <table border="0" cellpadding="0" cellspacing="0" style="width:100%">
         <tr>
             <td>
                 Year:
                 <asp:DropDownList ID="ddlCountries" runat="server">
-                    <asp:ListItem Text="2012" Value="USA" />
-                    <asp:ListItem Text="2011" Value="Germany" />
-                    <asp:ListItem Text="2010" Value="France" />
-                    <asp:ListItem Text="2009" Value="Brazil" />
+                    <asp:ListItem Text="2012" Value="2012" />
+                    <asp:ListItem Text="2011" Value="2011" />
+                    <asp:ListItem Text="2010" Value="2010" />
+                    <asp:ListItem Text="2009" Value="2009" />
                 </asp:DropDownList>
                 <asp:RadioButtonList ID="rblChartType" runat="server" RepeatDirection="Horizontal">
                     <asp:ListItem Text="Pie" Value="1" Selected="True" />
@@ -188,7 +212,7 @@
         </tr>
         <tr>
             <td>
-                <div id="dvChart">
+                <div id="dvChart" style="width:100%;">
                 </div>
             </td>
             <td>
@@ -197,6 +221,21 @@
             </td>
         </tr>
     </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                 </div>
                             </div>
                             <!--/.module-->
