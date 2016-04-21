@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard-billing.aspx.cs" Inherits="WebApplication1.dashboard_billing" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard-receptionist-doctors.aspx.cs" Inherits="WebApplication1.dashboard_receptionist_doctors" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Edmin</title>
+        <title>Dentist Profiles</title>
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
         <link type="text/css" href="css/theme.css" rel="stylesheet" />
@@ -16,16 +17,16 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
-      <div class="main-background-login">
+          <div class="main-background-login">
         <h1>
-            Billing
+            Dentist Profiles
         </h1>
 		</div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+
     <div class="dashboard">
-        <div class="navbar navbar-fixed-top">
+                <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 
             </div>
@@ -36,27 +37,37 @@
             <div class="container">
                 <div class="row">
                     <div class="span3">
-                        <div class="sidebar">
+                                                <div class="sidebar">
                             <ul class="widget widget-menu unstyled">
-                                <li class="active"><a href="dashboard-patient.aspx"><i class="menu-icon icon-dashboard"></i>Dashboard
+                                <li class="active"><a href="dashboard.aspx"><i class="menu-icon icon-dashboard"></i>Dashboard
                                 </a></li>
-                                <li><a href="Book-Appointment.aspx"><i class="menu-icon icon-bullhorn"></i>Appointments </a>
+                                <li><a href="dashboard-receptionist-makeAppointment.aspx"><i class="menu-icon icon-bullhorn"></i>Make Appointment </a>
                                 </li>
-                                <li><a href="dashboard-billing.aspx"><i class="menu-icon icon-inbox"></i>Billing </a></li>
-                                <li><a href="dashboard-user_profile.aspx"><i class="menu-icon icon-tasks"></i>Profile </a></li>
+                                <li><a href="Dashboard-Receptionist-Visit.aspx"><i class="menu-icon icon-inbox"></i>Add Visit </a></li>
+                                
                             </ul>
                             <!--/.widget-nav-->
                             
+                            
                             <ul class="widget widget-menu unstyled">
-                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-cog">
+                                <li><a href="dashboard-receptionist-doctors.aspx"><i class="menu-icon icon-book"></i>Doctors </a></li>
+                                <li><a href="dashboard-receptionist-patients.aspx"><i class="menu-icon icon-paste"></i>Patients </a></li>
+                                <li><a href="dashboard-receptionist-appointmentSchedule.aspx"><i class="menu-icon icon-paste"></i>Appointment History </a></li>
+                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Add User</a></li>
+                                    <%--APPOINTMENTS WITH BILLS dr.name pat name appt. date/time services amount--%> 
+                                    
+                            </ul>
+                            <!--/.widget-nav-->
+                            <ul class="widget widget-menu unstyled">
+  <%--                              <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-cog">
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                </i>Settings </a>
+                                </i>More Pages </a>
                                     <ul id="togglePages" class="collapse unstyled">
-                                        
-                                        <li><a href="User-Profile.aspx"><i class="icon-inbox"></i>Edit Profile </a></li>
-                                        <li><a href="#"><i class="icon-inbox"></i>My Family</a></li>
+                                        <li><a href="other-login.html"><i class="icon-inbox"></i>Login </a></li>
+                                        <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
+                                        <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>
                                     </ul>
-                                </li>
+                                </li>--%>
                                 <li><a id="linkLogout" runat="server"><i class="menu-icon icon-signout"></i>Logout </a></li>
                             </ul>
                         </div>
@@ -65,49 +76,11 @@
                     <!--/.span3-->	
                     <div class="span9">
                         <div class="content">
-                            <div class="btn-controls">
-                                <div class="btn-box-row row-fluid">
-                                    <a href="#" class="btn-box big span4"><i class="icon-money"></i><b><asp:Label runat="server" ID="lbl_balance"></asp:Label></b>
-                                        <p class="text-muted">
-                                            Balance</p>
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b><asp:Label runat="server" ID="lbl_amount"></asp:Label></b>
-                                        <p class="text-muted">
-                                            Amount Paid</p>
-                                    </a><a href="#" class="btn-box big span4"><i class=" icon-random"></i><b><asp:Label runat="server" ID="lbl_lastVisit"></asp:Label></b>
-                                        <p class="text-muted">
-                                            Last Visit</p>
-                                    </a>
-                                </div>
-								
-                            </div>
-                            <!--/#btn-controls-->
-                            <div class="module">
-                             
-
-                            </div>
-                            <!--/.module-->
-                            <div class="module hide">
-                                <div class="module-head">
-                                    <h3>
-                                        Adjust Budget Range</h3>
-                                </div>
-                                <div class="module-body">
-                                    <div class="form-inline clearfix">
-                                        <a href="#" class="btn pull-right">Update</a>
-                                        <label for="amount">
-                                            Price range:</label>
-                                        &nbsp;
-                                        <input type="text" id="amount" class="input-" />
-                                    </div>
-                                    <hr />
-                                    <div class="slider-range">
-                                    </div>
-                                </div>
-                            </div>
+                  <asp:Label ID="lbl_warning" runat="server" ForeColor="Red" Width="100%" BackColor="YellowGreen" Height="50px"></asp:Label>
                             <div class="module">
                                 <div class="module-head">
                                     <h3>
-                                        DataTables</h3>
+                                        Dentist Profiles</h3>
                                 </div>
                                 <div class="module-body table">
                                     
@@ -117,13 +90,15 @@
     <asp:GridView ID="GridView1" CssClass="footable" OnPageIndexChanging="GridView1_PageIndexChanging" runat="server" AutoGenerateColumns="false"
          AllowPaging="True" PagerSettings-Mode="NumericFirstLast">
         <Columns>
-            <asp:BoundField DataField="patient_name" HeaderText="Patient Name" />
-            <asp:BoundField DataField="visit_date_cast" HeaderText="Visit Date" />
-            <asp:BoundField DataField="service_description" HeaderText="Service Description" />
-            <asp:BoundField DataField="service_cost" DataFormatString="{0:C}" HeaderText="Service Cost"  />
-
+                                     <asp:HyperLinkField 
+     DataTextField="dentist_id" 
+     HeaderText="Dentist Id" 
+     DataNavigateUrlFields="dentist_id" 
+     DataNavigateUrlFormatString="dashboard-receptionist-dentistEdit.aspx?dentist_id={0}" />
+            
+            <asp:BoundField DataField="Dentist_Name" HeaderText="Dentist Name" />
+            <asp:BoundField DataField="join_date" HeaderText="Dentist Join Date" />
         </Columns>
-
 
         <PagerStyle HorizontalAlign="Right" CssClass="GridPager" />
     </asp:GridView>

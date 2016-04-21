@@ -19,7 +19,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
           <div class="main-background-login">
         <h1>
-            Welcome Admin !
+            Welcome Admin
         </h1>
 		</div>
 </asp:Content>
@@ -50,9 +50,9 @@
                             
                             
                             <ul class="widget widget-menu unstyled">
-                                <li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Doctors </a></li>
-                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Patients </a></li>
-                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Appointment History </a></li>
+                                <li><a href="dashboard-receptionist-doctors.aspx"><i class="menu-icon icon-book"></i>Doctors </a></li>
+                                <li><a href="dashboard-receptionist-patients.aspx"><i class="menu-icon icon-paste"></i>Patients </a></li>
+                                <li><a href="dashboard-receptionist-appointmentSchedule.aspx"><i class="menu-icon icon-paste"></i>Appointment History </a></li>
                                 <li><a href="form.html"><i class="menu-icon icon-paste"></i>Add User</a></li>
                                     <%--APPOINTMENTS WITH BILLS dr.name pat name appt. date/time services amount--%> 
                                     
@@ -77,19 +77,20 @@
                     <div class="span9">
                         <div class="content">
                             <div class="btn-controls">
+                                <asp:Label ID="lbl_warning" runat="server" ForeColor="Red" Width="100%" BackColor="YellowGreen" Height="50px"></asp:Label>
                                 <div class="btn-box-row row-fluid">
-                                    <a href="dashboard-receptionist-makeAppointment.aspx" class="btn-box big span4"><i class=" icon-random"></i><b>Appointments</b>
+                                    <a href="dashboard-receptionist-makeAppointment.aspx" class="btn-box big span4"><i class=" icon-random"></i><b>Make Appointments</b>
                                         
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b>Doctors</b>
+                                    </a><a href="dashboard-receptionist-doctors.aspx" class="btn-box big span4"><i class="icon-user"></i><b>Doctors</b>
                                         
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-money"></i><b>Appointment History</b>
+                                    </a><a href="dashboard-receptionist-appointmentSchedule.aspx" class="btn-box big span4"><i class="icon-money"></i><b>Appointment History</b>
                                         
                                     </a>
                                 </div>
 								<div class="btn-box-row row-fluid">
                                     <a href="#" class="btn-box big span4"><i class=" icon-random"></i><b>Add Visits</b>
                                       
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b>Patients</b>
+                                    </a><a href="dashboard-receptionist-patients.aspx" class="btn-box big span4"><i class="icon-user"></i><b>Patients</b>
                                  
                                     </a><a href="#" class="btn-box big span4"><i class="icon-money"></i><b>Add User</b>
                                         
@@ -131,7 +132,7 @@
                             <div class="module">
                                 <div class="module-head">
                                     <h3>
-                                        Appointment Schedule</h3>
+                                        Upcoming Appointment Schedule</h3>
                                 </div>
                                 <div class="module-body table">
                                     
@@ -149,6 +150,15 @@
             <asp:BoundField DataField="appointment_date" HeaderText="Appointment Date" />
             <asp:BoundField DataField="appointment_time" HeaderText="Appointment Time" />
         </Columns>
+                <EmptyDataTemplate>
+
+<div>
+
+No Upcoming Appointments
+
+</div>
+
+</EmptyDataTemplate>
 
         <PagerStyle HorizontalAlign="Right" CssClass="GridPager" />
     </asp:GridView>

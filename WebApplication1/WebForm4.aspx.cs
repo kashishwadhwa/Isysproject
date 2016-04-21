@@ -15,26 +15,23 @@ namespace WebApplication1
         {
             if (Session["user_id"] != null)
             {
-                if (Session["user_type"].ToString() == "r")
+                if (Session["user_type"].ToString() == "r" || Session["user_type"].ToString() == "R")
                 {
                     Response.Redirect("dashboard.aspx");
                 }
 
-                else if(Session["user_type"].ToString() == "d")
+                else if(Session["user_type"].ToString() == "d" || Session["user_type"].ToString() == "D")
                 {
                     Response.Redirect("dashboard-doctor.aspx");
                 }
 
-                else if (Session["user_type"].ToString() == "p")
+                else if (Session["user_type"].ToString() == "p" || Session["user_type"].ToString() == "P")
                 {
                     Response.Redirect("dashboard-patient.aspx");
                 }
             }
 
-            else
-            {
-                
-            }
+
 
         }
         string connectionString = "Server=isys631.database.windows.net;Database=\"isys 631\";User Id=isys631;Password=CollegeMain-345;";

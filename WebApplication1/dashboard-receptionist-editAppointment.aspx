@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Dashboard-Receptionist-Visit.aspx.cs" Inherits="WebApplication1.Dashboard_Receptionist_Visit" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard-receptionist-editAppointment.aspx.cs" Inherits="WebApplication1.dashboard_receptionist_editAppointment" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
             <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
@@ -11,20 +11,15 @@
 <link rel="stylesheet" href="css/normalize.css"/>
 <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'/>
 <link rel="stylesheet" href="css/main.css"/>
-    <link rel="stylesheet" href="css/theme.css" />    
     <link rel="stylesheet" href="index.css" />
-     <link rel="stylesheet" href="css/form.css" />
-    <style>
-        body{
-            background-color:#eee;
-        }
-    </style>
+    <link rel="stylesheet" href="css/form.css" />
+
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
               <div class="main-background-login">
         <h1>
-            Add Visit
+            Book Appointment
         </h1>
 		</div>
 </asp:Content>
@@ -43,7 +38,7 @@
 		<div class="container" >
 			<div class="row">
 				<div class="span3">
-                        <div class="sidebar">
+					                          <div class="sidebar">
                             <ul class="widget widget-menu unstyled">
                                 <li class="active"><a href="dashboard.aspx"><i class="menu-icon icon-dashboard"></i>Dashboard
                                 </a></li>
@@ -86,105 +81,37 @@
                         <div class="module">
 						 <form action="#" method="post" class="form-reg" runat="server">
       
-        <h1>Add Visit</h1>
-        
+        <h1>Book Appointment</h1>
+        <asp:Label ID="lbl_warning" runat="server" ForeColor="Red" Width="100%" BackColor="YellowGreen" Height="50px"></asp:Label>
         <fieldset>
           <legend><span class="number">1</span>Your Info</legend>
-          <label for="name">Visit ID:</label>
-          <input type="text" id="Visit" name="Appointment" readonly="true" style="opacity:.5;" runat="server" />
+          <label for="name">Appointment ID:</label>
+          <input type="text" id="Appointment" name="Appointment" readonly="true" style="opacity:.5;" runat="server" />
 
-          <label for="email">Email ID:</label>
-          <input type="email" id="emailId" name="email" runat="server" />
-   
+          <label for="patient">Patient ID:</label>
+          <input type="text" id="pat_id" name="pat_id"  runat="server" />
                       
-          <label for="doctor">Doctor Name:</label>
-          <select id="doctor" name="doctor" runat="server">
-        </select>
+          <label for="doctor">Dentist ID:</label>
+          <input type="text" id="txt_dentist_id" name="dentist_id"  runat="server" />
 
         </fieldset>
         
         <fieldset>
           <legend><span class="number">2</span>Appointment Info</legend>
-          <label for="date">Visit Date:</label>
-          <input type="date" id="date" name="visit_date" runat="server"/>
-          <label for="time">Visit Time:</label>
-          <input type="time" id="time" name="visit_time" runat="server"/>
+          <label for="date">Appointment Date:</label>
+          <input type="date" id="txt_date" name="appointment_date" runat="server"/>
+          <label for="time">Appointment Time:</label>
+          <input type="time" id="txt_time" name="appointment_time" runat="server"/>
           <label for="bio">Message:</label>
           <textarea id="message" name="message" runat="server"></textarea>
         </fieldset>
 
-        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book">Add Visit</button>
+        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book">Update Appointment</button>
      
 </div>
-                                                    <div class="module">
-                                <div class="module-head">
-                                    <h3>
-                                        Today's Appointments</h3>
-                                </div>
-                                <div class="module-body table">
-                                    
-    
+                                                    
 
-  
-    <asp:GridView ID="GridView1" CssClass="footable" OnPageIndexChanging="GridView1_PageIndexChanging" runat="server" AutoGenerateColumns="false"
-         AllowPaging="True" PagerSettings-Mode="NumericFirstLast" OnRowDataBound="GridView1_RowDataBound">
-        <Columns>
-            <asp:BoundField DataField="appointment_id" HeaderText="Appointment ID" />
-            <asp:BoundField DataField="Patient Name" HeaderText="Patient Name" />
-
-            <asp:BoundField DataField="Dentist Name" HeaderText="Dentist Name" />
-
-            <asp:BoundField DataField="appointment_date" HeaderText="Appointment Date" />
-            <asp:BoundField DataField="appointment_time" HeaderText="Appointment Time" />
-        </Columns>
-        <EmptyDataTemplate>
-
-<div>
-
-No Upcoming Appointments
-
-</div>
-
-</EmptyDataTemplate>
-
-        <PagerStyle HorizontalAlign="Right" CssClass="GridPager" />
-    </asp:GridView>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/css/footable.min.css"
-        rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/js/footable.min.js"></script>
-    <script type="text/javascript">
-        var jQuery_1_8_3 = $.noConflict(true);
-        jQuery_1_8_3(function () {
-            jQuery_1_8_3('[id*=GridView1]').footable();
-        });
-    </script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
-  <script src="js/chosen.jquery.js" type="text/javascript"></script>
-  <script src="js/prism.js" type="text/javascript" charset="utf-8"></script>
-  <script type="text/javascript">
-      var jQuery_1_6_4 = $.noConflict(true);
-    var config = {
-      '.chosen-select'           : {},
-      '.chosen-select-deselect'  : {allow_single_deselect:true},
-      '.chosen-select-no-single' : {disable_search_threshold:10},
-      '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
-      '.chosen-select-width'     : {width:"95%"}
-    }
-    for (var selector in config) {
-        jQuery_1_6_4(selector).chosen(config[selector]);
-    }
-  </script>
-
-</form>
-   
-      
-           
-                                </div>
-                            </div>
-
-						
+				</form>		
 						
 					</div><!--/.content-->
 				</div><!--/.span9-->

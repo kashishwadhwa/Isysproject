@@ -78,11 +78,11 @@
           <input type="text" id="Appointment" name="Appointment" readonly="true" style="opacity:.5;" runat="server" />
 
           <label for="patient">Patient Name:</label>
-          <select id="patient" name="patient" runat="server">
+          <select id="patient" name="patient" runat="server" required="required">
         </select>
                       
           <label for="doctor">Doctor Name:</label>
-          <select id="doctor" name="doctor" runat="server">
+          <select id="doctor" name="doctor" runat="server" required="required">
         </select>
 
         </fieldset>
@@ -90,14 +90,14 @@
         <fieldset>
           <legend><span class="number">2</span>Appointment Info</legend>
           <label for="date">Appointment Date:</label>
-          <input type="date" id="date" name="appointment_date" runat="server"/>
+          <input type="date" id="date" name="appointment_date" runat="server" required="required"/>
           <label for="time">Appointment Time:</label>
-          <input type="time" id="time" name="appointment_time" runat="server"/>
+          <input type="time" id="time" name="appointment_time" runat="server" required="required"/>
           <label for="bio">Message:</label>
-          <textarea id="message" name="message" runat="server"></textarea>
+          <textarea id="message" name="message" runat="server" ></textarea>
         </fieldset>
 
-        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book">Sign Up</button>
+        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book" causesvalidation="true">Sign Up</button>
      
 </div>
                                                     <div class="module">

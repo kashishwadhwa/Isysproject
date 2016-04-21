@@ -98,7 +98,12 @@
     <Content Include="Dashboard-doctor-prescription.aspx" />
     <Content Include="dashboard-doctor.aspx" />
     <Content Include="dashboard-patient.aspx" />
+    <Content Include="dashboard-receptionist-appointmentSchedule.aspx" />
+    <Content Include="dashboard-receptionist-dentistEdit.aspx" />
+    <Content Include="dashboard-receptionist-doctors.aspx" />
+    <Content Include="dashboard-receptionist-editAppointment.aspx" />
     <Content Include="dashboard-receptionist-makeAppointment.aspx" />
+    <Content Include="dashboard-receptionist-patients.aspx" />
     <Content Include="Dashboard-Receptionist-Visit.aspx" />
     <Content Include="dashboard-user_profile.aspx" />
     <Content Include="dashboard.aspx" />
@@ -298,12 +303,47 @@
     <Compile Include="dashboard-patient.aspx.designer.cs">
       <DependentUpon>dashboard-patient.aspx</DependentUpon>
     </Compile>
+    <Compile Include="dashboard-receptionist-appointmentSchedule.aspx.cs">
+      <DependentUpon>dashboard-receptionist-appointmentSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard-receptionist-appointmentSchedule.aspx.designer.cs">
+      <DependentUpon>dashboard-receptionist-appointmentSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard-receptionist-dentistEdit.aspx.cs">
+      <DependentUpon>dashboard-receptionist-dentistEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard-receptionist-dentistEdit.aspx.designer.cs">
+      <DependentUpon>dashboard-receptionist-dentistEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard-receptionist-doctors.aspx.cs">
+      <DependentUpon>dashboard-receptionist-doctors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard-receptionist-doctors.aspx.designer.cs">
+      <DependentUpon>dashboard-receptionist-doctors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard-receptionist-editAppointment.aspx.cs">
+      <DependentUpon>dashboard-receptionist-editAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard-receptionist-editAppointment.aspx.designer.cs">
+      <DependentUpon>dashboard-receptionist-editAppointment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="dashboard-receptionist-makeAppointment.aspx.cs">
       <DependentUpon>dashboard-receptionist-makeAppointment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="dashboard-receptionist-makeAppointment.aspx.designer.cs">
       <DependentUpon>dashboard-receptionist-makeAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard-receptionist-patients.aspx.cs">
+      <DependentUpon>dashboard-receptionist-patients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard-receptionist-patients.aspx.designer.cs">
+      <DependentUpon>dashboard-receptionist-patients.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard-Receptionist-Visit.aspx.cs">
       <DependentUpon>Dashboard-Receptionist-Visit.aspx</DependentUpon>
