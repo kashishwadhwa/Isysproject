@@ -10,16 +10,7 @@
 namespace WebApplication1 {
     
     
-    public partial class dashboard {
-        
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+    public partial class dashboard_receptionist_patients {
         
         /// <summary>
         /// linkLogout control.
@@ -31,31 +22,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor linkLogout;
         
         /// <summary>
-        /// lbl_warning control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_warning;
-        
-        /// <summary>
-        /// ddlCountries control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCountries;
-        
-        /// <summary>
-        /// rblChartType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rblChartType;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// GridView1 control.

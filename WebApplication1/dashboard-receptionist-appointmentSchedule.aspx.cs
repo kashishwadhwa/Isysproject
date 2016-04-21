@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace WebApplication1
 {
-    public partial class dashboard : System.Web.UI.Page
+    public partial class dashboard_receptionist_appointmentSchedule : System.Web.UI.Page
     {
+
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridView1.PageIndex = e.NewPageIndex;
@@ -27,12 +27,13 @@ namespace WebApplication1
             else
             {
                 lbl_warning.Visible = false;
-                string abc = Request.QueryString["message"];
+                string abc = Request.QueryString["record_updated"];
                 if (abc != null)
                 {
                     lbl_warning.Visible = true;
-                    lbl_warning.Text = Request.QueryString["message"];
+                    lbl_warning.Text = Request.QueryString["record_updated"];
                 }
+
                 linkLogout.ServerClick += new EventHandler(fnSetLogout_Click);
                 if (!IsPostBack)
                     bindview();
@@ -52,7 +53,7 @@ namespace WebApplication1
         private void bindview()
         {
             string connectionString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-            string sql = "select appointment_id,concat(Patient_First_Name,' ',Patient_last_Name) as [Patient Name],concat(dentist_First_Name,' ',dentist_last_Name) as [Dentist Name] ,cast(appointment_date as varchar(10)) as appointment_date, appointment_time  from dentist d, patient p, appointment a where d.dentist_id = a.dentist_id and p.patient_id = a.patient_id and appointment_date>getdate() order by appointment_date desc";
+            string sql = "select appointment_id,concat(Patient_First_Name,' ',Patient_last_Name) as [Patient Name],concat(dentist_First_Name,' ',dentist_last_Name) as [Dentist Name] ,cast(appointment_date as varchar(10)) as appointment_date, appointment_time  from dentist d, patient p, appointment a where d.dentist_id = a.dentist_id and p.patient_id = a.patient_id order by appointment_date desc";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
             DataSet ds = new DataSet();
@@ -76,54 +77,5 @@ namespace WebApplication1
             GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public static string GetChart(string year)
-        {
-            string constr = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                string query = string.Format("select count(appointment_id) as cnt_appointment ,DATEPART(month,appointment_date) as appointment_month from appointment where DATEPART(year,appointment_date)={0} group by DATEPART(month,appointment_date)", year);
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.CommandText = query;
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Connection = con;
-                    con.Open();
-                    using (SqlDataReader sdr = cmd.ExecuteReader())
-                    {
-                        StringBuilder sb = new StringBuilder();
-                        sb.Append("[");
-                        while (sdr.Read())
-                        {
-                            sb.Append("{");
-                            System.Threading.Thread.Sleep(50);
-                            string color = String.Format("#{0:X6}", new Random().Next(0x1000000));
-                            sb.Append(string.Format("text :'{0}', value:{1}, color: '{2}'", sdr[0], sdr[1], color));
-                            sb.Append("},");
-                        }
-                        sb = sb.Remove(sb.Length - 1, 1);
-                        sb.Append("]");
-                        con.Close();
-                        return sb.ToString();
-                    }
-                }
-            }
-        }
-
-
-
     }
 }
