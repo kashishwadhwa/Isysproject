@@ -156,7 +156,7 @@ var jQuery_1_8_3 = $.noConflict(true);
             var chartType = parseInt(jQuery_1_8_3("[id*=rblChartType] input:checked").val());
             jQuery_1_8_3.ajax({
                 type: "POST",
-                url: "CS.aspx/GetChart",
+                url: "dashboard.aspx/GetChart",
                 data: "{country: '" + jQuery_1_8_3("[id*=ddlCountries]").val() + "'}",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
