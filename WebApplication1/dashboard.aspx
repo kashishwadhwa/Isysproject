@@ -88,7 +88,7 @@
                                     </a>
                                 </div>
 								<div class="btn-box-row row-fluid">
-                                    <a href="#" class="btn-box big span4"><i class=" icon-random"></i><b>Add Visits</b>
+                                    <a href="Dashboard-Receptionist-Visit.aspx" class="btn-box big span4"><i class=" icon-random"></i><b>Add Visits</b>
                                       
                                     </a><a href="dashboard-receptionist-patients.aspx" class="btn-box big span4"><i class="icon-user"></i><b>Patients</b>
                                  
