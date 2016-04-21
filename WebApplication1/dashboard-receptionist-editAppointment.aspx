@@ -7,7 +7,7 @@
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' />
      <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Sign Up Form</title>
+<title>Edit Appointment</title>
 <link rel="stylesheet" href="css/normalize.css"/>
 <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'/>
 <link rel="stylesheet" href="css/main.css"/>
@@ -19,7 +19,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
               <div class="main-background-login">
         <h1>
-            Book Appointment
+            Edit Appointment
         </h1>
 		</div>
 </asp:Content>

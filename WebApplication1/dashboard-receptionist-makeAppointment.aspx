@@ -107,7 +107,7 @@
           <textarea id="message" name="message" runat="server"></textarea>
         </fieldset>
 
-        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book">Sign Up</button>
+        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book">Make Appointment</button>
      
 </div>
                                                     
