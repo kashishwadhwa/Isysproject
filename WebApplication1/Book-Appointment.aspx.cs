@@ -37,8 +37,15 @@ namespace WebApplication1
                     // SESSION STRING
                     string session_patient_id = Session["user_id"].ToString();
 
+                    if (Session["book_date"] != null)
+                    {
+                        date.Attributes.Add("value", Session["book_date"].ToString());
+                        
+                    }
 
-                    string ConnectString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
+
+
+                        string ConnectString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
                     string appointment_id = null;
                     SqlConnection myConnection = new SqlConnection(ConnectString);
                     try
@@ -142,10 +149,15 @@ namespace WebApplication1
 
             try
             {
+              
                 string Appointment_ID = Appointment.Value;
                 string Patient_ID = patient.Value;
                 string Dentist_ID = doctor.Value;
-                string Appointment_Date = date.Value;
+                
+                
+                    string Appointment_Date = date.Value;
+                
+
                 string Appointment_Time = time.Value;
 
 

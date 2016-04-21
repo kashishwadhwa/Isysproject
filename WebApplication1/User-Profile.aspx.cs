@@ -22,6 +22,13 @@ namespace WebApplication1
 
             else
             {
+
+
+                String f_name = null;
+                String m_name = null;
+                String l_name = null;
+
+
                 string abc = Request.QueryString["patient_id"];
                 string patient_id = null;
                 if (abc != null)
@@ -33,10 +40,10 @@ namespace WebApplication1
                      patient_id = Session["user_id"].ToString();
                 }
                 
+
+
                 String account_Id = null;
-                String f_name = null;
-                String m_name = null;
-                String l_name = null;
+                
                 String st = null;
                 String cty = null;
                 String stat = null;
@@ -114,7 +121,7 @@ namespace WebApplication1
 
                     conn.Open();
                     using (SqlCommand cmd =
-                        new SqlCommand("update patient set Account_ID = @Account_ID, Patient_First_Name = @Patient_First_Name, Patient_Middle_Name = @Patient_Middle_Name, Patient_Last_Name = @Patient_Last_Name, Patient_Street = @Patient_Street, Patient_City = @Patient_City, Patient_State = @Patient_State, Patient_Zip = @Patient_Zip, Patient_Phone_Primary = @Patient_Phone_Primary, Patient_Phone_Secondary = @Patient_Phone_Secondary, Patient_SSN = @Patient_SSN, Patient_DOB = @Patient_DOB, Patient_Minor = @Patient_Minor, Patient_Head_Of_House = @Patient_Head_Of_House, Patient_Allergies = @Patient_Allergies where Patient_ID = @Patient_ID", conn))
+                        new SqlCommand("update patient set Account_ID = @Account_ID, Patient_First_Name = @Patient_First_Name, Patient_Middle_Name = @Patient_Middle_Name, Patient_Last_Name = @Patient_Last_Name, Patient_Street = @Patient_Street, Patient_City = @Patient_City, Patient_State = @Patient_State, Patient_Zip = @Patient_Zip, Patient_Phone_Primary = @Patient_Phone_Primary, Patient_SSN = @Patient_SSN, Patient_DOB = @Patient_DOB, Patient_Minor = 0, Patient_Head_Of_House = null, Patient_Allergies = @Patient_Allergies where Patient_ID = @Patient_ID", conn))
                     {
 
                         cmd.Parameters.AddWithValue("@Account_ID", accountId.Text);
@@ -128,7 +135,6 @@ namespace WebApplication1
                         cmd.Parameters.AddWithValue("@Patient_Phone_Primary", ph.Text);
                         cmd.Parameters.AddWithValue("@Patient_SSN", ssn.Text);
                         cmd.Parameters.AddWithValue("@Patient_DOB", dob.Text);
-                        cmd.Parameters.AddWithValue("@Patient_Allergies", allergies.Text);
                         cmd.Parameters.AddWithValue("@Patient_Allergies", allergies.Text);
                         cmd.Parameters.AddWithValue("@Patient_ID", patientId.Text);
 
@@ -144,6 +150,7 @@ namespace WebApplication1
                         
                         cmd.Parameters.AddWithValue("@email", username.Text);
                         cmd.Parameters.AddWithValue("@pass", password.Text);
+                        cmd.Parameters.AddWithValue("@Patient_ID", patientId.Text);
 
                         int rows = cmd.ExecuteNonQuery();
 
