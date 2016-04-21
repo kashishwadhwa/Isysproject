@@ -39,11 +39,11 @@ namespace WebApplication1
                 try
                 {
                     SqlDataReader myReader = null;
-                    SqlCommand myCommand = new SqlCommand("select * from account where account_id=1",
+                    SqlCommand myCommand = new SqlCommand("select * from account where account_id=(select distinct account_id from patient where account_id=(select account_id from patient where patient_id="+Session["user_id"].ToString()+"))",
                                                              myConnection);
-                    SqlCommand myCommand1 = new SqlCommand("select sum(payment_amount) as payment_sum from payment where account_id=1",
+                    SqlCommand myCommand1 = new SqlCommand("select sum(payment_amount) as payment_sum from payment where account_id=(select account_id from patient where patient_id=" + Session["user_id"].ToString() + "))",
                                                              myConnection);
-                    SqlCommand myCommand2 = new SqlCommand("select top 1 visit_date from visit v, patient p where v.patient_id = p.patient_id and   p.account_id = 1 order by visit_date desc ",
+                    SqlCommand myCommand2 = new SqlCommand("select top 1 visit_date from visit v, patient p where v.patient_id = p.patient_id and   p.account_id = =(select account_id from patient where patient_id=" + Session["user_id"].ToString() + ") order by visit_date desc ",
                                                              myConnection);
                     myConnection.Open();
 

@@ -22,37 +22,81 @@
     <div class="cd-testimonials-wrapper cd-container">
 	<ul class="cd-testimonials">
 		<li>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<p>From the receptionist, the hygienist, to the dentist there is a high degree of professionalism exhibited throughout the staff.</p>
 			<div class="cd-author">
 				<img src="images/avatar-1.jpg" alt="Author image">
 				<ul class="cd-author-info">
-					<li>MyName</li>
-					<li>CEO, AmberCreative</li>
+					<li>Aston Martin</li>
+					<li>Project Manager, Tulsa Motors</li>
 				</ul>
 			</div>
 		</li>
 
 		<li>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ea, perferendis error repudiandae numquam dolor fuga temporibus. Unde omnis, consequuntur.</p>
+			<p>The implant procedure was easy to have done. It was much easier than a root canal or filling. Dr. Elvis and Kevin do a great job and make you feel very relaxed and
+comfortable. The staff was very supportive and helpful as they explained every step thoroughly with detail.  It went extremely well- was painless.</p>
 			<div class="cd-author">
 				<img src="images/avatar-2.jpg" alt="Author image">
 				<ul class="cd-author-info">
-					<li>MyName</li>
-					<li>Designer, CodyHouse</li>
+					<li>Lauren Wolff</li>
+					<li>Student, Colorado School of Mines</li>
 				</ul>
 			</div>
 		</li>
 
 		<li>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam totam nulla est, illo molestiae maxime officiis, quae ad, ipsum vitae deserunt molestias eius alias.</p>
+			<p>The staff is excellent and super friendly. Dr. Simmons is a chill dude and is a true professional at his profession. Come check out this place.</p>
 			<div class="cd-author">
 				<img src="images/avatar-3.jpg" alt="Author image">
 				<ul class="cd-author-info">
-					<li>MyName</li>
-					<li>CEO, CompanyName</li>
+					<li>Chase Lee</li>
+					<li>Mother of two</li>
 				</ul>
 			</div>
 		</li>
+        <li>
+				<p>Over the years Joaquina Dental has helped me overcome my fear of going to the
+dentist and fear of the pain. They have a pleasant, calming, way to explain things so I
+can understand them. I like my hygienist and the rest of my support staff. I talk high 
+about Joaquina Dental whenever it comes up.</p>
+				
+				<div class="cd-author">
+					<img src="images/avatar-4.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>Champion Snape</li>
+						<li>Recruiter, Staff Maniac</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li >
+				<p>My visit with Joaquina Dental was the first time I had a pain free and stress free
+dental visit for a very long time.  Having Dr. Angela as my Orthodontist was also
+a very pleasant experience.  My wife, Beth, says ditto regarding her dental 
+appointments as well.</p>
+				
+				<div class="cd-author">
+					<img src="images/avatar-5.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>Greg Matters</li>
+						<li>Sales Rep, Grinder.com</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li>
+				<p>Best Service in town. You guys rock!.
+                    Dr. Trump is so funny and wanna make me come again and again.
+				</p>
+				
+				<div class="cd-author">
+					<img src="images/avatar-6.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, Alphabet</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
 		
 	</ul> <!-- cd-testimonials -->
 
@@ -63,149 +107,162 @@
 	<div class="cd-testimonials-all-wrapper">
 		<ul>
 			<li class="cd-testimonials-item">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit totam saepe iste maiores neque animi molestias nihil illum nisi temporibus.</p>
-				
-				<div class="cd-author">
-					<img src="images/avatar-1.jpg" alt="Author image">
-					<ul class="cd-author-info">
-						<li>MyName</li>
-						<li>CEO, CompanyName</li>
-					</ul>
-				</div> <!-- cd-author -->
+				<p>From the receptionist, the hygienist, to the dentist there is a high degree of professionalism exhibited throughout the staff.</p>
+			<div class="cd-author">
+				<img src="images/avatar-1.jpg" alt="Author image">
+				<ul class="cd-author-info">
+					<li>Aston Martin</li>
+					<li>Project Manager, Tulsa Motors</li>
+				</ul>
+			</div>
 			</li>
 
 			<li class="cd-testimonials-item">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore nostrum nisi, doloremque error hic nam nemo doloribus porro impedit perferendis. Tempora, distinctio hic suscipit. At ullam eaque atque recusandae modi fugiat voluptatem laborum laboriosam rerum, consequatur reprehenderit omnis, enim pariatur nam, quidem, quas vel reiciendis aspernatur consequuntur. Commodi quasi enim, nisi alias fugit architecto, doloremque, eligendi quam autem exercitationem consectetur.</p>
-				
-				<div class="cd-author">
-					<img src="images/avatar-2.jpg" alt="Author image">
-					<ul class="cd-author-info">
-						<li>MyName</li>
-						<li>CEO, CompanyName</li>
-					</ul>
-				</div> <!-- cd-author -->
+				<p>The implant procedure was easy to have done. It was much easier than a root canal or filling. Dr. Elvis and Kevin do a great job and make you feel very relaxed and
+comfortable. The staff was very supportive and helpful as they explained every step thoroughly with detail.  It went extremely well- was painless.</p>
+			<div class="cd-author">
+				<img src="images/avatar-2.jpg" alt="Author image">
+				<ul class="cd-author-info">
+					<li>Lauren Wolff</li>
+					<li>Student, Colorado School of Mines</li>
+				</ul>
+			</div>
 			</li>
 
 			<li class="cd-testimonials-item">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem quibusdam eveniet, molestiae laborum voluptatibus minima hic quasi accusamus ut facere, eius expedita, voluptatem? Repellat incidunt veniam quaerat, qui laboriosam dicta. Quidem ducimus laudantium dolorum enim qui at ipsum, a error.</p>
-				
-				<div class="cd-author">
-					<img src="images/avatar-3.jpg" alt="Author image">
-					<ul class="cd-author-info">
-						<li>MyName</li>
-						<li>CEO, CompanyName</li>
-					</ul>
-				</div> <!-- cd-author -->
+				<p>The staff is excellent and super friendly. Dr. Simmons is a chill dude and is a true professional at his profession. Come check out this place.</p>
+			<div class="cd-author">
+				<img src="images/avatar-3.jpg" alt="Author image">
+				<ul class="cd-author-info">
+					<li>Chase Lee</li>
+					<li>Mother of two</li>
+				</ul>
+			</div>
 			</li>
 
 			<li class="cd-testimonials-item">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero voluptates officiis tempore quae officia! Beatae quia deleniti cum corporis eos perferendis libero reiciendis nemo iusto accusamus, debitis tempora voluptas praesentium repudiandae laboriosam excepturi laborum, nisi optio repellat explicabo, incidunt ex numquam. Ullam perferendis officiis harum doloribus quae corrupti minima quia, aliquam nostrum expedita pariatur maxime repellat, voluptas sunt unde, inventore.</p>
+				<p>Over the years Joaquina Dental has helped me overcome my fear of going to the
+dentist and fear of the pain. They have a pleasant, calming, way to explain things so I
+can understand them. I like my hygienist and the rest of my support staff. I talk high 
+about Joaquina Dental whenever it comes up.</p>
 				
 				<div class="cd-author">
 					<img src="images/avatar-4.jpg" alt="Author image">
 					<ul class="cd-author-info">
-						<li>MyName</li>
-						<li>CEO, CompanyName</li>
+						<li>Champion Snape</li>
+						<li>Recruiter, Staff Maniac</li>
 					</ul>
 				</div> <!-- cd-author -->
 			</li>
 
 			<li class="cd-testimonials-item">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit totam saepe iste maiores neque animi molestias nihil illum nisi temporibus.</p>
+				<p>My visit with Joaquina Dental was the first time I had a pain free and stress free
+dental visit for a very long time.  Having Dr. Angela as my Orthodontist was also
+a very pleasant experience.  My wife, Beth, says ditto regarding her dental 
+appointments as well.</p>
 				
 				<div class="cd-author">
 					<img src="images/avatar-5.jpg" alt="Author image">
 					<ul class="cd-author-info">
-						<li>MyName</li>
-						<li>CEO, CompanyName</li>
+						<li>Greg Matters</li>
+						<li>Sales Rep, Grinder.com</li>
 					</ul>
 				</div> <!-- cd-author -->
 			</li>
 
 			<li class="cd-testimonials-item">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis quia quas, quis illo adipisci voluptate ex harum iste commodi nulla dolor. Eius ratione quod ab!</p>
+				<p>Best Service in town. You guys rock!.
+                    Dr. Trump is so funny and wanna make me come again and again.
+				</p>
 				
 				<div class="cd-author">
 					<img src="images/avatar-6.jpg" alt="Author image">
 					<ul class="cd-author-info">
 						<li>MyName</li>
-						<li>CEO, CompanyName</li>
+						<li>CEO, Alphabet</li>
 					</ul>
 				</div> <!-- cd-author -->
 			</li>
 
 			<li class="cd-testimonials-item">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, dignissimos iure rem fugiat consequuntur officiis.</p>
-				
-				<div class="cd-author">
-					<img src="images/avatar-1.jpg" alt="Author image">
-					<ul class="cd-author-info">
-						<li>MyName</li>
-						<li>CEO, CompanyName</li>
-					</ul>
-				</div> <!-- cd-author -->
+				<p>From the receptionist, the hygienist, to the dentist there is a high degree of professionalism exhibited throughout the staff.</p>
+			<div class="cd-author">
+				<img src="images/avatar-1.jpg" alt="Author image">
+				<ul class="cd-author-info">
+					<li>Aston Martin</li>
+					<li>Project Manager, Tulsa Motors</li>
+				</ul>
+			</div>
 			</li>
 
 			<li class="cd-testimonials-item">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At temporibus tempora necessitatibus reiciendis provident deserunt maxime sit id. Dicta aut voluptatibus placeat quibusdam vel, dolore.</p>
-				
-				<div class="cd-author">
-					<img src="images/avatar-2.jpg" alt="Author image">
-					<ul class="cd-author-info">
-						<li>MyName</li>
-						<li>CEO, CompanyName</li>
-					</ul>
-				</div> <!-- cd-author -->
+				<p>The implant procedure was easy to have done. It was much easier than a root canal or filling. Dr. Elvis and Kevin do a great job and make you feel very relaxed and
+comfortable. The staff was very supportive and helpful as they explained every step thoroughly with detail.  It went extremely well- was painless.</p>
+			<div class="cd-author">
+				<img src="images/avatar-2.jpg" alt="Author image">
+				<ul class="cd-author-info">
+					<li>Lauren Wolff</li>
+					<li>Student, Colorado School of Mines</li>
+				</ul>
+			</div>
 			</li>
 
 			<li class="cd-testimonials-item">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis iusto sapiente, excepturi velit, beatae possimus est tenetur cumque fugit tempore dolore fugiat! Recusandae, vel suscipit? Perspiciatis non similique sint suscipit officia illo, accusamus dolorum, voluptate vitae quia ea amet optio magni voluptatem nemo, natus nihil.</p>
-				
-				<div class="cd-author">
-					<img src="images/avatar-3.jpg" alt="Author image">
-					<ul class="cd-author-info">
-						<li>MyName</li>
-						<li>CEO, CompanyName</li>
-					</ul>
-				</div> <!-- cd-author -->
+				<p>The staff is excellent and super friendly. Dr. Simmons is a chill dude and is a true professional at his profession. Come check out this place.</p>
+			<div class="cd-author">
+				<img src="images/avatar-3.jpg" alt="Author image">
+				<ul class="cd-author-info">
+					<li>Chase Lee</li>
+					<li>Mother of two</li>
+				</ul>
+			</div>
 			</li>
 
 			<li class="cd-testimonials-item">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor quasi officiis pariatur, fugit minus omnis animi ut assumenda quod commodi, ad a alias maxime unde suscipit magnam, voluptas laboriosam ipsam quibusdam quidem, dolorem deleniti id.</p>
+				<p>Over the years Joaquina Dental has helped me overcome my fear of going to the
+dentist and fear of the pain. They have a pleasant, calming, way to explain things so I
+can understand them. I like my hygienist and the rest of my support staff. I talk high 
+about Joaquina Dental whenever it comes up.</p>
 				
 				<div class="cd-author">
 					<img src="images/avatar-4.jpg" alt="Author image">
 					<ul class="cd-author-info">
-						<li>MyName</li>
-						<li>CEO, CompanyName</li>
+						<li>Champion Snape</li>
+						<li>Recruiter, Staff Maniac</li>
 					</ul>
 				</div> <!-- cd-author -->
 			</li>
 
 			<li class="cd-testimonials-item">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At temporibus tempora necessitatibus reiciendis provident deserunt maxime sit id. Dicta aut voluptatibus placeat quibusdam vel, dolore.</p>
+				<p>My visit with Joaquina Dental was the first time I had a pain free and stress free
+dental visit for a very long time.  Having Dr. Angela as my Orthodontist was also
+a very pleasant experience.  My wife, Beth, says ditto regarding her dental 
+appointments as well.</p>
 				
 				<div class="cd-author">
 					<img src="images/avatar-5.jpg" alt="Author image">
 					<ul class="cd-author-info">
-						<li>MyName</li>
-						<li>CEO, CompanyName</li>
+						<li>Greg Matters</li>
+						<li>Sales Rep, Grinder.com</li>
 					</ul>
 				</div> <!-- cd-author -->
 			</li>
 
 			<li class="cd-testimonials-item">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque tempore ipsam, eos suscipit nostrum molestias reprehenderit, rerum amet cum similique a, ipsum soluta delectus explicabo nihil repellat incidunt! Minima magni possimus mollitia deserunt facere, tempore earum modi, ea ipsa dicta temporibus suscipit quidem ut quibusdam vero voluptatibus nostrum excepturi explicabo nulla harum, molestiae alias. Ab, quidem rem fugit delectus quod.</p>
+				<p>Best Service in town. You guys rock!.
+                    Dr. Trump is so funny and wanna make me come again and again.
+				</p>
 				
 				<div class="cd-author">
 					<img src="images/avatar-6.jpg" alt="Author image">
 					<ul class="cd-author-info">
 						<li>MyName</li>
-						<li>CEO, CompanyName</li>
+						<li>CEO, Alphabet</li>
 					</ul>
 				</div> <!-- cd-author -->
 			</li>
-		</ul>
+	</ul>
+			
 	</div>	<!-- cd-testimonials-all-wrapper -->
 
 	<a href="#0" class="close-btn">Close</a>
@@ -218,4 +275,3 @@
     
     </section>
 </asp:Content>
-

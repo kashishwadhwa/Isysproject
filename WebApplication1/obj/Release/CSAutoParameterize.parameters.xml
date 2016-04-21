@@ -3,4 +3,7 @@
   <parameter name="isys 631ConnectionString-Web.config Connection String" description="isys 631ConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=isys631.database.windows.net;Initial Catalog=&quot;isys 631&quot;;User ID=isys631;Password=CollegeMain-345" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\shashaank\\Source\\Repos\\Isysproject\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='isys 631ConnectionString']/@connectionString" />
   </parameter>
+  <parameter name="isys 631ConnectionString2-Web.config Connection String" description="isys 631ConnectionString2 Connection String used in web.config by the application to access the database." defaultValue="Data Source=isys631.database.windows.net;Initial Catalog=&quot;isys 631&quot;;User ID=isys631;Password=CollegeMain-345" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\shashaank\\Source\\Repos\\Isysproject\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='isys 631ConnectionString2']/@connectionString" />
+  </parameter>
 </parameters>
