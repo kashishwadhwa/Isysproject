@@ -20,13 +20,13 @@
                     <div class="col-md-8">
                         <div class="templatemo-contact-map" id="map-canvas"> </div>  
                         <div class="clearfix"></div>
-                        <i>You can find us on 80 Dagon Studio, Yankin Street, <span class="txt_orange">Digital Estate</span> in Yangon.</i>
+                        <i>You can find us on 4451 E Virginia Ave, <span class="txt_orange">Aggie Estate</span> in Denver.</i>
                     </div>
                     <div class="col-md-4 contact_right">
-                        <p>Lorem ipsum dolor sit amet, consectetu adipiscing elit pendisse as a molesti.</p>
-                        <p><img src="images/location.png" alt="icon 1" /> 80 Dagon Studio, Yakin Street, Digital Estate</p>
-                        <p><img src="images/phone1.png"  alt="icon 2" /> 090-080-0110</p>
-                        <p><img src="images/globe.png" alt="icon 3" /><a class="link_orange" href="#"><span class="txt_orange">www.company.com</span></a></p>
+                        <p>We promise to never sell, share or divulge your personal information with anyone.</p>
+                        <p><img src="images/location.png" alt="icon 1" /> 4451 E Virginia Ave Denver, CO</p>
+                        <p><img src="images/phone1.png"  alt="icon 2" /> +1 555 123456</p>
+                        <p><img src="images/globe.png" alt="icon 3" /><a class="link_orange" href="#"><span class="txt_orange">www.JoaquinaDental.com</span></a></p>
                         <form class="form-horizontal" action="#">
                             <div class="form-group">
                                 <input type="email" class="form-control" placeholder="Your Name..." maxlength="40" />
