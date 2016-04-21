@@ -7,7 +7,7 @@
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' />
      <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Add Service</title>
+<title>New Prescription</title>
 <link rel="stylesheet" href="css/normalize.css"/>
 <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'/>
 <link rel="stylesheet" href="css/main.css"/>
@@ -26,7 +26,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
                   <div class="main-background-login">
         <h1>
-            Add Service
+            New Prescription
         </h1>
 		</div>
 </asp:Content>
@@ -46,78 +46,22 @@
 			<div class="row">
 				<div class="span3">
 					<div class="sidebar">
-
-						<ul class="widget widget-menu unstyled">
-							<li class="active">
-								<a href="index.html">
-									<i class="menu-icon icon-dashboard"></i>
-									Dashboard
-								</a>
-							</li>
-							<li>
-								<a href="activity.html">
-									<i class="menu-icon icon-bullhorn"></i>
-									News Feed
-								</a>
-							</li>
-							<li>
-								<a href="message.html">
-									<i class="menu-icon icon-inbox"></i>
-									Inbox
-									<b class="label green pull-right">11</b>
-								</a>
-							</li>
-							
-							<li>
-								<a href="task.html">
-									<i class="menu-icon icon-tasks"></i>
-									Tasks
-									<b class="label orange pull-right">19</b>
-								</a>
-							</li>
-						</ul><!--/.widget-nav-->
-
-						<ul class="widget widget-menu unstyled">
-                                <li><a href="ui-button-icon.html"><i class="menu-icon icon-bold"></i> Buttons </a></li>
-                                <li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Typography </a></li>
-                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Forms </a></li>
-                                <li><a href="table.html"><i class="menu-icon icon-table"></i>Tables </a></li>
-                                <li><a href="charts.html"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>
-                            </ul><!--/.widget-nav-->
-
-						<ul class="widget widget-menu unstyled">
-							<li>
-								<a class="collapsed" data-toggle="collapse" href="#togglePages">
-									<i class="menu-icon icon-cog"></i>
-									<i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right"></i>
-									More Pages
-								</a>
-								<ul id="togglePages" class="collapse unstyled">
-									<li>
-										<a href="other-login.html">
-											<i class="icon-inbox"></i>
-											Login
-										</a>
-									</li>
-									<li>
-										<a href="other-user-profile.html">
-											<i class="icon-inbox"></i>
-											Profile
-										</a>
-									</li>
-									<li>
-										<a href="other-user-listing.html">
-											<i class="icon-inbox"></i>
-											All Users
-										</a>
-									</li>
-								</ul>
-							</li>
-							
-                            <li><a id="linkLogout" runat="server"><i class="menu-icon icon-signout"></i>Logout </a></li>
-						</ul>
-
-					</div><!--/.sidebar-->
+                            <ul class="widget widget-menu unstyled">
+                                <li class="active"><a href="dashboard-doctor.aspx"><i class="menu-icon icon-dashboard"></i>Dashboard
+                                </a></li>
+                                <li><a href="#"><i class="menu-icon icon-bullhorn"></i>Patients </a>
+                                </li>
+                                <li><a href="#"><i class="menu-icon icon-inbox"></i>Appointments  </a></li>
+                                <li><a href="Dashboard-doctor-prescription.aspx"><i class="menu-icon icon-tasks"></i>New Prescription </a></li>
+                            </ul>
+                            <!--/.widget-nav-->
+                            
+                            
+                            <ul class="widget widget-menu unstyled">
+                                <li><a id="linkLogout" runat="server"><i class="menu-icon icon-signout"></i>Logout </a></li>
+                            </ul>
+                        </div>
+                        <!--/.sidebar-->
 				</div><!--/.span3-->
 
 

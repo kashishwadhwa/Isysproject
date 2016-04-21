@@ -94,7 +94,7 @@
      DataTextField="patient_id" 
      HeaderText="Patient Id" 
      DataNavigateUrlFields="patient_id" 
-     DataNavigateUrlFormatString="User-Profile.aspx?patient_id={0}" />
+     DataNavigateUrlFormatString="receptionist-edit-patient.aspx?patient_id={0}" />
             <asp:BoundField DataField="Patient_Name" HeaderText="Patient Name" />
             <asp:BoundField DataField="patient_phone_primary" HeaderText="Phone" />
             <asp:BoundField DataField="dob" HeaderText="DoB" />
