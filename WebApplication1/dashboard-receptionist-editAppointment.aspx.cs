@@ -56,13 +56,15 @@ namespace WebApplication1
                         }
 
                         myConnection.Close();
-                        string date_1 = date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
-                        Appointment.Attributes.Add("value", appointment_id);
-                        pat_id.Attributes.Add("value", patient_id);
-                        txt_dentist_id.Attributes.Add("value", dentist_id);
-                        txt_date.Attributes.Add("value", date_1);
-                        txt_time.Attributes.Add("value", time);
-
+                        if (!IsPostBack)
+                        {
+                            string date_1 = date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+                            Appointment.Attributes.Add("value", appointment_id);
+                            pat_id.Attributes.Add("value", patient_id);
+                            txt_dentist_id.Attributes.Add("value", dentist_id);
+                            txt_date.Attributes.Add("value", date_1);
+                            txt_time.Attributes.Add("value", time);
+                        }
                     }
                     catch (Exception ex)
                     {

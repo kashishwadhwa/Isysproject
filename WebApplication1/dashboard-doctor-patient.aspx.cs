@@ -45,7 +45,7 @@ namespace WebApplication1
         private void bindview()
         {
             string connectionString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-            string sql = "select Patient_id,concat(patient_First_Name,' ',patient_last_Name) as [Patient_Name] ,cast(Patient_DOB as varchar(11)) as dob,patient_phone_primary  from patient";
+            string sql = "select Patient_id,concat(patient_First_Name,' ',patient_last_Name) as [Patient_Name] ,cast(Patient_DOB as varchar(11)) as dob,patient_allergies as p_allergies  from patient";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
             DataSet ds = new DataSet();

@@ -56,12 +56,16 @@ namespace WebApplication1
                         }
 
                         myConnection.Close();
-                        string date_1 = date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
-                        txt_dentist_id.Attributes.Add("value", dentist_id);
-                        txt_fname.Attributes.Add("value", fname);
-                        txt_lname.Attributes.Add("value", lname);
-                        txt_mname.Attributes.Add("value", mname);
-                        txt_date.Attributes.Add("value", date_1);
+                        if (!IsPostBack)
+                        {
+                            string date_1 = date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+
+                            txt_dentist_id.Attributes.Add("value", dentist_id);
+                            txt_fname.Attributes.Add("value", fname);
+                            txt_lname.Attributes.Add("value", lname);
+                            txt_mname.Attributes.Add("value", mname);
+                            txt_date.Attributes.Add("value", date_1);
+                        }
 
                     }
                     catch (Exception ex)

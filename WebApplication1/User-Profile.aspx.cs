@@ -90,22 +90,24 @@ namespace WebApplication1
                     pass = (myReader1["passwrd"].ToString());
                 }
                 myConnection.Close();
-
-                patientId.Text       = patient_id;
-                accountId.Text       = account_Id;
-                fname.Text           = f_name;
-                mname.Text           = m_name;
-                lname.Text           = l_name;
-                dob.Text             = DOB;
-                ssn.Text             = SSN;
-                city.Text            = cty;
-                ph.Text              = phone;
-                street.Text          = st;
-                state.Text           = stat;
-                zip.Text             = zi;
-                allergies.Text       = allergy;
-                username.Text        = uname;
-                password.Text        = pass;
+                if (!IsPostBack)
+                {
+                    patientId.Text = patient_id;
+                    accountId.Text = account_Id;
+                    fname.Text = f_name;
+                    mname.Text = m_name;
+                    lname.Text = l_name;
+                    dob.Text = DOB;
+                    ssn.Text = SSN;
+                    city.Text = cty;
+                    ph.Text = phone;
+                    street.Text = st;
+                    state.Text = stat;
+                    zip.Text = zi;
+                    allergies.Text = allergy;
+                    username.Text = uname;
+                    password.Text = pass;
+                }
             }
         }
         protected void Button_edit_profile(object sender, EventArgs e)
