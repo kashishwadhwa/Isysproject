@@ -888,7 +888,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@topColor', end
 	 
 	margin-right: 10px;
 	 
-	color: #767676;
+	/*color: #767676;*/
 	 -webkit-transition: all .2s ease-in-out;
 -moz-transition: all .2s ease-in-out;
 transition: all .2s ease-in-out;
@@ -914,8 +914,8 @@ transition: all .2s ease-in-out;
 	border-top: 1px solid #555
 }
 .widget-menu>li>a {
-	background-color: #292c2f;
-	color: #767676;
+	background-color: rgba(68, 78, 78, 0.65);
+	color: whitesmoke;
 	-webkit-transition: all .2s ease-in-out;
 -moz-transition: all .2s ease-in-out;
 transition: all .2s ease-in-out;

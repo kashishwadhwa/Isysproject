@@ -7,4 +7,7 @@
   <parameter name="isys 631ConnectionString-Web.config Connection String" description="" value="Data Source=isys631.database.windows.net;Initial Catalog=&quot;isys 631&quot;;User ID=isys631;Password=CollegeMain-345" tags="">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\shashaank\\Source\\Repos\\Isysproject\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='isys 631ConnectionString']/@connectionString" />
   </parameter>
+  <parameter name="isys 631ConnectionString2-Web.config Connection String" description="" value="Data Source=isys631.database.windows.net;Initial Catalog=&quot;isys 631&quot;;User ID=isys631;Password=CollegeMain-345" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\shashaank\\Source\\Repos\\Isysproject\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='isys 631ConnectionString2']/@connectionString" />
+  </parameter>
 </parameters>
