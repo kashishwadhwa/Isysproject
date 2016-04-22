@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -52,6 +54,49 @@ namespace WebApplication1
 
             }
         }
+
+
+
+
+        [WebMethod(EnableSession = true)]
+
+        public static string GetChart(string country)
+        {
+
+            string constr = "Server=isys631.database.windows.net;Database=\"isys 631\";User Id=isys631;Password=CollegeMain-345;";
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                string dentist_id = HttpContext.Current.Session["user_id"].ToString();
+
+                string query = string.Format("select CASE WHEN DATEPART(month,appointment_date)=1 THEN 'Jan' WHEN DATEPART(month,appointment_date)=2 THEN 'feb' WHEN DATEPART(month,appointment_date)=3 THEN 'Mar' WHEN DATEPART(month,appointment_date)=4 THEN 'Apr' WHEN DATEPART(month,appointment_date)=5 THEN 'May' WHEN DATEPART(month,appointment_date)=6 THEN 'Jun' WHEN DATEPART(month,appointment_date)=7 THEN 'Jul' WHEN DATEPART(month,appointment_date)=8 THEN 'Aug' WHEN DATEPART(month,appointment_date)=9 THEN 'Sep' WHEN DATEPART(month,appointment_date)=10 THEN 'Oct' WHEN DATEPART(month,appointment_date)=11 THEN 'Nov' WHEN DATEPART(month,appointment_date)=12 THEN 'Dec' END  as appointment_month ,count(appointment_id) as cnt_appointment  from appointment where DATEPART(year,appointment_date)={0} and dentist_id=" + dentist_id + " group by DATEPART(month,appointment_date) order by DATEPART(month,appointment_date)", country);
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = query;
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        StringBuilder sb = new StringBuilder();
+                        sb.Append("[");
+                        while (sdr.Read())
+                        {
+                            sb.Append("{");
+                            System.Threading.Thread.Sleep(50);
+                            string color = String.Format("#{0:X6}", new Random().Next(0x1000000));
+                            sb.Append(string.Format("text :'{0}', value:{1}, color: '{2}'", sdr[0], sdr[1], color));
+                            sb.Append("},");
+                        }
+                        sb = sb.Remove(sb.Length - 1, 1);
+                        sb.Append("]");
+                        con.Close();
+                        return sb.ToString();
+                    }
+                }
+            }
+        }
+
+
 
         protected void fnSetLogout_Click(object sender, EventArgs e)
         {

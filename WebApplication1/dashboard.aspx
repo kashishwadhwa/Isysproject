@@ -120,7 +120,7 @@
                             <div class="module">
                                 <div class="module-head">
                                     <h3>
-                                        Profit Chart</h3>
+                                        Monthly Appointments</h3>
                                 </div>
                                 <div class="module-body">
                                    
@@ -202,7 +202,7 @@ var jQuery_1_8_3 = $.noConflict(true);
                 <asp:DropDownList ID="ddlCountries" runat="server" DataSourceID="SqlDataSource1" DataTextField="appointment_year" DataValueField="appointment_year">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:isys 631ConnectionString2 %>" SelectCommand="select distinct DATEPART(year,appointment_date) as appointment_year from appointment order by 1 desc"></asp:SqlDataSource>
-                <asp:RadioButtonList ID="rblChartType" runat="server" RepeatDirection="Horizontal" Font-Size="1em" Width="10px">
+                <asp:RadioButtonList ID="rblChartType" runat="server" RepeatDirection="Horizontal" >
                     <asp:ListItem Text="Pie" Value="1" Selected="True" />
                     <asp:ListItem Text="Doughnut" Value="2" />
                 </asp:RadioButtonList>
