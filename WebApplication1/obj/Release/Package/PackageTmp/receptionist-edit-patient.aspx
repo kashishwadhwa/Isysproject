@@ -14,6 +14,12 @@
     
     <link rel="stylesheet" href="css/form.css" />
     <link rel="stylesheet" href="index.css" />
+
+    <style>
+        body{
+            background-color:#eee;
+        }
+    </style>
 </asp:Content>
 
 

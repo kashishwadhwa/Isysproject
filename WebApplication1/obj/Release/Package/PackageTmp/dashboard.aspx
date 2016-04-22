@@ -17,8 +17,8 @@
         }
 
         canvas{
-            width:100%;
-            height:auto;
+            width:100% !important;
+            height:auto !important;
         }
     </style>
 </asp:Content>
@@ -139,7 +139,7 @@
     <script type="text/javascript">
 var jQuery_1_8_3 = $.noConflict(true);
 </script>
-    <script src="//cdn.jsdelivr.net/excanvas/r3/excanvas.js" type="text/javascript"></script>
+    <script src="js/excanvas.js" type="text/javascript"></script>
     <script src="//cdn.jsdelivr.net/chart.js/0.2/Chart.js" type="text/javascript"></script>
     <%--<form id="form2" runat="server">--%>
     <script type="text/javascript">
@@ -156,7 +156,7 @@ var jQuery_1_8_3 = $.noConflict(true);
             var chartType = parseInt(jQuery_1_8_3("[id*=rblChartType] input:checked").val());
             jQuery_1_8_3.ajax({
                 type: "POST",
-                url: "CS.aspx/GetChart",
+                url: "dashboard.aspx/GetChart",
                 data: "{country: '" + jQuery_1_8_3("[id*=ddlCountries]").val() + "'}",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -172,8 +172,7 @@ var jQuery_1_8_3 = $.noConflict(true);
                         G_vmlCanvasManager.initElement(el);
                     }
                     var ctx = el.getContext('2d');
-                    ctx.canvas.width = 100;
-                    ctx.canvas.height = 500;
+
                     var userStrengthsChart;
                     switch (chartType) {
                         case 1:
@@ -200,13 +199,10 @@ var jQuery_1_8_3 = $.noConflict(true);
         <tr>
             <td>
                 Year:
-                <asp:DropDownList ID="ddlCountries" runat="server">
-                    <asp:ListItem Text="2012" Value="2012" />
-                    <asp:ListItem Text="2011" Value="2011" />
-                    <asp:ListItem Text="2010" Value="2010" />
-                    <asp:ListItem Text="2009" Value="2009" />
+                <asp:DropDownList ID="ddlCountries" runat="server" DataSourceID="SqlDataSource1" DataTextField="appointment_year" DataValueField="appointment_year">
                 </asp:DropDownList>
-                <asp:RadioButtonList ID="rblChartType" runat="server" RepeatDirection="Horizontal">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:isys 631ConnectionString2 %>" SelectCommand="select distinct DATEPART(year,appointment_date) as appointment_year from appointment order by 1 desc"></asp:SqlDataSource>
+                <asp:RadioButtonList ID="rblChartType" runat="server" RepeatDirection="Horizontal" Font-Size="1em" Width="10px">
                     <asp:ListItem Text="Pie" Value="1" Selected="True" />
                     <asp:ListItem Text="Doughnut" Value="2" />
                 </asp:RadioButtonList>

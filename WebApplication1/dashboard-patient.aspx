@@ -3,7 +3,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Edmin</title>
+        <title>Dashboard</title>
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
         <link type="text/css" href="css/theme.css" rel="stylesheet" />
@@ -17,7 +17,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
-          <div class="main-background-login">
+          <div class="main-background-login" style="background-image: url('images/overlay.png'), url('images/p-dashboard.jpg');">
         <h1>
             Welcome <asp:label ID="lbl_patientName" runat="server"> </asp:label>
         </h1>

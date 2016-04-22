@@ -41,7 +41,7 @@
                 <div class="row">
                     <div class="action count">
                         <div class="col-sm-3 text-center wow bounceIn" data-wow-duration="1000ms" data-wow-delay="300ms">
-                            <h1 class="timer bold" data-to="7000" data-speed="3000" data-from="0"></h1>   
+                            <h1 class="timer bold" data-to="12500" data-speed="3000" data-from="0"></h1>   
                             <h3>Happy Clients</h3>
                         </div>
                         <div class="col-sm-3 text-center wow bounceIn" data-wow-duration="1000ms" data-wow-delay="300ms">
@@ -50,11 +50,11 @@
                         </div>
                         <div class="col-sm-3 text-center wow bounceIn" data-wow-duration="1000ms" data-wow-delay="300ms">
                             <h1 class="timer bold" data-to="432" data-speed="3000" data-from="0"></h1> 
-                            <h3>Cups of Coffee</h3>
+                            <h3>Recognitions</h3>
                         </div>
                         <div class="col-sm-3 text-center wow bounceIn" data-wow-duration="1000ms" data-wow-delay="300ms">
                             <h1 class="timer bold" data-to="145" data-speed="3000" data-from="0"></h1> 
-                            <h3>Total Project</h3>
+                            <h3>Affiliations</h3>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                 <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
                     <div class="single-service">
                         <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <img src="images/home/icon1.png" alt="">
+                            <img src="images/icon1.jpg" alt="">
                         </div>
                         <h2>Joaquina Dental</h2>
                         <p>The leading dental clinic in Denver, Colorado in United States which has been assisting patients in relieving them from dental problems since 2001</p>
@@ -77,7 +77,7 @@
                 <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
                     <div class="single-service">
                         <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
-                            <img src="images/home/icon2.png" alt="">
+                            <img src="images/icon3.png" alt="">
                         </div>
                         <h2>Your Smile. Our Passion. Your Life.</h2>
                         <p>Quality dental care starts with best dentists. JD bring best in class dentist and dental services at a very affordable price.</p>
@@ -86,7 +86,7 @@
                 <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
                     <div class="single-service">
                         <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
-                            <img src="images/home/icon3.png" alt="">
+                            <img src="images/icon2.jpg" alt="">
                         </div>
                         <h2>Rewards</h2>
                         <p>Random discounts in the range of 5-25% on the first pre-dental check-up after the user completes the registration process.</p>

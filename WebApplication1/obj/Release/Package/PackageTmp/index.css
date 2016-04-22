@@ -780,6 +780,7 @@ Footer
 }
 #manage-appointment form{
 	display: inline-block;
+    width:72%;
 }
 
 #manage-appointment form input,

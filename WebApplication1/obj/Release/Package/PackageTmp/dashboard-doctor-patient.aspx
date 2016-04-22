@@ -77,14 +77,10 @@
     <asp:GridView ID="GridView1" CssClass="footable" OnPageIndexChanging="GridView1_PageIndexChanging" runat="server" AutoGenerateColumns="false"
          AllowPaging="True" PagerSettings-Mode="NumericFirstLast">
         <Columns>
-            <asp:HyperLinkField 
-     DataTextField="patient_id" 
-     HeaderText="Patient Id" 
-     DataNavigateUrlFields="patient_id" 
-     DataNavigateUrlFormatString="receptionist-edit-patient.aspx?patient_id={0}" />
+            <asp:BoundField DataField="patient_id" HeaderText="Patient Id" />
             <asp:BoundField DataField="Patient_Name" HeaderText="Patient Name" />
-            <asp:BoundField DataField="patient_phone_primary" HeaderText="Phone" />
             <asp:BoundField DataField="dob" HeaderText="DoB" />
+            <asp:BoundField DataField="p_allergies" HeaderText="Allergies" />
         </Columns>
 
         <PagerStyle HorizontalAlign="Right" CssClass="GridPager" />
