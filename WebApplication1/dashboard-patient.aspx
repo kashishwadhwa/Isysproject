@@ -14,6 +14,11 @@
         body{
             background-color:#eee;
         }
+
+        canvas{
+            width:100% !important;
+            height:auto !important;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
@@ -82,16 +87,124 @@
 								
                             </div>
                             <!--/#btn-controls-->
-                            <div class="module">
+<div class="module">
                                 <div class="module-head">
                                     <h3>
-                                        Profit Chart</h3>
+                                        Monthly Appointments</h3>
                                 </div>
                                 <div class="module-body">
-                                    <div class="chart inline-legend grid">
-                                        <div id="placeholder2" class="graph" style="height: 500px">
-                                        </div>
-                                    </div>
+                                   
+
+
+
+
+
+
+
+
+
+                                    
+
+                               <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+var jQuery_1_8_3 = $.noConflict(true);
+</script>
+    <script src="js/excanvas.js" type="text/javascript"></script>
+    <script src="//cdn.jsdelivr.net/chart.js/0.2/Chart.js" type="text/javascript"></script>
+    <%--<form id="form2" runat="server">--%>
+    <script type="text/javascript">
+        jQuery_1_8_3(function () {
+            LoadChart();
+            jQuery_1_8_3("[id*=ddlCountries]").bind("change", function () {
+                LoadChart();
+            });
+            jQuery_1_8_3("[id*=rblChartType] input").bind("click", function () {
+                LoadChart();
+            });
+        });
+        function LoadChart() {
+            var chartType = parseInt(jQuery_1_8_3("[id*=rblChartType] input:checked").val());
+            jQuery_1_8_3.ajax({
+                type: "POST",
+                url: "dashboard-patient.aspx/GetChart",
+                data: "{country: '" + jQuery_1_8_3("[id*=ddlCountries]").val() + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (r) {
+                    jQuery_1_8_3("#dvChart").html("");
+                    jQuery_1_8_3("#dvLegend").html("");
+                    var data = eval(r.d);
+                    var el = document.createElement('canvas');
+                    jQuery_1_8_3("#dvChart")[0].appendChild(el);
+
+                    //Fix for IE 8
+                    if (jQuery_1_8_3.browser.msie && jQuery_1_8_3.browser.version == "8.0") {
+                        G_vmlCanvasManager.initElement(el);
+                    }
+                    var ctx = el.getContext('2d');
+
+                    var userStrengthsChart;
+                    switch (chartType) {
+                        case 1:
+                            userStrengthsChart = new Chart(ctx).Pie(data);
+                            break;
+                        case 2:
+                            userStrengthsChart = new Chart(ctx).Doughnut(data);
+                            break;
+                    }
+                    for (var i = 0; i < data.length; i++) {
+                        var div = jQuery_1_8_3("<div />");
+                        div.css("margin-bottom", "10px");
+                        div.html("<span style = 'display:inline-block;height:10px;width:10px;background-color:" + data[i].color + "'></span> " + data[i].text);
+                        jQuery_1_8_3("#dvLegend").append(div);
+                    }
+                },
+                failure: function (response) {
+                    alert('There was an error.');
+                }
+            });
+        }
+    </script>
+                                    <form id="form1" runat="server">
+    <table border="0" cellpadding="0" cellspacing="0" style="width:100%">
+        <tr>
+            <td>
+                Year:
+                <asp:DropDownList ID="ddlCountries" runat="server" DataSourceID="SqlDataSource1" DataTextField="appointment_year" DataValueField="appointment_year">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:isys 631ConnectionString2 %>" SelectCommand="select distinct DATEPART(year,appointment_date) as appointment_year from appointment where  DATEPART(year,appointment_date)<2017 order by 1 desc"></asp:SqlDataSource>
+                <asp:RadioButtonList ID="rblChartType" runat="server" RepeatDirection="Horizontal" >
+                    <asp:ListItem Text="Pie" Value="1" Selected="True" />
+                    <asp:ListItem Text="Doughnut" Value="2" />
+                </asp:RadioButtonList>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="dvChart" style="width:100%;">
+                </div>
+            </td>
+            <td>
+                <div id="dvLegend">
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                 </div>
                             </div>
                             <!--/.module-->
@@ -122,7 +235,7 @@
                                     
     
 
-    <form id="form1" runat="server">
+   
     <asp:GridView ID="GridView1" CssClass="footable" OnPageIndexChanging="GridView1_PageIndexChanging" runat="server" AutoGenerateColumns="false"
          AllowPaging="True" PagerSettings-Mode="NumericFirstLast">
         <Columns>
@@ -146,6 +259,7 @@ No Upcoming Appointments
 
         <PagerStyle HorizontalAlign="Right" CssClass="GridPager" />
     </asp:GridView>
+                                    </form>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/css/footable.min.css"
         rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -155,7 +269,7 @@ No Upcoming Appointments
                 $('[id*=GridView1]').footable();
         });
     </script>
-</form>
+
    
       
            
