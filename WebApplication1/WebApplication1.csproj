@@ -170,11 +170,16 @@
     <Content Include="images\d4.png" />
     <Content Include="images\globe.png" />
     <Content Include="images\header.png" />
+    <Content Include="images\icon1.jpg" />
+    <Content Include="images\icon2.jpg" />
+    <Content Include="images\icon3.png" />
     <Content Include="images\icons\css\font-awesome.css" />
     <Content Include="images\img.jpg" />
     <Content Include="images\jquery-ui\picker.png" />
     <Content Include="images\location.png" />
     <Content Include="images\login.jpg" />
+    <Content Include="images\p-dash2.jpg" />
+    <Content Include="images\p-dashboard.jpg" />
     <Content Include="images\patient_records.jpg" />
     <Content Include="images\phone1.png" />
     <Content Include="images\s1.jpg" />
