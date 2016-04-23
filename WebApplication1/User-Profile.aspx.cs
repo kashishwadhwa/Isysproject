@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,6 +14,9 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string dateres = DateTime.Now.ToString("yyyy-MM-dd");
+            dob1.Attributes.Add("max", dateres);
+            dob1.Attributes.Add("min", "1930-01-01");
             linkLogout.ServerClick += new EventHandler(fnSetLogout_Click);
             if (Session["email"] == null)
             {
@@ -92,12 +96,21 @@ namespace WebApplication1
                 myConnection.Close();
                 if (!IsPostBack)
                 {
+                    String date_1 = "2000-01-01";
+                    if (DOB!="")
+                    {
+                        DateTime dob = Convert.ToDateTime(DOB);
+                         date_1 = dob.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+                        dob1.Attributes.Add("value", date_1);
+                    }
+
+                    
                     patientId.Text = patient_id;
                     accountId.Text = account_Id;
                     fname.Text = f_name;
                     mname.Text = m_name;
                     lname.Text = l_name;
-                    dob.Text = DOB;
+                    
                     ssn.Text = SSN;
                     city.Text = cty;
                     ph.Text = phone;
@@ -135,7 +148,7 @@ namespace WebApplication1
                         cmd.Parameters.AddWithValue("@Patient_Zip", zip.Text);
                         cmd.Parameters.AddWithValue("@Patient_Phone_Primary", ph.Text);
                         cmd.Parameters.AddWithValue("@Patient_SSN", ssn.Text);
-                        cmd.Parameters.AddWithValue("@Patient_DOB", dob.Text);
+                        cmd.Parameters.AddWithValue("@Patient_DOB", dob1.Value);
                         cmd.Parameters.AddWithValue("@Patient_Allergies", allergies.Text);
                         cmd.Parameters.AddWithValue("@Patient_ID", patientId.Text);
 

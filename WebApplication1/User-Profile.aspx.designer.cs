@@ -76,13 +76,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox ph;
         
         /// <summary>
-        /// dob control.
+        /// dob1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dob;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dob1;
         
         /// <summary>
         /// street control.

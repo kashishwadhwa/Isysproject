@@ -93,13 +93,23 @@
           <label for="doctor">Dentist ID:</label>
           <input type="text" id="txt_dentist_id" name="dentist_id"  runat="server" readonly="true" style="opacity:.5;"/>
 
-          <label for="name">First Name:</label>
+          <label for="name">First Name*:
+                <asp:RequiredFieldValidator id="RequiredFieldValidator3" runat="server"
+  ControlToValidate="txt_fname"
+  ErrorMessage="First Name is a required field."
+  ForeColor="Red" ValidationGroup="req"></asp:RequiredFieldValidator>
+          </label>
           <input type="text" id="txt_fname" name="Appointment"  runat="server" />
 
           <label for="patient">Middle Name:</label>
           <input type="text" id="txt_mname" name="pat_id"  runat="server" />
 
-          <label for="patient">Last Name:</label>
+          <label for="patient">Last Name*:
+                <asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server"
+  ControlToValidate="txt_lname"
+  ErrorMessage="Last Name is a required field."
+  ForeColor="Red" ValidationGroup="req"></asp:RequiredFieldValidator>
+          </label>
           <input type="text" id="txt_lname" name="pat_id"  runat="server" />
                       
 
@@ -108,11 +118,16 @@
         
         <fieldset>
           <legend><span class="number">2</span>Joining Info</legend>
-          <label for="date">Dentist Join Date:</label>
+          <label for="date">Dentist Join Date*:
+                <asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server"
+  ControlToValidate="txt_date"
+  ErrorMessage="Date is a required field."
+  ForeColor="Red" ValidationGroup="req"></asp:RequiredFieldValidator>
+          </label>
           <input type="date" id="txt_date" name="appointment_date" runat="server"/>
         </fieldset>
 
-        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book">Update Dentist</button>
+        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book" validationgroup="req">Update Dentist</button>
      
 </div>
                                                     

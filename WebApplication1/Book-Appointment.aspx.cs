@@ -20,6 +20,8 @@ namespace WebApplication1
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            string dateres = DateTime.Now.ToString("yyyy-MM-dd");
+            date.Attributes.Add("min",dateres);
             linkLogout.ServerClick += new EventHandler(fnSetLogout_Click);
 
 
