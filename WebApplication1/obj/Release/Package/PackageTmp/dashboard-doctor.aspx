@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard-doctor.aspx.cs" Inherits="WebApplication1.dashboard_doctor" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard-doctor.aspx.cs" Inherits="WebApplication1.dashboard_doctor"  EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
