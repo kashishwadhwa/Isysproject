@@ -27,7 +27,7 @@
             overflow:hidden;
         }
 
-        @media screen and (max-width: 425px) {
+        @media screen and (max-width: 737px) {
     .media_responsive
     {
         display: block;
