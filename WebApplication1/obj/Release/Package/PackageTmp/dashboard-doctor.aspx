@@ -11,6 +11,11 @@
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' />
     <link rel="stylesheet" href="index.css" />
         <style>
+
+            .media_responsive
+    {
+        display: none;
+        }
         body{
             background-color:#eee;
         }
@@ -19,7 +24,28 @@
             width:100% !important;
             height:auto !important;
         }
+
+        .module{
+            overflow:hidden;
+        }
+
+            @media screen and (max-width: 480px) {
+                .media_responsive {
+                    display: block;
+                    float: none;
+                }
+
+                .span3 {
+                    display: none;
+                }
+
+                .chart {
+                    display: none;
+                }
+            }
+}
     </style>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
           <div class="main-background-login">
@@ -83,6 +109,7 @@
                                     <h3>
                                         Profit Chart</h3>
                                 </div>
+                                <div class="chart">
                                 <div class="module-body">
                                    
 
@@ -197,6 +224,7 @@ var jQuery_1_8_3 = $.noConflict(true);
 
 
                                 </div>
+                                </div>
                             </div>
                             <!--/.module-->
                             <div class="module hide">
@@ -265,6 +293,16 @@ No Upcoming Appointments
                         <!--/.content-->
                     </div>
                     <!--/.span9-->
+
+ <div class="media_responsive">
+                        <div class="sidebar">
+                            <ul class="widget widget-menu unstyled">
+                                <li><a id="A1" runat="server"><i class="menu-icon icon-signout"></i>Logout </a></li>
+                            </ul>
+                        </div>
+                        <!--/.sidebar-->
+                    </div>
+
                 </div>
             </div>
             <!--/.container-->

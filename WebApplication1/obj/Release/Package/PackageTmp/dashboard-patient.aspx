@@ -3,14 +3,18 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Edmin</title>
+        <title>Dashboard</title>
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
         <link type="text/css" href="css/theme.css" rel="stylesheet" />
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet" />
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' />
     <link rel="stylesheet" href="index.css" />
-        <style>
+ <style>
+     .media_responsive
+    {
+        display: none;
+        }
         body{
             background-color:#eee;
         }
@@ -19,10 +23,31 @@
             width:100% !important;
             height:auto !important;
         }
+                .module-body table{
+            overflow:hidden;
+        }
+
+        @media screen and (max-width: 425px) {
+    .media_responsive
+    {
+        display: block;
+        float:none;
+
+    }
+    .span3{
+        display:none;
+    }
+    .chart{
+        display:none;
+    }
+
+
+
+}
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
-          <div class="main-background-login">
+          <div class="main-background-login" style="background-image: url('images/overlay.png'), url('images/p-dashboard.jpg');">
         <h1>
             Welcome <asp:label ID="lbl_patientName" runat="server"> </asp:label>
         </h1>
@@ -92,7 +117,8 @@
                                     <h3>
                                         Monthly Appointments</h3>
                                 </div>
-                                <div class="module-body">
+         <div class="chart">                       "
+    <div class="module-body">
                                    
 
 
@@ -206,6 +232,7 @@ var jQuery_1_8_3 = $.noConflict(true);
 
 
                                 </div>
+             </div>
                             </div>
                             <!--/.module-->
                             <div class="module hide">
@@ -280,6 +307,12 @@ No Upcoming Appointments
                         <!--/.content-->
                     </div>
                     <!--/.span9-->
+                     <div class="media_responsive">
+                        <div class="sidebar">
+                            <ul class="widget widget-menu unstyled">
+                                <li><a id="A1" runat="server"><i class="menu-icon icon-signout"></i>Logout </a></li>
+                            </ul>
+                        </div>
                 </div>
             </div>
             <!--/.container-->
