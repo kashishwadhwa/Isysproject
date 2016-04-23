@@ -130,11 +130,11 @@
                                     </a>
                                 </div>
 								<div class="btn-box-row row-fluid">
-                                    <a href="Dashboard-Receptionist-Visit.aspx" class="btn-box big span4"><i class=" icon-random"></i><b>Add Visits</b>
+                                    <a href="Dashboard-Receptionist-Visit.aspx" class="btn-box big span4"><i class=" icon-bell"></i><b>Add Visits</b>
                                       
-                                    </a><a href="dashboard-receptionist-patients.aspx" class="btn-box big span4"><i class="icon-user"></i><b>Patients</b>
+                                    </a><a href="dashboard-receptionist-patients.aspx" class="btn-box big span4"><i class="icon-group"></i><b>Patients</b>
                                  
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-money"></i><b>Add User</b>
+                                    </a><a href="#" class="btn-box big span4"><i class="icon-edit"></i><b>Add User</b>
                                         
                                     </a>
                                 </div>

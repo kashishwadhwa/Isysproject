@@ -51,11 +51,11 @@ namespace WebApplication1
 
         private void bindview()
         {
-           // string d_id = Session["user_id"].ToString();
-            String d_id = "1";
+            string d_id = Session["user_id"].ToString();
+           
             string connectionString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-            string sql = "select concat(patient_first_name,' ',patient_last_name) as patient_name, a.appointment_id, cast(appointment_date as varchar(10)) as appointment_date_cast, a.appointment_time from patient p, appointment a where p.account_id = (select account_id from patient where patient_id=1)and a.dentist_id=1 and a.appointment_date>getdate() order by a.appointment_date desc";
-            string sql2 = "select concat(patient_first_name,' ',patient_last_name) as patient_name, v.visit_id as visit_id, s.service_description, cast(visit_date as varchar(10)) as visit_date_cast, v.visit_time from visit v, patient p, COMPLETED_SERVICE cs, appointment a ,service s where v.patient_id = p.patient_id and cs.visit_id = v.visit_id and cs.service_id = s.service_id and p.account_id = (select account_id from patient where patient_id=1)and a.dentist_id=" +d_id+ " order by visit_date_cast desc";
+            string sql = "select concat(d.dentist_first_name,' ',d.dentist_last_name) as dentist_name,concat(p.patient_first_name,' ',p.patient_last_name) as patient_name,a.appointment_id,a.appointment_time,cast(a.appointment_date as varchar(10)) as appointment_date_cast from patient p, dentist d, appointment a where a.dentist_id=d.dentist_id and a.patient_id=p.patient_id and d.dentist_id=" + d_id + " and a.appointment_date>getdate() order by a.appointment_date desc";
+            string sql2 = "select concat(d.dentist_first_name,' ',d.dentist_last_name) as dentist_name,concat(p.patient_first_name,' ',p.patient_last_name) as patient_name,a.appointment_id,a.appointment_time,cast(a.appointment_date as varchar(10)) as appointment_date_cast from patient p, dentist d, appointment a where a.dentist_id=d.dentist_id and a.patient_id=p.patient_id and d.dentist_id=" + d_id + " and a.appointment_date<getdate() order by a.appointment_date desc";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
             DataSet ds = new DataSet();
@@ -68,7 +68,7 @@ namespace WebApplication1
             SqlDataAdapter dataadapter2 = new SqlDataAdapter(sql2, connection);
             DataSet ds2 = new DataSet();
            
-            dataadapter.Fill(ds2, "Auppointments_table2");
+            dataadapter2.Fill(ds2, "Auppointments_table2");
             connection.Close();
             GridView1.DataSource = ds;
             GridView1.DataBind();
@@ -77,15 +77,15 @@ namespace WebApplication1
 
             //Attribute to show the Plus Minus Button.
             GridView1.HeaderRow.Cells[1].Attributes["data-class"] = "expand";
-            GridView2.HeaderRow.Cells[0].Attributes["data-class"] = "expand";
+            GridView2.HeaderRow.Cells[1].Attributes["data-class"] = "expand";
 
             //Attribute to hide column in Phone.
             GridView1.HeaderRow.Cells[2].Attributes["data-hide"] = "phone";
             GridView1.HeaderRow.Cells[3].Attributes["data-hide"] = "phone";
-            //GridView1.HeaderRow.Cells[4].Attributes["data-hide"] = "phone";
-            //GridView2.HeaderRow.Cells[2].Attributes["data-hide"] = "phone";
-            //GridView2.HeaderRow.Cells[3].Attributes["data-hide"] = "phone";
-            //GridView2.HeaderRow.Cells[4].Attributes["data-hide"] = "phone";
+            
+            GridView2.HeaderRow.Cells[2].Attributes["data-hide"] = "phone";
+            GridView2.HeaderRow.Cells[3].Attributes["data-hide"] = "phone";
+           
 
             //Adds THEAD and TBODY to GridView.
             GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
