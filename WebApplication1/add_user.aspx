@@ -1,13 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="receptionist-edit-patient.aspx.cs" Inherits="WebApplication1.receptionist_edit_patient" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="add_user.aspx.cs" Inherits="WebApplication1.add_user" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-     <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
         <link type="text/css" href="css/theme.css" rel="stylesheet" />
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet" />
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' />
      <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>User profile</title>
+<title>Add user</title>
 <link rel="stylesheet" href="css/normalize.css"/>
 <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'/>
 <link rel="stylesheet" href="css/main.css"/>
@@ -20,20 +21,20 @@
             background-color:#eee;
         }
     </style>
+
 </asp:Content>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
-           <div class="main-background-login">
+     <div class="main-background-login">
         <h1>
-            Edit Profile
+            Add User
         </h1>
 		</div>
 </asp:Content>
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
 
 <div class="dashboard">
                 <div class="navbar navbar-fixed-top">
@@ -63,7 +64,7 @@
                                 <li><a href="dashboard-receptionist-doctors.aspx"><i class="menu-icon icon-book"></i>Doctors </a></li>
                                 <li><a href="dashboard-receptionist-patients.aspx"><i class="menu-icon icon-paste"></i>Patients </a></li>
                                 <li><a href="dashboard-receptionist-appointmentSchedule.aspx"><i class="menu-icon icon-paste"></i>Appointment History </a></li>
-                                <li><a href="add_user.aspx"><i class="menu-icon icon-paste"></i>Add User</a></li>
+                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Add User</a></li>
                                     <%--APPOINTMENTS WITH BILLS dr.name pat name appt. date/time services amount--%> 
                                     
                             </ul>
@@ -84,30 +85,34 @@
                         <!--/.sidebar-->
 				</div><!--/.span3-->
 
-
+                <asp:Label runat="server" ID="lbl_invalidId" forecolor="Red"></asp:Label>
 				<div class="span9">
 					<div class="content">
                         <div class="module">
 						 <form action="#" method="post" class="form-reg" runat="server">
       
-        <h1>Edit Profile</h1>
+        <h1>Add User</h1>
         
         <fieldset>
           <legend><span class="number">1</span>Your Info</legend>
           <%--<label id="appointmentId" runat="server" for="name"></label>--%>
+
+            
             <table id="table_user_profile_table" cellpadding="8">
                 
            <tr>
                <td>
-                 <asp:label runat="server"><b>Patient ID: </b></asp:label>  <asp:label runat="server" ID="patientId" ></asp:label>
+                 <asp:label runat="server"><b>Patient ID: </b></asp:label><asp:TextBox runat="server" ReadOnly="true" ID="patientId1"> </asp:TextBox>
                </td>
                <td class="id2">
-                   <asp:label runat="server"><b>   Account ID: </b></asp:label><asp:label runat="server" ID="accountId" ></asp:label>
+                   <asp:label runat="server"><b>Account ID*: </b></asp:label><asp:RequiredFieldValidator id="RequiredFieldValidator3" runat="server"
+  ControlToValidate="accountId"  ErrorMessage="Required"  ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator><asp:Textbox runat="server" ID="accountId" ></asp:Textbox> 
                </td>
            </tr> 
                 <tr>
                <td>
-                  <asp:label runat="server"><b>First Name: </b></asp:label> <asp:Textbox runat="server" ID="fname" ></asp:Textbox>
+                  <asp:label runat="server"><b>First Name*: </b></asp:label><asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server"
+  ControlToValidate="fname"  ErrorMessage="Required"  ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator> <asp:Textbox runat="server" ID="fname" ></asp:Textbox> 
                </td>
                <td class="id2">
                    <asp:label runat="server"><b>   Middle Name: </b></asp:label><asp:Textbox runat="server" ID="mname" ></asp:Textbox>
@@ -157,12 +162,14 @@
           
          <fieldset>
           <legend><span class="number">3</span>Settings</legend>
-         <asp:label runat="server"><b>Username: </b></asp:label><asp:Label runat="server" ID="username" ></asp:Label><br /><br /> 
-         <asp:label runat="server"><b>Password: </b>*********</asp:label><br /> <br />
-        <asp:label runat="server"><b>SSN: </b></asp:label><asp:TextBox runat="server" ID="ssn"></asp:TextBox><br /> <br />
+         <asp:label runat="server"><b>Username*: </b></asp:label><asp:RequiredFieldValidator id="RequiredFieldValidator5" runat="server"
+  ControlToValidate="username" ErrorMessage="Email is a required field." ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator><asp:Textbox runat="server" ID="username" ></asp:Textbox>
+         <asp:label runat="server"><b>Password*: </b></asp:label><asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server"
+  ControlToValidate="password" ErrorMessage="Password is a required field." ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator><asp:Textbox runat="server" ID="password" ></asp:Textbox>
+        <asp:label runat="server"><b>SSN: </b></asp:label><asp:TextBox runat="server" ID="ssn"></asp:TextBox>
         </fieldset>
 
-        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Button_edit_profile">Submit</button>
+        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Button_add_user" validationgroup="req_reg">Add User</button>
                              </form>
      
 </div>
@@ -185,4 +192,3 @@
 	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
 </asp:Content>
-
