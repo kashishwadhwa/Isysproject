@@ -51,7 +51,7 @@ namespace WebApplication1
         {
             string session_var = Session["user_id"].ToString();
             string connectionString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-            string sql = "select patient_id, account_id, concat(patient_first_name,' ',patient_last_name) as patient_name,cast(patient_DOB as varchar(11)) as Dob_cast from patient where account_id=(select account_id from patient where patient_id="+Session["user_id"].ToString()+")";
+            string sql = "select patient_id, account_id, concat(patient_first_name,' ',patient_last_name) as patient_name,cast(patient_DOB as varchar(11)) as Dob_cast, patient_head_of_house as head_house from patient where account_id=(select account_id from patient where patient_id="+Session["user_id"].ToString()+")";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
             DataSet ds = new DataSet();
@@ -70,6 +70,7 @@ namespace WebApplication1
 
                 //Attribute to hide column in Phone.
                 GridView1.HeaderRow.Cells[3].Attributes["data-hide"] = "phone";
+                GridView1.HeaderRow.Cells[4].Attributes["data-hide"] = "phone";
                
                
 

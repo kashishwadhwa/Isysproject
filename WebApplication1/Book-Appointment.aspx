@@ -73,7 +73,7 @@
 					<div class="content">
                         <div class="module">
 						 <form action="#" method="post" class="form-reg" runat="server">
-      
+      <asp:Label ID="lbl_warning" runat="server" ForeColor="Red" Width="100%" Height="50px"></asp:Label>
         <h1>Book Appointment</h1>
         
         <fieldset>
@@ -139,7 +139,12 @@
     <asp:GridView ID="GridView1" CssClass="footable" OnPageIndexChanging="GridView1_PageIndexChanging" runat="server" AutoGenerateColumns="false"
          AllowPaging="True" PagerSettings-Mode="NumericFirstLast">
         <Columns>
-            <asp:BoundField DataField="appointment_id" HeaderText="Appointment ID" />
+            
+            <asp:HyperLinkField 
+     DataTextField="appointment_id" 
+     HeaderText="Appointment Id" 
+     DataNavigateUrlFields="appointment_id" 
+     DataNavigateUrlFormatString="dashboard-patient-editAppointment.aspx?appointment_id={0}" />
             <asp:BoundField DataField="Patient Name" HeaderText="Patient Name" />
 
             <asp:BoundField DataField="Dentist Name" HeaderText="Dentist Name" />

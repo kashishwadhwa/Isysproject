@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication1
 {
-    public partial class dashboard_receptionist_editAppointment : System.Web.UI.Page
+    public partial class dashboard_patient_editAppointment : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,20 +31,20 @@ namespace WebApplication1
                 if (!IsPostBack)
                 {
                     // SESSION STRING
-                    string appointment_id= Request.QueryString["appointment_id"];
+                    string appointment_id = Request.QueryString["appointment_id"];
                     string session_patient_id = Session["user_id"].ToString();
                     string dentist_id = null;
                     string patient_id = null;
-                    DateTime date=DateTime.Now;
+                    DateTime date = DateTime.Now;
                     string time = null;
 
                     string ConnectString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-                    
+
                     SqlConnection myConnection = new SqlConnection(ConnectString);
                     try
                     {
                         SqlDataReader myReader = null;
-                        SqlCommand myCommand2 = new SqlCommand("select top 1 * from appointment where appointment_id="+ appointment_id,
+                        SqlCommand myCommand2 = new SqlCommand("select top 1 * from appointment where appointment_id=" + appointment_id,
                                                                  myConnection);
                         myConnection.Open();
                         myReader = myCommand2.ExecuteReader();
@@ -110,7 +110,7 @@ namespace WebApplication1
                         cmd.Parameters.AddWithValue("@appointment_time", txt_time.Value);
 
                         int rows = cmd.ExecuteNonQuery();
-                        Response.Redirect("dashboard-receptionist-appointmentSchedule.aspx?record_updated="+rows+" record updated");
+                        Response.Redirect("Book-Appointment.aspx?message=" + rows + " record updated");
                         //rows number of record got updated
                     }
                 }
@@ -128,7 +128,7 @@ namespace WebApplication1
             try
             {
 
-                
+
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     SqlCommand cmd = new SqlCommand("Delete from appointment  WHERE appointment_id= @Appointment_ID");
@@ -140,7 +140,7 @@ namespace WebApplication1
                     cmd.ExecuteNonQuery();
                 }
 
-                Response.Redirect("dashboard-receptionist-appointmentSchedule.aspx?record_updated=Appointment Deleted");
+                Response.Redirect("Book-Appointment.aspx?message=Appointment Deleted");
 
 
 
@@ -164,9 +164,9 @@ namespace WebApplication1
             //        SqlCommand cmd =  new SqlCommand("Delete * from appointment  WHERE appointment_id=" + Appointment.Value);
             //        cmd.ExecuteNonQuery();
             //        Response.Redirect("dashboard-receptionist-appointmentSchedule.aspx?record_updated=Appointment deleted");
-                    
+
             //        conn.Close();
-                
+
             //}
             //catch (SqlException ex)
             //{

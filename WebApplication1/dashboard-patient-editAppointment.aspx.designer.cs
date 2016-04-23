@@ -10,7 +10,7 @@
 namespace WebApplication1 {
     
     
-    public partial class dashboard_receptionist_editAppointment {
+    public partial class dashboard_patient_editAppointment {
         
         /// <summary>
         /// linkLogout control.

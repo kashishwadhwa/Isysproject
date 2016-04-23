@@ -48,7 +48,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
-          <div class="main-background-login">
+          <div class="main-background-login" style="background-image: url('images/overlay.png'), url('images/p-dash4.jpg');">
         <h1>
             Welcome <asp:label ID="lbl_doctorName" runat="server"> </asp:label>
         </h1>

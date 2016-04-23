@@ -22,7 +22,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
-              <div class="main-background-login">
+              <div class="main-background-login" >
         <h1>
             Add Visit
         </h1>
@@ -85,7 +85,7 @@
 					<div class="content">
                         <div class="module">
 						 <form action="#" method="post" class="form-reg" runat="server">
-      
+       <asp:Label ID="lbl_warning" runat="server" ForeColor="Red" Width="100%" Height="50px"></asp:Label>
         <h1>Add Visit</h1>
         
         <fieldset>
@@ -139,7 +139,7 @@
                                                     <div class="module">
                                 <div class="module-head">
                                     <h3>
-                                        Today's Appointments</h3>
+                                        Upcoming Appointments</h3>
                                 </div>
                                 <div class="module-body table">
                                     

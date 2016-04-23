@@ -1,29 +1,37 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard-patient-myfamily.aspx.cs" Inherits="WebApplication1.dashboard_patient_myfamily" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard-patient-editAppointment.aspx.cs" Inherits="WebApplication1.dashboard_patient_editAppointment" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>My Family</title>
-        <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+                <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
         <link type="text/css" href="css/theme.css" rel="stylesheet" />
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet" />
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' />
+     <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Edit Appointment</title>
+<link rel="stylesheet" href="css/normalize.css"/>
+<link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'/>
+<link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="index.css" />
-        <style>
+    <link rel="stylesheet" href="css/form.css" />
+    <style>
         body{
             background-color:#eee;
         }
     </style>
 </asp:Content>
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
       <div class="main-background-login">
         <h1>
-            My Family
+            Edit Appointment
         </h1>
 		</div>
+
 </asp:Content>
+
+
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
     <div class="dashboard">
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
@@ -63,66 +71,65 @@
                         <!--/.sidebar-->
                     </div>
                     <!--/.span3-->	
-                    <div class="span9">
-                        <div class="content">
-                            <div class="module">
-                             
-
-                            </div>
-                            <!--/.module-->
-                           
-                            <div class="module">
-                                <div class="module-head">
-                                    <h3>
-                                        My Family</h3>
-                                </div>
-                                <div class="module-body table">
-                                    
-    
-
-    <form id="form1" runat="server">
-    <asp:GridView ID="GridView1" CssClass="footable" OnPageIndexChanging="GridView1_PageIndexChanging" runat="server" AutoGenerateColumns="false"
-         AllowPaging="True" PagerSettings-Mode="NumericFirstLast">
-        <Columns>
-            <asp:BoundField DataField="patient_id" HeaderText="Patient Id" />
-            <asp:BoundField DataField="account_id" HeaderText="Account Id" />
-            <asp:BoundField DataField="patient_name" HeaderText="Name" />
-            <asp:BoundField DataField="Dob_cast"  HeaderText="DoB"  />
-             <asp:BoundField DataField="head_house"  HeaderText="Head Of Household"  />
-
-        </Columns>
-
-                <EmptyDataTemplate>
-
-<div>
-
-No Records to Display
-
-</div>
-
-</EmptyDataTemplate>
-        <PagerStyle HorizontalAlign="Right" CssClass="GridPager" />
-    </asp:GridView>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/css/footable.min.css"
-        rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/js/footable.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-                $('[id*=GridView1]').footable();
-        });
-    </script>
-</form>
-   
+                   <div class="span9">
+					<div class="content">
+                        <div class="module">
+						 <form action="#" method="post" class="form-reg" runat="server">
       
-           
-                                </div>
-                            </div>
-                            <!--/.module-->
-                        </div>
-                        <!--/.content-->
-                    </div>
-                    <!--/.span9-->
+        <h1>Edit Appointment</h1>
+        <asp:Label ID="lbl_warning" runat="server" ForeColor="Red" Width="100%" Height="50px"></asp:Label>
+        <fieldset>
+          <legend><span class="number">1</span>Your Info</legend>
+          <label for="name">Appointment ID:</label>
+          <input type="text" id="Appointment" name="Appointment" readonly="true" style="opacity:.5;" runat="server" />
+
+          <label for="patient">Patient ID*:
+                <asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server"
+  ControlToValidate="pat_id"
+  ErrorMessage="Patient Id is a required field."
+  ForeColor="Red" ValidationGroup="req"></asp:RequiredFieldValidator>
+          </label>
+          <input type="text" id="pat_id" name="pat_id"  runat="server" />
+                      
+          <label for="doctor">Dentist ID*:
+                <asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server"
+  ControlToValidate="txt_dentist_id"
+  ErrorMessage="Dentist Id is a required field."
+  ForeColor="Red" ValidationGroup="req"></asp:RequiredFieldValidator>
+          </label>
+          <input type="text" id="txt_dentist_id" name="dentist_id"  runat="server" />
+
+        </fieldset>
+        
+        <fieldset>
+          <legend><span class="number">2</span>Appointment Info</legend>
+          <label for="date">Appointment Date*:
+                <asp:RequiredFieldValidator id="RequiredFieldValidator3" runat="server"
+  ControlToValidate="txt_date"
+  ErrorMessage="Date is a required field."
+  ForeColor="Red" ValidationGroup="req"></asp:RequiredFieldValidator>
+          </label>
+          <input type="date" id="txt_date" name="appointment_date" runat="server"/>
+          <label for="time">Appointment Time*:
+                <asp:RequiredFieldValidator id="RequiredFieldValidator4" runat="server"
+  ControlToValidate="txt_time"
+  ErrorMessage="Time is a required field."
+  ForeColor="Red" ValidationGroup="req"></asp:RequiredFieldValidator>
+          </label>
+          <input type="time" id="txt_time" name="appointment_time" runat="server" min="09:00" max="17:00"/>
+          <label for="bio">Message:</label>
+          <textarea id="message" name="message" runat="server"></textarea>
+        </fieldset>
+
+        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book" validationgroup="req">Update Appointment</button>
+        <button type="submit" class="button button-block" runat="server" id="button1" onserverclick="Buttonbook_Click_delete" style="background-color:#ff3232">Delete Appointment</button>
+</div>
+                                                    
+
+				</form>		
+						
+					</div><!--/.content-->
+				</div><!--/.span9-->
                 </div>
             </div>
             <!--/.container-->
@@ -137,3 +144,6 @@ No Records to Display
         <script src="dashboard_scripts/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="dashboard_scripts/common.js" type="text/javascript"></script>
 </asp:Content>
+
+
+

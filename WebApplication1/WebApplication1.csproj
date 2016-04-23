@@ -102,6 +102,7 @@
     <Content Include="dashboard-doctor-patient.aspx" />
     <Content Include="Dashboard-doctor-prescription.aspx" />
     <Content Include="dashboard-doctor.aspx" />
+    <Content Include="dashboard-patient-editAppointment.aspx" />
     <Content Include="dashboard-patient-myfamily.aspx" />
     <Content Include="dashboard-patient.aspx" />
     <Content Include="dashboard-receptionist-appointmentSchedule.aspx" />
@@ -176,14 +177,20 @@
     <Content Include="images\icon2.jpg" />
     <Content Include="images\icon3.png" />
     <Content Include="images\icons\css\font-awesome.css" />
+    <Content Include="images\image.jpe" />
     <Content Include="images\img.jpg" />
     <Content Include="images\jquery-ui\picker.png" />
     <Content Include="images\location.png" />
     <Content Include="images\login.jpg" />
+    <Content Include="images\p-dash1.jpg" />
     <Content Include="images\p-dash2.jpg" />
+    <Content Include="images\p-dash3.jpg" />
+    <Content Include="images\p-dash4.jpg" />
     <Content Include="images\p-dashboard.jpg" />
+    <Content Include="images\p-profile.jpg" />
     <Content Include="images\patient_records.jpg" />
     <Content Include="images\phone1.png" />
+    <Content Include="images\r-dashboard.jpg" />
     <Content Include="images\s1.jpg" />
     <Content Include="images\s2.jpg" />
     <Content Include="images\s3.jpg" />
@@ -195,43 +202,43 @@
     <Content Include="images\tour-bg.png" />
     <Content Include="images\user.png" />
     <Content Include="JavaScript1.js" />
-    <Content Include="js\about\audio.min.js" />
-    <Content Include="js\about\audiojs.swf" />
-    <Content Include="js\about\bootstrap.min.js" />
-    <Content Include="js\about\coundown-timer.js" />
-    <Content Include="js\about\gmaps.js" />
-    <Content Include="js\about\holder.js" />
-    <Content Include="js\about\html5shiv.js" />
-    <Content Include="js\about\jquery.countTo.js" />
-    <Content Include="js\about\jquery.fitvids.js" />
-    <Content Include="js\about\jquery.isotope.min.js" />
-    <Content Include="js\about\jquery.js" />
-    <Content Include="js\about\lightbox.min.js" />
-    <Content Include="js\about\main.js" />
-    <Content Include="js\about\masonry.min.js" />
-    <Content Include="js\about\player-graphics.gif" />
-    <Content Include="js\about\respond.min.js" />
-    <Content Include="js\about\w.gif" />
-    <Content Include="js\about\wow.min.js" />
-    <Content Include="js\chosen.jquery.js" />
-    <Content Include="js\chosen.jquery.min.js" />
-    <Content Include="js\classie.js" />
-    <Content Include="js\excanvas.js" />
-    <Content Include="js\index.js" />
-    <Content Include="js\jquery-1.9.1.min.js" />
-    <Content Include="js\jquery-2.1.1.js" />
-    <Content Include="js\jquery.countdown.js" />
-    <Content Include="js\jquery.flexslider-min.js" />
-    <Content Include="js\jquery.magnific-popup.js" />
-    <Content Include="js\jquery.min.js" />
-    <Content Include="js\main.js" />
-    <Content Include="js\masonry.pkgd.min.js" />
-    <Content Include="js\modernizr.custom.js" />
-    <Content Include="js\modernizr.js" />
-    <Content Include="js\owl.carousel.js" />
-    <Content Include="js\prism.js" />
-    <Content Include="js\script.js" />
-    <Content Include="js\templatemo_script.js" />
+    <Content Include="scss\js\about\audio.min.js" />
+    <Content Include="scss\js\about\audiojs.swf" />
+    <Content Include="scss\js\about\bootstrap.min.js" />
+    <Content Include="scss\js\about\coundown-timer.js" />
+    <Content Include="scss\js\about\gmaps.js" />
+    <Content Include="scss\js\about\holder.js" />
+    <Content Include="scss\js\about\html5shiv.js" />
+    <Content Include="scss\js\about\jquery.countTo.js" />
+    <Content Include="scss\js\about\jquery.fitvids.js" />
+    <Content Include="scss\js\about\jquery.isotope.min.js" />
+    <Content Include="scss\js\about\jquery.js" />
+    <Content Include="scss\js\about\lightbox.min.js" />
+    <Content Include="scss\js\about\main.js" />
+    <Content Include="scss\js\about\masonry.min.js" />
+    <Content Include="scss\js\about\player-graphics.gif" />
+    <Content Include="scss\js\about\respond.min.js" />
+    <Content Include="scss\js\about\w.gif" />
+    <Content Include="scss\js\about\wow.min.js" />
+    <Content Include="scss\js\chosen.jquery.js" />
+    <Content Include="scss\js\chosen.jquery.min.js" />
+    <Content Include="scss\js\classie.js" />
+    <Content Include="scss\js\excanvas.js" />
+    <Content Include="scss\js\index.js" />
+    <Content Include="scss\js\jquery-1.9.1.min.js" />
+    <Content Include="scss\js\jquery-2.1.1.js" />
+    <Content Include="scss\js\jquery.countdown.js" />
+    <Content Include="scss\js\jquery.flexslider-min.js" />
+    <Content Include="scss\js\jquery.magnific-popup.js" />
+    <Content Include="scss\js\jquery.min.js" />
+    <Content Include="scss\js\main.js" />
+    <Content Include="scss\js\masonry.pkgd.min.js" />
+    <Content Include="scss\js\modernizr.custom.js" />
+    <Content Include="scss\js\modernizr.js" />
+    <Content Include="scss\js\owl.carousel.js" />
+    <Content Include="scss\js\prism.js" />
+    <Content Include="scss\js\script.js" />
+    <Content Include="scss\js\templatemo_script.js" />
     <Content Include="logo_title.jpg" />
     <Content Include="packages.config" />
     <Content Include="receptionist-edit-patient.aspx" />
@@ -333,6 +340,13 @@
     </Compile>
     <Compile Include="dashboard-doctor.aspx.designer.cs">
       <DependentUpon>dashboard-doctor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard-patient-editAppointment.aspx.cs">
+      <DependentUpon>dashboard-patient-editAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard-patient-editAppointment.aspx.designer.cs">
+      <DependentUpon>dashboard-patient-editAppointment.aspx</DependentUpon>
     </Compile>
     <Compile Include="dashboard-patient-myfamily.aspx.cs">
       <DependentUpon>dashboard-patient-myfamily.aspx</DependentUpon>

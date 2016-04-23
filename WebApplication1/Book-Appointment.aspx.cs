@@ -31,7 +31,13 @@ namespace WebApplication1
             }
             else
             {
-
+                lbl_warning.Visible = false;
+                string abc = Request.QueryString["message"];
+                if (abc != null)
+                {
+                    lbl_warning.Visible = true;
+                    lbl_warning.Text = Request.QueryString["message"];
+                }
 
 
                 if (!IsPostBack)
@@ -178,10 +184,7 @@ namespace WebApplication1
                     cmd.ExecuteNonQuery();
                 }
 
-                Response.Redirect("dashboard-patient.aspx");
-
-
-
+                Response.Redirect("Book-Appointment.aspx?message=Appointment Scheduled!!");
 
 
             }

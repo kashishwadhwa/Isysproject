@@ -88,6 +88,7 @@
             <asp:BoundField DataField="account_id" HeaderText="Account Id" />
             <asp:BoundField DataField="patient_name" HeaderText="Name" />
             <asp:BoundField DataField="Dob_cast"  HeaderText="DoB"  />
+             <asp:BoundField DataField="head_house"  HeaderText="Head Of Household"  />
 
         </Columns>
 

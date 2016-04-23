@@ -11,6 +11,14 @@ namespace WebApplication1
 {
     public partial class Dashboard_doctor_prescription : System.Web.UI.Page
     {
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+
+
+            GridView1.PageIndex = e.NewPageIndex;
+            bindview(); //bindgridview will get the data source and bind it again
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -36,8 +44,44 @@ namespace WebApplication1
                 service_list.DataBind();
             }
 
+            if (!IsPostBack)
+                bindview();
+
         }
 
+        private void bindview()
+        {
+            string session_var = Session["user_id"].ToString();
+            string connectionString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
+            string sql = "select concat(p.patient_first_name,' ',p.patient_last_name) as patient_name, visit_id, cast(visit_date as varchar(10)) as visit_date from visit v, patient p where visit_date>=(getdate()-1) and v.patient_id=p.patient_id and dentist_id=" + Session["user_id"].ToString() + "order by visit_date desc";
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
+            DataSet ds = new DataSet();
+            connection.Open();
+            dataadapter.Fill(ds, "Visit_table");
+            connection.Close();
+            GridView1.DataSource = ds;
+            GridView1.DataBind();
+            //GridView1.DataMember = "Auppointments_table";
+
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+
+                //Attribute to show the Plus Minus Button.
+                GridView1.HeaderRow.Cells[1].Attributes["data-class"] = "expand";
+
+                //Attribute to hide column in Phone.
+                GridView1.HeaderRow.Cells[2].Attributes["data-hide"] = "phone";
+                //GridView1.HeaderRow.Cells[3].Attributes["data-hide"] = "phone";
+                //GridView1.HeaderRow.Cells[4].Attributes["data-hide"] = "phone";
+
+
+                //Adds THEAD and TBODY to GridView.
+                GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
+
+            }
+
+        }
 
         protected void fnSetLogout_Click(object sender, EventArgs e)
         {
@@ -50,7 +94,8 @@ namespace WebApplication1
 
         protected void Buttonbook_Click_visit(object sender, EventArgs e)
         {
-
+              try
+                    {
             foreach (ListItem listItem in service_list.Items)
             {
            
@@ -59,8 +104,7 @@ namespace WebApplication1
                     string listitemm = listItem.Value;
                     string connectionString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
 
-                    try
-                    {
+                  
                         string visit_ID = Visit.Value;
                         string service_id = listitemm;
 
@@ -94,21 +138,21 @@ namespace WebApplication1
                             cmd.ExecuteNonQuery();
                         }
 
-                        Response.Redirect("dashboard-doctor.aspx");
-
-
-
-
-
+                      
                     }
+                else
+                {
+                      Response.Redirect("dashboard-doctor.aspx");
+                }
+            }
+              }
                     catch (Exception ex)
                     {
                         Exception E = ex;
                         lbl_visitId_validate.Text = "Please check the visit id";
                     }
 
-                }
+                
             }
 }
     }
-}

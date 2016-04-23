@@ -85,7 +85,7 @@
                         <div class="module">
 						 <form action="#" method="post" class="form-reg" runat="server">
       
-        <h1>Book Appointment</h1>
+        <h1>Edit Appointment</h1>
         <asp:Label ID="lbl_warning" runat="server" ForeColor="Red" Width="100%" BackColor="YellowGreen" Height="50px"></asp:Label>
         <fieldset>
           <legend><span class="number">1</span>Your Info</legend>
@@ -131,7 +131,7 @@
         </fieldset>
 
         <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book" validationgroup="req">Update Appointment</button>
-     
+        <button type="submit" class="button button-block" runat="server" id="button1" onserverclick="Buttonbook_Click_delete" style="background-color:#ff3232">Delete Appointment</button>
 </div>
                                                     
 

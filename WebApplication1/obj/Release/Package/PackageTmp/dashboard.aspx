@@ -46,7 +46,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
-          <div class="main-background-login">
+          <div class="main-background-login" style="background-image: url('images/overlay.png'), url('images/p-dash3.jpg');">
         <h1>
             Welcome Admin
         </h1>

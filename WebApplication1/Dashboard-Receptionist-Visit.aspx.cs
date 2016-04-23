@@ -33,7 +33,13 @@ namespace WebApplication1
             }
             else
             {
-
+                lbl_warning.Visible = false;
+                string abc = Request.QueryString["message"];
+                if (abc != null)
+                {
+                    lbl_warning.Visible = true;
+                    lbl_warning.Text = Request.QueryString["message"];
+                }
 
                 string ConnectString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
                 string visit_id = null;
@@ -161,7 +167,7 @@ namespace WebApplication1
                     cmd.ExecuteNonQuery();
                 }
 
-                //Response.Redirect("dashboard-patient.aspx");
+                Response.Redirect("Dashboard-Receptionist-Visit.aspx?message=Visit Added!!");
 
 
 
