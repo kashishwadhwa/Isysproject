@@ -58,15 +58,6 @@
     <form id="form1" runat="server">
     
 
-
-
-
-
-
-
-
-
-
     <div class="dashboard">
                 <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
@@ -95,7 +86,7 @@
                                 <li><a href="dashboard-receptionist-doctors.aspx"><i class="menu-icon icon-book"></i>Doctors </a></li>
                                 <li><a href="dashboard-receptionist-patients.aspx"><i class="menu-icon icon-paste"></i>Patients </a></li>
                                 <li><a href="dashboard-receptionist-appointmentSchedule.aspx"><i class="menu-icon icon-paste"></i>Appointment History </a></li>
-                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Add User</a></li>
+                                <li><a href="add_user.aspx"><i class="menu-icon icon-paste"></i>Add User</a></li>
                                     <%--APPOINTMENTS WITH BILLS dr.name pat name appt. date/time services amount--%> 
                                     
                             </ul>
@@ -134,7 +125,7 @@
                                       
                                     </a><a href="dashboard-receptionist-patients.aspx" class="btn-box big span4"><i class="icon-group"></i><b>Patients</b>
                                  
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-edit"></i><b>Add User</b>
+                                    </a><a href="add_user.aspx" class="btn-box big span4"><i class="icon-edit"></i><b>Add User</b>
                                         
                                     </a>
                                 </div>

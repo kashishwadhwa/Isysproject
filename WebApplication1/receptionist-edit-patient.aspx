@@ -63,7 +63,7 @@
                                 <li><a href="dashboard-receptionist-doctors.aspx"><i class="menu-icon icon-book"></i>Doctors </a></li>
                                 <li><a href="dashboard-receptionist-patients.aspx"><i class="menu-icon icon-paste"></i>Patients </a></li>
                                 <li><a href="dashboard-receptionist-appointmentSchedule.aspx"><i class="menu-icon icon-paste"></i>Appointment History </a></li>
-                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Add User</a></li>
+                                <li><a href="add_user.aspx"><i class="menu-icon icon-paste"></i>Add User</a></li>
                                     <%--APPOINTMENTS WITH BILLS dr.name pat name appt. date/time services amount--%> 
                                     
                             </ul>
