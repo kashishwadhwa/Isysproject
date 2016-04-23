@@ -93,11 +93,21 @@
           <label for="name">Visit ID:</label>
           <input type="text" id="Visit" name="Appointment" readonly="true" style="opacity:.5;" runat="server" />
 
-          <label for="email">Email ID:</label>
+          <label for="email">Email ID*:
+                            <asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server"
+  ControlToValidate="emailId"
+  ErrorMessage="Email is a required field."
+  ForeColor="Red" ValidationGroup="req"></asp:RequiredFieldValidator>
+          </label>
           <input type="email" id="emailId" name="email" runat="server" />
    
                       
-          <label for="doctor">Doctor Name:</label>
+          <label for="doctor">Dentist Name*:
+              <asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server"
+  ControlToValidate="doctor"
+  ErrorMessage="Dentist is a required field."
+  ForeColor="Red" ValidationGroup="req"></asp:RequiredFieldValidator>
+          </label>
           <select id="doctor" name="doctor" runat="server">
         </select>
 
@@ -105,15 +115,25 @@
         
         <fieldset>
           <legend><span class="number">2</span>Appointment Info</legend>
-          <label for="date">Visit Date:</label>
+          <label for="date">Visit Date*:
+              <asp:RequiredFieldValidator id="RequiredFieldValidator3" runat="server"
+  ControlToValidate="date"
+  ErrorMessage="Date is a required field."
+  ForeColor="Red" ValidationGroup="req"></asp:RequiredFieldValidator>
+          </label>
           <input type="date" id="date" name="visit_date" runat="server"/>
-          <label for="time">Visit Time:</label>
+          <label for="time">Visit Time*:
+              <asp:RequiredFieldValidator id="RequiredFieldValidator4" runat="server"
+  ControlToValidate="time"
+  ErrorMessage="Time is a required field."
+  ForeColor="Red" ValidationGroup="req"></asp:RequiredFieldValidator>
+          </label>
           <input type="time" id="time" name="visit_time" runat="server" min="09:00" max="17:00"/>
           <label for="bio">Message:</label>
           <textarea id="message" name="message" runat="server"></textarea>
         </fieldset>
 
-        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book">Add Visit</button>
+        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book" validationgroup="req">Add Visit</button>
      
 </div>
                                                     <div class="module">

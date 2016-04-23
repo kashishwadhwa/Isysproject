@@ -92,25 +92,45 @@
           <label for="name">Appointment ID:</label>
           <input type="text" id="Appointment" name="Appointment" readonly="true" style="opacity:.5;" runat="server" />
 
-          <label for="patient">Patient ID:</label>
+          <label for="patient">Patient ID*:
+                <asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server"
+  ControlToValidate="pat_id"
+  ErrorMessage="Patient Id is a required field."
+  ForeColor="Red" ValidationGroup="req"></asp:RequiredFieldValidator>
+          </label>
           <input type="text" id="pat_id" name="pat_id"  runat="server" />
                       
-          <label for="doctor">Dentist ID:</label>
+          <label for="doctor">Dentist ID*:
+                <asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server"
+  ControlToValidate="txt_dentist_id"
+  ErrorMessage="Dentist Id is a required field."
+  ForeColor="Red" ValidationGroup="req"></asp:RequiredFieldValidator>
+          </label>
           <input type="text" id="txt_dentist_id" name="dentist_id"  runat="server" />
 
         </fieldset>
         
         <fieldset>
           <legend><span class="number">2</span>Appointment Info</legend>
-          <label for="date">Appointment Date:</label>
+          <label for="date">Appointment Date*:
+                <asp:RequiredFieldValidator id="RequiredFieldValidator3" runat="server"
+  ControlToValidate="txt_date"
+  ErrorMessage="Date is a required field."
+  ForeColor="Red" ValidationGroup="req"></asp:RequiredFieldValidator>
+          </label>
           <input type="date" id="txt_date" name="appointment_date" runat="server"/>
-          <label for="time">Appointment Time:</label>
+          <label for="time">Appointment Time*:
+                <asp:RequiredFieldValidator id="RequiredFieldValidator4" runat="server"
+  ControlToValidate="txt_time"
+  ErrorMessage="Time is a required field."
+  ForeColor="Red" ValidationGroup="req"></asp:RequiredFieldValidator>
+          </label>
           <input type="time" id="txt_time" name="appointment_time" runat="server" min="09:00" max="17:00"/>
           <label for="bio">Message:</label>
           <textarea id="message" name="message" runat="server"></textarea>
         </fieldset>
 
-        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book">Update Appointment</button>
+        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book" validationgroup="req">Update Appointment</button>
      
 </div>
                                                     

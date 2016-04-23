@@ -81,11 +81,23 @@
           <label for="name">Appointment ID:</label>
           <input type="text" id="Appointment" name="Appointment" readonly="true" style="opacity:.5;" runat="server" />
 
-          <label for="patient">Patient Name:</label>
+          <label for="patient">Patient Name*:   
+              <asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server"
+  ControlToValidate="patient"
+  ErrorMessage="Patient Name is a required field."
+  ForeColor="Red" ValidationGroup="req_form"></asp:RequiredFieldValidator>
+
+          </label>
           <select id="patient" name="patient" runat="server" required="required">
         </select>
                       
-          <label for="doctor">Doctor Name:</label>
+          <label for="doctor">Doctor Name*:
+              <asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server"
+  ControlToValidate="doctor"
+  ErrorMessage="Doctor Name is a required field."
+  ForeColor="Red" ValidationGroup="req_form"></asp:RequiredFieldValidator>
+
+          </label>
           <select id="doctor" name="doctor" runat="server" required="required">
         </select>
 
@@ -93,15 +105,25 @@
         
         <fieldset>
           <legend><span class="number">2</span>Appointment Info</legend>
-          <label for="date">Appointment Date:</label>
+          <label for="date">Appointment Date*:
+              <asp:RequiredFieldValidator id="RequiredFieldValidator3" runat="server"
+  ControlToValidate="date"
+  ErrorMessage="Date is a required field."
+  ForeColor="Red" ValidationGroup="req_form"></asp:RequiredFieldValidator>
+          </label>
           <input type="date" id="date" name="appointment_date" runat="server" required="required"/>
-          <label for="time">Appointment Time:</label>
+          <label for="time">Appointment Time*:
+                            <asp:RequiredFieldValidator id="RequiredFieldValidator4" runat="server"
+  ControlToValidate="time"
+  ErrorMessage="Date is a required field."
+  ForeColor="Red" ValidationGroup="req_form"></asp:RequiredFieldValidator>
+          </label>
           <input type="time" id="time" name="appointment_time" runat="server" required="required" min="09:00" max="17:00"/>
           <label for="bio">Message:</label>
           <textarea id="message" name="message" runat="server" ></textarea>
         </fieldset>
 
-        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book" causesvalidation="true">Book Appointment</button>
+        <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="Buttonbook_Click_book" causesvalidation="true" validationgroup="req_form">Book Appointment</button>
      
 </div>
                                                     <div class="module">
