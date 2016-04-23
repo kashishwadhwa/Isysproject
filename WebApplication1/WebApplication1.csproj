@@ -101,6 +101,7 @@
     <Content Include="dashboard-doctor-patient.aspx" />
     <Content Include="Dashboard-doctor-prescription.aspx" />
     <Content Include="dashboard-doctor.aspx" />
+    <Content Include="dashboard-patient-myfamily.aspx" />
     <Content Include="dashboard-patient.aspx" />
     <Content Include="dashboard-receptionist-appointmentSchedule.aspx" />
     <Content Include="dashboard-receptionist-dentistEdit.aspx" />
@@ -324,6 +325,13 @@
     </Compile>
     <Compile Include="dashboard-doctor.aspx.designer.cs">
       <DependentUpon>dashboard-doctor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard-patient-myfamily.aspx.cs">
+      <DependentUpon>dashboard-patient-myfamily.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard-patient-myfamily.aspx.designer.cs">
+      <DependentUpon>dashboard-patient-myfamily.aspx</DependentUpon>
     </Compile>
     <Compile Include="dashboard-patient.aspx.cs">
       <DependentUpon>dashboard-patient.aspx</DependentUpon>

@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard-billing.aspx.cs" Inherits="WebApplication1.dashboard_billing" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="dashboard-patient-myfamily.aspx.cs" Inherits="WebApplication1.dashboard_patient_myfamily" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Billing</title>
+        <title>My Family</title>
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
         <link type="text/css" href="css/theme.css" rel="stylesheet" />
@@ -18,7 +18,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
       <div class="main-background-login">
         <h1>
-            Billing
+            My Family
         </h1>
 		</div>
 </asp:Content>
@@ -65,49 +65,16 @@
                     <!--/.span3-->	
                     <div class="span9">
                         <div class="content">
-                            <div class="btn-controls">
-                                <div class="btn-box-row row-fluid">
-                                    <a href="#" class="btn-box big span4"><i class="icon-money"></i><b><asp:Label runat="server" ID="lbl_balance"></asp:Label></b>
-                                        <p class="text-muted">
-                                            Balance</p>
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b><asp:Label runat="server" ID="lbl_amount"></asp:Label></b>
-                                        <p class="text-muted">
-                                            Amount Paid</p>
-                                    </a><a href="#" class="btn-box big span4"><i class=" icon-random"></i><b><asp:Label runat="server" ID="lbl_lastVisit"></asp:Label></b>
-                                        <p class="text-muted">
-                                            Last Visit</p>
-                                    </a>
-                                </div>
-								
-                            </div>
-                            <!--/#btn-controls-->
                             <div class="module">
                              
 
                             </div>
                             <!--/.module-->
-                            <div class="module hide">
-                                <div class="module-head">
-                                    <h3>
-                                        Adjust Budget Range</h3>
-                                </div>
-                                <div class="module-body">
-                                    <div class="form-inline clearfix">
-                                        <a href="#" class="btn pull-right">Update</a>
-                                        <label for="amount">
-                                            Price range:</label>
-                                        &nbsp;
-                                        <input type="text" id="amount" class="input-" />
-                                    </div>
-                                    <hr />
-                                    <div class="slider-range">
-                                    </div>
-                                </div>
-                            </div>
+                           
                             <div class="module">
                                 <div class="module-head">
                                     <h3>
-                                        DataTables</h3>
+                                        My Family</h3>
                                 </div>
                                 <div class="module-body table">
                                     
@@ -117,10 +84,10 @@
     <asp:GridView ID="GridView1" CssClass="footable" OnPageIndexChanging="GridView1_PageIndexChanging" runat="server" AutoGenerateColumns="false"
          AllowPaging="True" PagerSettings-Mode="NumericFirstLast">
         <Columns>
-            <asp:BoundField DataField="patient_name" HeaderText="Patient Name" />
-            <asp:BoundField DataField="visit_date_cast" HeaderText="Visit Date" />
-            <asp:BoundField DataField="service_description" HeaderText="Service Description" />
-            <asp:BoundField DataField="service_cost" DataFormatString="{0:C}" HeaderText="Service Cost"  />
+            <asp:BoundField DataField="patient_id" HeaderText="Patient Id" />
+            <asp:BoundField DataField="account_id" HeaderText="Account Id" />
+            <asp:BoundField DataField="patient_name" HeaderText="Name" />
+            <asp:BoundField DataField="Dob_cast"  HeaderText="DoB"  />
 
         </Columns>
 
@@ -128,7 +95,7 @@
 
 <div>
 
-No Service Record
+No Records to Display
 
 </div>
 

@@ -60,7 +60,7 @@
                                     <ul id="togglePages" class="collapse unstyled">
                                         
                                         <li><a href="User-Profile.aspx"><i class="icon-inbox"></i>Edit Profile </a></li>
-                                        <li><a href="#"><i class="icon-inbox"></i>My Family</a></li>
+                                        <li><a href="dashboard-patient-myfamily.aspx"><i class="icon-inbox"></i>My Family</a></li>
                                     </ul>
                                 </li>
                                 <li><a id="linkLogout" runat="server"><i class="menu-icon icon-signout"></i>Logout </a></li>
