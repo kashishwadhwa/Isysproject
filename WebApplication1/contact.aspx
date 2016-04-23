@@ -1,7 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="contact.aspx.cs" Inherits="WebApplication1.contact" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="css/contact.css"/>
+    <link rel="stylesheet" href="index.css" />
     <title>Contact Us </title>
+    <style>
+        header{height:56px;}
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
 </asp:Content>

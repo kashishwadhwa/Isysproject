@@ -56,6 +56,10 @@
             <div class="field-wrap">
               <label>
                 First Name<span class="req">*</span>
+<asp:RequiredFieldValidator id="RequiredFieldValidator3" runat="server"
+  ControlToValidate="fname"
+  ErrorMessage="First Name is a required field."
+  ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator>
               </label>
               <input id="fname" type="text" required="required" autocomplete="on" runat="server"  />
             </div>
@@ -63,6 +67,10 @@
             <div class="field-wrap">
               <label>
                 Last Name<span class="req">*</span>
+                  <asp:RequiredFieldValidator id="RequiredFieldValidator4" runat="server"
+  ControlToValidate="lname"
+  ErrorMessage="Last Name is a required field."
+  ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator>
               </label>
               <input id="lname" type="text" required="required" autocomplete="on" runat="server" />
             </div>
@@ -71,6 +79,10 @@
           <div class="field-wrap">
             <label>
               Email Address<span class="req">*</span>
+                <asp:RequiredFieldValidator id="RequiredFieldValidator5" runat="server"
+  ControlToValidate="email"
+  ErrorMessage="Email is a required field."
+  ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator>
             </label>
             <input id="email" type="email" required="required" autocomplete="on" runat="server" />
           </div>
@@ -78,11 +90,15 @@
           <div class="field-wrap">
             <label>
               Set A Password<span class="req">*</span>
+                <asp:RequiredFieldValidator id="RequiredFieldValidator6" runat="server"
+  ControlToValidate="passwrd"
+  ErrorMessage="Password is a required field."
+  ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator>
             </label>
             <input id="passwrd" type="password" required="required" autocomplete="on" runat="server" />
           </div>
           
-          <button type="submit" class="button button-block" runat="server" id="button1" onserverclick="ButtonRegister_Click">Get Started</button>
+          <button type="submit" class="button button-block" runat="server" id="button1" onserverclick="ButtonRegister_Click" validationgroup="req_reg">Get Started</button>
           
           
 
@@ -96,6 +112,11 @@
             <div class="field-wrap">
             <label>
               Email Address<span class="req">*</span>
+                <asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server"
+  ControlToValidate="email_login"
+  ErrorMessage="Email is a required field."
+  ForeColor="Red" ValidationGroup="req">
+</asp:RequiredFieldValidator>
             </label>
             <input type="email" required="required"  id="email_login" runat="server"/>
           </div>
@@ -103,13 +124,17 @@
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
+                                <asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server"
+  ControlToValidate="psswrd_login"
+  ErrorMessage="Password is a required field."
+  ForeColor="Red" ValidationGroup="req"></asp:RequiredFieldValidator>
             </label>
             <input type="password" required="required"  id="psswrd_login" runat="server" />
           </div>
           
           <p class="forgot"><a href="UnderConstr.aspx">Forgot Password?</a></p>
           
-          <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="ButtonRegister_Click_login">Log In</button>
+          <button type="submit" class="button button-block" runat="server" id="button2" onserverclick="ButtonRegister_Click_login" validationgroup="req">Log In</button>
           
           </form>
 

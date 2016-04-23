@@ -68,13 +68,18 @@
 				<div class="span9">
 					<div class="content">
                         <div class="module">
-						 <form action="#" method="post" class="form-reg" runat="server">
+						 <form  method="post" class="form-reg" runat="server">
       
         <h1>New Prescription</h1>
         
         <fieldset>
           <legend><span class="number">1</span>Visit Info</legend>
-          <label for="name">Visit ID:</label>
+          <label for="name">Visit ID*:
+              <asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server"
+  ControlToValidate="Visit"
+  ErrorMessage="Visit Id is a required field."
+  ForeColor="Red" ValidationGroup="req_form"></asp:RequiredFieldValidator>
+          </label>
           <input type="text" id="Visit" name="Appointment" runat="server" />
             <asp:Label runat="server" ID="lbl_visitId_validate" ForeColor="Red" ></asp:Label>
    
@@ -85,12 +90,17 @@
         <fieldset>
           <legend><span class="number">2</span>Service Info</legend>
                       
-          <label for="doctor">Service Provided:</label>
+          <label for="doctor">Service Provided*:
+                            <asp:RequiredFieldValidator id="RequiredFieldValidator3" runat="server"
+  ControlToValidate="service_list"
+  ErrorMessage="Service Provided is a required field."
+  ForeColor="Red" ValidationGroup="req_form"></asp:RequiredFieldValidator>
+          </label>
           <select data-placeholder="Choose a Service..." class="chosen-select" multiple id="service_list" runat="server">
           </select>
         </fieldset>
 
-        <button type="submit" class="button button-block" runat="server" id="button2"  onserverclick="Buttonbook_Click_visit">Add Service</button>
+        <button type="submit" class="button button-block" runat="server" id="button2"  onserverclick="Buttonbook_Click_visit" validationgroup="req_form">Add Service</button>
     </form>   
 </div>					
 					</div><!--/.content-->

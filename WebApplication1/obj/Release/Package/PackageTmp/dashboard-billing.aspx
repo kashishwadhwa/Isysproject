@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Edmin</title>
+        <title>Billing</title>
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
         <link type="text/css" href="css/theme.css" rel="stylesheet" />
@@ -54,7 +54,7 @@
                                     <ul id="togglePages" class="collapse unstyled">
                                         
                                         <li><a href="User-Profile.aspx"><i class="icon-inbox"></i>Edit Profile </a></li>
-                                        <li><a href="#"><i class="icon-inbox"></i>My Family</a></li>
+                                        <li><a href="dashboard-patient-myfamily.aspx"><i class="icon-inbox"></i>My Family</a></li>
                                     </ul>
                                 </li>
                                 <li><a id="linkLogout" runat="server"><i class="menu-icon icon-signout"></i>Logout </a></li>
