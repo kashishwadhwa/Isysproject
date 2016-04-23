@@ -90,13 +90,14 @@ namespace WebApplication1
                 com2.CommandText = "INSERT INTO users ( user_id,passwrd,user_type,email) VALUES ( (select top 1 (patient_id) as patient_id from patient order by patient_id desc) , @pass, 'p',@email)";
                 com2.Connection = db;
                 com2.Transaction = tran;
-                com2.Parameters.AddWithValue("@email", username);
-                com2.Parameters.AddWithValue("@pass", password);
+                com2.Parameters.AddWithValue("@email", username.Text);
+                com2.Parameters.AddWithValue("@pass", password.Text);
                 com2.ExecuteNonQuery();
 
 
                 tran.Commit();
-
+                db.Close();
+                Response.Redirect("dashboard.aspx?message= New User Added");
 
             }
             catch (SqlException sqlex)
@@ -107,7 +108,6 @@ namespace WebApplication1
             finally
             {
                 db.Close();
-                Response.Redirect("dashboard.aspx?message= New User Added");
             }
         }
     }

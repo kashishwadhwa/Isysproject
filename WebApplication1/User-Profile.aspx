@@ -84,7 +84,7 @@
            </tr> 
                 <tr>
                <td>
-                  <asp:label runat="server"><b>First Name: </b></asp:label> <asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server"
+                  <asp:label runat="server"><b>First Name*: </b></asp:label> <asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server"
   ControlToValidate="fname"  ErrorMessage="Required"  ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator><asp:Textbox runat="server" ID="fname" ></asp:Textbox>
                </td>
                <td class="id2">
@@ -93,7 +93,7 @@
            </tr>
                 <tr>
                <td>
-                   <asp:label runat="server"><b>Last Name: </b></asp:label><asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server"
+                   <asp:label runat="server"><b>Last Name*: </b></asp:label><asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server"
   ControlToValidate="lname"  ErrorMessage="Required"  ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator><asp:Textbox runat="server" ID="lname" ></asp:Textbox>
                </td>
                <td class="id2">
@@ -137,7 +137,7 @@
          <fieldset>
           <legend><span class="number">3</span>Settings</legend>
          <asp:label runat="server"><b>Username: </b></asp:label><asp:Label runat="server" ID="username" ></asp:Label><br /><br /> 
-         <asp:label runat="server"><b>Password: </b></asp:label><asp:RequiredFieldValidator id="RequiredFieldValidator3" runat="server"
+         <asp:label runat="server"><b>Password*: </b></asp:label><asp:RequiredFieldValidator id="RequiredFieldValidator3" runat="server"
   ControlToValidate="password"  ErrorMessage="Required"  ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator><asp:TextBox runat="server" ID="password" ></asp:TextBox><br /> <br />
         <asp:label runat="server"><b>SSN: </b></asp:label><asp:TextBox runat="server" ID="ssn"></asp:TextBox><br /> <br />
         </fieldset>

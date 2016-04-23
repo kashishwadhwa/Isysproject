@@ -107,7 +107,7 @@
            </tr> 
                 <tr>
                <td>
-                  <asp:label runat="server"><b>First Name: </b></asp:label> <asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server"
+                  <asp:label runat="server"><b>First Name*: </b></asp:label> <asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server"
   ControlToValidate="fname"  ErrorMessage="Required"  ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator><asp:Textbox runat="server" ID="fname" ></asp:Textbox>
                </td>
                <td class="id2">
@@ -116,7 +116,7 @@
            </tr>
                 <tr>
                <td>
-                   <asp:label runat="server"><b>Last Name: </b></asp:label><asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server"
+                   <asp:label runat="server"><b>Last Name*: </b></asp:label><asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server"
   ControlToValidate="lname"  ErrorMessage="Required"  ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator><asp:Textbox runat="server" ID="lname" ></asp:Textbox>
                </td>
                <td class="id2">
