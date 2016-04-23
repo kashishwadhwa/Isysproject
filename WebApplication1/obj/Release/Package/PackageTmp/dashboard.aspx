@@ -29,7 +29,7 @@
             overflow:hidden;
         }
 
-             @media screen and (max-width: 480px) {
+             @media screen and (max-width: 737px) {
                  .media_responsive {
                      display: block;
                      float: none;

@@ -23,7 +23,7 @@ namespace WebApplication1
                 
                 SqlConnection myConnection = new SqlConnection(ConnectString);
 
-                string QueryString = "select top 3 * from service";
+                string QueryString = "select * from service";
 
 
                 SqlDataAdapter myCommand = new SqlDataAdapter(QueryString, myConnection);

@@ -77,6 +77,7 @@ namespace WebApplication1
                     con.Open();
                     using (SqlDataReader sdr = cmd.ExecuteReader())
                     {
+
                         StringBuilder sb = new StringBuilder();
                         sb.Append("[");
                         while (sdr.Read())
