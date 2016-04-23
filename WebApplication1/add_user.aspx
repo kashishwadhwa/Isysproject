@@ -131,7 +131,8 @@
                    <asp:label runat="server"><b>Phone: </b></asp:label> <asp:Textbox runat="server" ID="ph" ></asp:Textbox>
                </td>
                <td class="id2">
-                  <asp:label runat="server"><b>   DOB: </b></asp:label> <asp:Textbox runat="server" ID="dob" ></asp:Textbox>
+                  <asp:label runat="server"><b>   DOB: </b></asp:label> <input type="date"  runat="server" id="dob1" />
+
                </td>
            </tr>
                 <tr>

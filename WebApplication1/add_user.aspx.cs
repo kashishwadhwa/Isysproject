@@ -13,6 +13,10 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string dateres = DateTime.Now.ToString("yyyy-MM-dd");
+            dob1.Attributes.Add("max", dateres);
+            dob1.Attributes.Add("min", "1930-01-01");
+
             linkLogout.ServerClick += new EventHandler(fnSetLogout_Click);
             if (Session["email"] == null)
             {
@@ -78,7 +82,7 @@ namespace WebApplication1
                 com3.Parameters.AddWithValue("@pzip", zip.Text);
                 com3.Parameters.AddWithValue("@phone", ph.Text);
                 com3.Parameters.AddWithValue("@pssn", ssn.Text);
-                com3.Parameters.AddWithValue("@pdob", dob.Text);
+                com3.Parameters.AddWithValue("@pdob", dob1.Value);
                 com3.Parameters.AddWithValue("@pallergy", allergies.Text);
                
                 com3.ExecuteNonQuery();
@@ -103,6 +107,7 @@ namespace WebApplication1
             finally
             {
                 db.Close();
+                Response.Redirect("dashboard.aspx?message= New User Added");
             }
         }
     }
