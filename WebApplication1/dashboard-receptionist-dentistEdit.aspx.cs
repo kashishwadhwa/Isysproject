@@ -13,6 +13,8 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string dateres = DateTime.Now.ToString("yyyy-MM-dd");
+            txt_date.Attributes.Add("max", dateres);
             linkLogout.ServerClick += new EventHandler(fnSetLogout_Click);
 
 

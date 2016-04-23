@@ -102,7 +102,7 @@
           <label for="date">Appointment Date:</label>
           <input type="date" id="date" name="appointment_date" runat="server"/>
           <label for="time">Appointment Time:</label>
-          <input type="time" id="time" name="appointment_time" runat="server"/>
+          <input type="time" id="time" name="appointment_time" runat="server" min="09:00" max="17:00"/>
           <label for="bio">Message:</label>
           <textarea id="message" name="message" runat="server"></textarea>
         </fieldset>

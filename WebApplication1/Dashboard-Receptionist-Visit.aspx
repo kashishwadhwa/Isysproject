@@ -108,7 +108,7 @@
           <label for="date">Visit Date:</label>
           <input type="date" id="date" name="visit_date" runat="server"/>
           <label for="time">Visit Time:</label>
-          <input type="time" id="time" name="visit_time" runat="server"/>
+          <input type="time" id="time" name="visit_time" runat="server" min="09:00" max="17:00"/>
           <label for="bio">Message:</label>
           <textarea id="message" name="message" runat="server"></textarea>
         </fieldset>

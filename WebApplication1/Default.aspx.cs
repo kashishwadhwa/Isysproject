@@ -12,6 +12,8 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string dateres = DateTime.Now.ToString("yyyy-MM-dd");
+            date.Attributes.Add("min", dateres);
             bookAppointment.ServerClick += new EventHandler(fnSetBook_Click);
 
             int dayOfYear = DateTime.Now.DayOfYear;

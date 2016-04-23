@@ -15,7 +15,8 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             linkLogout.ServerClick += new EventHandler(fnSetLogout_Click);
-
+            string dateres = DateTime.Now.ToString("yyyy-MM-dd");
+            date.Attributes.Add("min", dateres);
 
             if (Session["email"] == null)
             {
