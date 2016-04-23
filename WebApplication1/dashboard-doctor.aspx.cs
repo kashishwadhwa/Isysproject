@@ -21,7 +21,7 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
+            linkLogout_responsive.ServerClick += new EventHandler(fnSetLogout_Click);
             linkLogout.ServerClick += new EventHandler(fnSetLogout_Click);
 
 

@@ -34,12 +34,21 @@ namespace WebApplication1
                     lbl_warning.Visible = true;
                     lbl_warning.Text = Request.QueryString["message"];
                 }
+                linkLogout_responsive.ServerClick += new EventHandler(fnSetLogout_Click_responsive);
                 linkLogout.ServerClick += new EventHandler(fnSetLogout_Click);
                 if (!IsPostBack)
                     bindview();
 
             }
 
+        }
+
+        protected void fnSetLogout_Click_responsive(object sender, EventArgs e)
+        {
+            Session["email"] = null;
+            Session["user_id"] = null;
+            Session["user_type"] = null;
+            Response.Redirect("default.aspx");
         }
 
         [WebMethod]
