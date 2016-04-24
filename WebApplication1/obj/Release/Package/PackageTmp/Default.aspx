@@ -36,7 +36,7 @@
 
 <div id="wowslider-container1">
 <div class="ws_images"><ul>
-		<li><img src="data1/images/3.jpg" alt="Image 1" title="Joaqina Dental" id="wows1_0"/>Your smile. Our passion. Your life.</li>
+		<li><img src="data1/images/3.jpg" alt="Image 1" title="Joaquina Dental" id="wows1_0"/>Your smile. Our passion. Your life.</li>
 		<li><img src="data1/images/10.jpg" alt="Image 2" title="Smile Rewards" id="wows1_1"/>Most exclusive smile program for the most loyal customers.</li>
 		<li><a href="UnderConstr.aspx"><img src="data1/images/11.jpg" alt="jquery carousel" title="World Class Doctors" id="wows1_2"/></a>2 Doctors are Recipient of Golden Apple Awards</li>
 		<li><img src="data1/images/9.jpg" alt="Image 4" title="Multispeciality Dental Services" id="wows1_3"/>Catering to all of your dental needs and desires.</li>
