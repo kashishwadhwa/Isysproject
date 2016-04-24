@@ -85,7 +85,7 @@
                             <ul class="widget widget-menu unstyled">
                                 <li><a href="dashboard-receptionist-doctors.aspx"><i class="menu-icon icon-book"></i>Doctors </a></li>
                                 <li><a href="dashboard-receptionist-patients.aspx"><i class="menu-icon icon-paste"></i>Patients </a></li>
-                                <li><a href="dashboard-receptionist-appointmentSchedule.aspx"><i class="menu-icon icon-paste"></i>Appointment History </a></li>
+                                <li><a href="dashboard-receptionist-appointmentSchedule.aspx"><i class="menu-icon icon-paste"></i>Appointment Schedule </a></li>
                                 <li><a href="add_user.aspx"><i class="menu-icon icon-paste"></i>Add User</a></li>
                                     <%--APPOINTMENTS WITH BILLS dr.name pat name appt. date/time services amount--%> 
                                     
@@ -116,7 +116,7 @@
                                         
                                     </a><a href="dashboard-receptionist-doctors.aspx" class="btn-box big span4"><i class="icon-user"></i><b>Doctors</b>
                                         
-                                    </a><a href="dashboard-receptionist-appointmentSchedule.aspx" class="btn-box big span4"><i class="icon-money"></i><b>Appointment History</b>
+                                    </a><a href="dashboard-receptionist-appointmentSchedule.aspx" class="btn-box big span4"><i class="icon-money"></i><b>Appointment Schedule</b>
                                         
                                     </a>
                                 </div>

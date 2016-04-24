@@ -97,7 +97,7 @@
                                         </script>
                                 </div>
                                 <div class="module-head">
-                                    <h3>Appointment History</h3>
+                                    <h3>Appointment Schedule</h3>
                                 </div>
                                 <div class="module-body table">
 
