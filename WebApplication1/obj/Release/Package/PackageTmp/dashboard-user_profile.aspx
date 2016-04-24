@@ -13,7 +13,11 @@
 <link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="css/form.css" />
-
+        <style>
+        body{
+            background-color:#eee;
+        }
+    </style>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">

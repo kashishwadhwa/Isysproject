@@ -45,7 +45,7 @@ namespace WebApplication1
 
                 }
                 myConnection.Close();
-                lbl_patientName.Text = " "+user_name+" !";
+                lbl_patientName.Text = " "+user_name+"!";
 
                 if (!IsPostBack)
                     bindview();

@@ -14,6 +14,11 @@
     
     <link rel="stylesheet" href="css/form.css" />
     <link rel="stylesheet" href="index.css" />
+     <style>
+        body{
+            background-color:#eee;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="banner" runat="server">
                  <div class="main-background-login">
@@ -76,10 +81,10 @@
                 
            <tr>
                <td>
-                 <asp:label runat="server"><b>Patient ID: </b></asp:label>  <asp:label runat="server" ID="patientId" ></asp:label>
+                 <asp:label runat="server"><b>Patient ID: </b></asp:label> <asp:TextBox runat="server" ID="patientId" ReadOnly="true"></asp:TextBox>
                </td>
                <td class="id2">
-                   <asp:label runat="server"><b>   Account ID: </b></asp:label><asp:label runat="server" ID="accountId" ></asp:label>
+                   <asp:label runat="server"><b>   Account ID: </b></asp:label><asp:TextBox runat="server" ReadOnly="true" ID="accountId"></asp:TextBox>
                </td>
            </tr> 
                 <tr>
@@ -136,9 +141,9 @@
           
          <fieldset>
           <legend><span class="number">3</span>Settings</legend>
-         <asp:label runat="server"><b>Username: </b></asp:label><asp:Label runat="server" ID="username" ></asp:Label><br /><br /> 
+         <asp:label runat="server"><b>Username: </b></asp:label><asp:TextBox runat="server" ID="username" ReadOnly="true" ></asp:TextBox> 
          <asp:label runat="server"><b>Password*: </b></asp:label><asp:RequiredFieldValidator id="RequiredFieldValidator3" runat="server"
-  ControlToValidate="password"  ErrorMessage="Required"  ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator><asp:TextBox runat="server" ID="password" ></asp:TextBox><br /> <br />
+  ControlToValidate="password"  ErrorMessage="Required"  ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator><asp:TextBox runat="server" ID="password" ></asp:TextBox>
         <asp:label runat="server"><b>SSN: </b></asp:label><asp:TextBox runat="server" ID="ssn"></asp:TextBox><br /> <br />
         </fieldset>
 

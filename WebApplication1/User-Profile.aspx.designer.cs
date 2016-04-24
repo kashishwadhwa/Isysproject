@@ -28,7 +28,7 @@ namespace WebApplication1 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label patientId;
+        protected global::System.Web.UI.WebControls.TextBox patientId;
         
         /// <summary>
         /// accountId control.
@@ -37,7 +37,7 @@ namespace WebApplication1 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label accountId;
+        protected global::System.Web.UI.WebControls.TextBox accountId;
         
         /// <summary>
         /// RequiredFieldValidator2 control.
@@ -154,7 +154,7 @@ namespace WebApplication1 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label username;
+        protected global::System.Web.UI.WebControls.TextBox username;
         
         /// <summary>
         /// RequiredFieldValidator3 control.

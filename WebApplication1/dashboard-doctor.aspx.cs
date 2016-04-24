@@ -46,7 +46,7 @@ namespace WebApplication1
 
                 }
                 myConnection.Close();
-                lbl_doctorName.Text = " " + user_name + " !";
+                lbl_doctorName.Text = " " + user_name + "!";
 
 
                 if (!IsPostBack)

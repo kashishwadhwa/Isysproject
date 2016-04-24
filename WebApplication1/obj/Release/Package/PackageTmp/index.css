@@ -441,7 +441,7 @@ div.desc {
 Footer
 *******************************/
 .footer-distributed{
-	background-color: #44494e;
+	background-color:rgba(70, 137, 152, 0.99);
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
@@ -475,7 +475,7 @@ Footer
 }
 
 .footer-distributed h3 span{
-	color:  #5383d3;
+	color:#FF9800 ;
 }
 
 /* Footer links */
@@ -494,7 +494,7 @@ Footer
 }
 
 .footer-distributed .footer-company-name{
-	color:  #8f9296;
+	color:  whitesmoke;
 	font-size: 14px;
 	font-weight: normal;
 	margin: 0;
@@ -540,7 +540,7 @@ Footer
 }
 
 .footer-distributed .footer-center p a{
-	color:  #5383d3;
+	color:  #dbdbdb;
 	text-decoration: none;
 }
 
@@ -602,7 +602,7 @@ Footer
 	display: block;
 	border-radius: 3px;
 	box-sizing: border-box;
-	background-color:  #1f2022;
+	background-color:  #ededed;
 	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
 	border: none;
 	resize: none;
@@ -642,8 +642,8 @@ Footer
 
 .footer-distributed form button{
 	border-radius: 3px;
-	background-color:  #33383b;
-	color: #ffffff;
+	background-color:  #ededed;
+	color: black;
 	border: 0;
 	padding: 15px 50px;
 	font-weight: bold;

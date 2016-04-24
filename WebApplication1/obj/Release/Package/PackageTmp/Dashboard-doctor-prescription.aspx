@@ -68,7 +68,7 @@
 				<div class="span9">
 					<div class="content">
                         <div class="module">
-						 <form  method="post" class="form-reg" runat="server">
+						 <form method="post" class="form-reg" runat="server">
       
         <h1>New Prescription</h1>
         
@@ -101,8 +101,54 @@
         </fieldset>
 
         <button type="submit" class="button button-block" runat="server" id="button2"  onserverclick="Buttonbook_Click_visit" validationgroup="req_form">Add Service</button>
-    </form>   
-</div>					
+      
+</div>		
+                         <div class="module">
+                                <div class="module-head">
+                                    <h3>
+                                        Upcoming Visits</h3>
+                                </div>
+                                <div class="module-body table">
+                                    
+    
+
+  
+    <asp:GridView ID="GridView1" CssClass="footable" OnPageIndexChanging="GridView1_PageIndexChanging" runat="server" AutoGenerateColumns="false"
+         AllowPaging="True" PagerSettings-Mode="NumericFirstLast">
+        <Columns>
+            <asp:BoundField DataField="visit_id" HeaderText="Visit Id" />
+              <asp:BoundField DataField="patient_name" HeaderText="Patient Name" />
+          
+            <asp:BoundField DataField="visit_date" HeaderText="Visit_date" />
+
+        </Columns>
+
+                <EmptyDataTemplate>
+
+<div>
+
+No Upcoming Visits
+
+</div>
+
+</EmptyDataTemplate>
+        <PagerStyle HorizontalAlign="Right" CssClass="GridPager" />
+    </asp:GridView>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/css/footable.min.css"
+        rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/js/footable.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('[id*=GridView1]').footable();
+        });
+    </script>
+</form>
+   
+      
+           
+                                </div>
+                            </div>			
 					</div><!--/.content-->
 				</div><!--/.span9-->
 			</div>
