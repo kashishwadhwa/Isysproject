@@ -58,7 +58,7 @@
                                         First Name<span class="req">*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
                                             ControlToValidate="fname"
-                                            ErrorMessage="First Name is a required field."
+                                            ErrorMessage=" Required "
                                             ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator>
                                     </label>
                                     <input id="fname" type="text" required="required" autocomplete="on" runat="server" />
@@ -69,7 +69,7 @@
                                         Last Name<span class="req">*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
                                             ControlToValidate="lname"
-                                            ErrorMessage="Last Name is a required field."
+                                            ErrorMessage=" Required"
                                             ForeColor="Red" ValidationGroup="req_reg"></asp:RequiredFieldValidator>
                                     </label>
                                     <input id="lname" type="text" required="required" autocomplete="on" runat="server" />
