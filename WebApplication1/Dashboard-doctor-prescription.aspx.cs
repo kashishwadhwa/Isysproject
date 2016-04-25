@@ -24,29 +24,35 @@ namespace WebApplication1
 
             linkLogout.ServerClick += new EventHandler(fnSetLogout_Click);
 
-
-            if (!IsPostBack)
+            if (Session["email"] == null)
             {
-                string ConnectString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-                
-                SqlConnection myConnection = new SqlConnection(ConnectString);
-
-                string QueryString = "select * from service";
-
-
-                SqlDataAdapter myCommand = new SqlDataAdapter(QueryString, myConnection);
-                DataSet ds = new DataSet();
-                myCommand.Fill(ds, "Service");
-
-                service_list.DataSource = ds;
-                service_list.DataTextField = "service_description";
-                service_list.DataValueField = "service_id";
-                service_list.DataBind();
+                Response.Redirect("WebForm4.aspx");
             }
+            else
+            {
+                if (!IsPostBack)
+                {
+                    string ConnectString = "Data Source=isys631.database.windows.net;Initial Catalog=\"isys 631\";Integrated Security=False;User ID=isys631;Password=CollegeMain-345;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
 
-            if (!IsPostBack)
-                bindview();
+                    SqlConnection myConnection = new SqlConnection(ConnectString);
 
+                    string QueryString = "select * from service";
+
+
+                    SqlDataAdapter myCommand = new SqlDataAdapter(QueryString, myConnection);
+                    DataSet ds = new DataSet();
+                    myCommand.Fill(ds, "Service");
+
+                    service_list.DataSource = ds;
+                    service_list.DataTextField = "service_description";
+                    service_list.DataValueField = "service_id";
+                    service_list.DataBind();
+                }
+
+                if (!IsPostBack)
+                    bindview();
+
+            }
         }
 
         private void bindview()
@@ -140,11 +146,9 @@ namespace WebApplication1
 
                       
                     }
-                else
-                {
-                      Response.Redirect("dashboard-doctor.aspx");
-                }
+               
             }
+            Response.Redirect("dashboard-doctor.aspx");
               }
                     catch (Exception ex)
                     {
