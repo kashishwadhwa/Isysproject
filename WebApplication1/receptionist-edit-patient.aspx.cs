@@ -124,7 +124,7 @@ namespace WebApplication1
 
                     conn.Open();
                     using (SqlCommand cmd =
-                        new SqlCommand("update patient set Account_ID = @Account_ID, Patient_First_Name = @Patient_First_Name, Patient_Middle_Name = @Patient_Middle_Name, Patient_Last_Name = @Patient_Last_Name, Patient_Street = @Patient_Street, Patient_City = @Patient_City, Patient_State = @Patient_State, Patient_Zip = @Patient_Zip, Patient_Phone_Primary = @Patient_Phone_Primary, Patient_Phone_Secondary = @Patient_Phone_Secondary, Patient_SSN = @Patient_SSN, Patient_DOB = @Patient_DOB, Patient_Minor = @Patient_Minor, Patient_Head_Of_House = @Patient_Head_Of_House, Patient_Allergies = @Patient_Allergies where Patient_ID = @Patient_ID", conn))
+                        new SqlCommand("update patient set Account_ID = @Account_ID, Patient_First_Name = @Patient_First_Name, Patient_Middle_Name = @Patient_Middle_Name, Patient_Last_Name = @Patient_Last_Name, Patient_Street = @Patient_Street, Patient_City = @Patient_City, Patient_State = @Patient_State, Patient_Zip = @Patient_Zip, Patient_Phone_Primary = @Patient_Phone_Primary, Patient_SSN = @Patient_SSN, Patient_DOB = @Patient_DOB, Patient_Allergies = @Patient_Allergies where Patient_ID = @Patient_ID", conn))
                     {
 
                         cmd.Parameters.AddWithValue("@Account_ID", accountId.Text);
@@ -139,39 +139,16 @@ namespace WebApplication1
                         cmd.Parameters.AddWithValue("@Patient_SSN", ssn.Text);
                         cmd.Parameters.AddWithValue("@Patient_DOB", dob1.Value);
                         cmd.Parameters.AddWithValue("@Patient_Allergies", allergies.Text);
-                        cmd.Parameters.AddWithValue("@Patient_Allergies", allergies.Text);
+                        
                         cmd.Parameters.AddWithValue("@Patient_ID", patientId.Text);
 
                         //cmd.Parameters.AddWithValue("@Patient_Minor", username.Text);
                         //cmd.Parameters.AddWithValue("@Patient_Head_Of_House", password.Text);
-                        int rows = cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
                     }
 
-                    using (SqlCommand cmd =
-    new SqlCommand("update users set passwrd=@pass,email=@email where user_id=@Patient_ID and user_type='p'", conn))
-                    {
 
-
-                        cmd.Parameters.AddWithValue("@email", username.Text);
-                        
-
-                        int rows = cmd.ExecuteNonQuery();
-
-                        string abc = Request.QueryString["patient_id"];
-
-                        if (abc != null)
-                        {
-                            Response.Redirect("dashboard-receptionist-doctors.aspx?record_updated=" + rows + " record updated");
-                        }
-                        else
-                        {
-                            Response.Redirect("dashboard-user_profile.aspx");
-                        }
-
-
-
-                    }
-
+                    Response.Redirect("dashboard-receptionist-patients.aspx");
 
                 }
             }

@@ -99,10 +99,10 @@
                 
            <tr>
                <td>
-                 <asp:label runat="server"><b>Patient ID: </b></asp:label>  <asp:label runat="server" ID="patientId" ></asp:label>
+                 <asp:label runat="server"><b>Patient ID: </b></asp:label>  <asp:Textbox runat="server" ID="patientId" readonly="true"></asp:Textbox>
                </td>
                <td class="id2">
-                   <asp:label runat="server"><b>   Account ID: </b></asp:label><asp:label runat="server" ID="accountId" ></asp:label>
+                   <asp:label runat="server"><b>   Account ID: </b></asp:label><asp:Textbox runat="server" ID="accountId" ></asp:Textbox>
                </td>
            </tr> 
                 <tr>

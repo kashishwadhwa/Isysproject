@@ -117,3 +117,4 @@ C:\Users\kashish\Documents\GitHub\Isysproject\WebApplication1\bin\Microsoft.Code
 C:\Users\kashish\Documents\GitHub\Isysproject\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\kashish\Documents\GitHub\Isysproject\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\kashish\Documents\GitHub\Isysproject\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\kashish\Documents\GitHub\Isysproject\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
